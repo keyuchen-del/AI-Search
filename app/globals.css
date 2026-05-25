@@ -1,0 +1,39 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+:root {
+  --bg: #f6f7fb;
+  --panel: #ffffff;
+  --text: #1c2434;
+  --muted: #6b7280;
+  --border: #e5e7eb;
+}
+
+html,
+body {
+  background: var(--bg);
+  color: var(--text);
+  font-family: ui-sans-serif, system-ui, -apple-system, "PingFang SC",
+    "Microsoft YaHei", sans-serif;
+}
+
+* {
+  box-sizing: border-box;
+}
+
+.card {
+  background: var(--panel);
+  border: 1px solid var(--border);
+  border-radius: 12px;
+  transition: box-shadow 0.15s ease, transform 0.15s ease;
+}
+
+.card:hover {
+  box-shadow: 0 6px 20px rgba(20, 30, 60, 0.06);
+  transform: translateY(-1px);
+}
+
+.scroll-hide::-webkit-scrollbar {
+  display: none;
+}
