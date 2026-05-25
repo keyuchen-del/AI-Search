@@ -21,7 +21,7 @@ export default function Header({ defaultKeyword = "" }: { defaultKeyword?: strin
 
         <nav className="hidden md:flex items-center gap-4 text-sm text-gray-600">
           <Link href="/" className="hover:text-brand-600">首页</Link>
-          <Link href="/?sort=latest" className="hover:text-brand-600">最新</Link>
+          <Link href="/daily" className="hover:text-brand-600">日报</Link>
           <a
             href="https://github.com/keyuchen-del/AI-Search"
             target="_blank"

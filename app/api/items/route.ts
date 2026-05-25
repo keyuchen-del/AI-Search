@@ -1,19 +1,28 @@
 import { NextRequest, NextResponse } from "next/server";
 import { queryItems } from "@/lib/queryItems";
-import type { CategoryKey } from "@/lib/types";
+import { isCategoryKey } from "@/lib/categories";
+import type { CategoryKey, Mode } from "@/lib/types";
 
 export const dynamic = "force-dynamic";
 
 export async function GET(req: NextRequest) {
   const { searchParams } = new URL(req.url);
-  const category = (searchParams.get("category") || "all") as
-    | CategoryKey
-    | "all";
+  const cat = searchParams.get("category");
+  const category: CategoryKey | "all" = isCategoryKey(cat) ? cat : "all";
   const page = Number(searchParams.get("page") || 1);
   const pageSize = Number(searchParams.get("pageSize") || 12);
   const keyword = searchParams.get("keyword") || "";
-  const sort = (searchParams.get("sort") || "heat") as "heat" | "latest";
+  const mode: Mode = searchParams.get("mode") === "all" ? "all" : "selected";
+  const since = searchParams.get("since") || undefined;
 
-  const result = queryItems({ category, page, pageSize, keyword, sort });
+  const result = await queryItems({
+    category,
+    page,
+    pageSize,
+    keyword,
+    mode,
+    since,
+    sort: "latest",
+  });
   return NextResponse.json(result);
 }
