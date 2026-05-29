@@ -1,6 +1,6 @@
 {
-  "fetchedAt": "2026-05-29T04:40:50.136Z",
-  "count": 474,
+  "fetchedAt": "2026-05-29T04:43:33.680Z",
+  "count": 454,
   "sources": {
     "hf-papers": 50,
     "github": 80,
@@ -20,6 +20,6 @@
     "rss:arstechnica-ai": 20,
     "rss:techreview-ai": 10,
     "rss:simonwillison": 14,
-    "arxiv": 20
+    "arxiv": 0
   }
 }
