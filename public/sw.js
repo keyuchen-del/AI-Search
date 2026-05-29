@@ -1,6 +1,6 @@
 // Minimal offline service worker for the static site. Derives the base path from
 // its own location so it works under both "/" (dev) and "/AI-Search/" (Pages).
-const CACHE = "ai-search-v2";
+const CACHE = "ai-search-v3";
 const BASE = self.location.pathname.replace(/sw\.js$/, "");
 
 self.addEventListener("install", (e) => {

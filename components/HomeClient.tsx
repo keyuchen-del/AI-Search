@@ -13,7 +13,7 @@ import CommandPalette from "./CommandPalette";
 import { filterItems } from "@/lib/filter";
 import { sourceCounts } from "@/lib/personalize";
 import { ENTITY_MAP, entityCounts } from "@/lib/entities";
-import { isCategoryKey } from "@/lib/categories";
+import { CATEGORIES, isCategoryKey } from "@/lib/categories";
 import { formatBJDate } from "@/lib/timeFormat";
 import type { StoreMeta } from "@/lib/localStore";
 import type { AIItem, CategoryKey, Digest, Mode } from "@/lib/types";
@@ -57,6 +57,10 @@ function HomeLayout({
     .sort((a, b) => b[1] - a[1])
     .slice(0, 12)
     .map(([slug, count]) => ({ slug, name: ENTITY_MAP[slug]?.name ?? slug, count }));
+  // 各方向精选一条最新的，凑成"推荐阅读"（填充右栏、提供发现入口）。
+  const recommend = CATEGORIES.map(
+    (c) => filterItems(items, { mode: "selected", category: c.key, since: "30d", sort: "latest" })[0],
+  ).filter((x): x is AIItem => !!x);
   // 每日必读 / 头条 only on the default landing view (no active filter/search).
   const showDigest = !keyword && category === "all" && !source;
   const heroItem =
@@ -95,6 +99,7 @@ function HomeLayout({
           sources={sourceCounts(items)}
           topics={topics}
           trendSummary={digest?.trendSummary ?? null}
+          recommend={recommend}
         />
       </main>
 

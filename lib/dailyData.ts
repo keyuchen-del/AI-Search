@@ -14,14 +14,25 @@ function dayOf(iso: string | null | undefined): string | null {
   return iso.slice(0, 10);
 }
 
-/** Daily reports are keyed by the day WE collected items (firstSeen), not publish day. */
+const DAILY_ARCHIVE_DAYS = 30;
+const MIN_DAILY_ITEMS = 3;
+
+/**
+ * Collection dates (firstSeen) worth showing as a daily: within the recent window
+ * and with enough items. Filters out ancient publish-date artifacts and near-empty
+ * days, so the archive only lists real, substantial reports.
+ */
 function distinctDatesDesc(items: AIItem[]): string[] {
-  const set = new Set<string>();
+  const counts = new Map<string, number>();
   for (const i of items) {
     const d = dayOf(i.firstSeen);
-    if (d) set.add(d);
+    if (d) counts.set(d, (counts.get(d) ?? 0) + 1);
   }
-  return [...set].sort((a, b) => b.localeCompare(a));
+  const cutoff = new Date(Date.now() - DAILY_ARCHIVE_DAYS * 86400000).toISOString().slice(0, 10);
+  return [...counts.entries()]
+    .filter(([d, n]) => d >= cutoff && n >= MIN_DAILY_ITEMS)
+    .map(([d]) => d)
+    .sort((a, b) => b.localeCompare(a));
 }
 
 /** Headline for a digest: newest item that has a summary (real lead paragraph),
