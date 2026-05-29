@@ -1,6 +1,6 @@
 import fs from "node:fs";
-import { META_PATH, STORE_PATH, storeMaxAgeMs } from "./config";
-import type { AIItem } from "./types";
+import { DIGEST_PATH, META_PATH, STORE_PATH, storeMaxAgeMs } from "./config";
+import type { AIItem, Digest } from "./types";
 
 export interface StoreMeta {
   fetchedAt: string | null;
@@ -57,6 +57,16 @@ export function readStoreMeta(): StoreMeta | null {
     const items = readLocalItems();
     if (items.length === 0) return null;
     return { fetchedAt: null, count: items.length, sources: {}, errors: {} };
+  }
+}
+
+/** Read the "AI 每日必读" digest, or null when absent/empty. */
+export function readDigest(): Digest | null {
+  try {
+    const d = JSON.parse(fs.readFileSync(DIGEST_PATH, "utf8")) as Digest;
+    return d && Array.isArray(d.picks) && d.picks.length > 0 ? d : null;
+  } catch {
+    return null;
   }
 }
 

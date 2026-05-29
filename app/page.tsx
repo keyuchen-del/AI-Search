@@ -1,5 +1,5 @@
 import HomeClient from "@/components/HomeClient";
-import { readLocalItems, readStoreMeta } from "@/lib/localStore";
+import { readDigest, readLocalItems, readStoreMeta } from "@/lib/localStore";
 import { normalizeItems } from "@/lib/classify";
 import { MOCK_ITEMS } from "@/lib/mockData";
 
@@ -13,5 +13,5 @@ export default function Home() {
   // so NEW/今日新增 windows don't cause hydration mismatch).
   const now = meta?.fetchedAt ? new Date(meta.fetchedAt).getTime() : Date.now();
 
-  return <HomeClient items={items} meta={meta} now={now} />;
+  return <HomeClient items={items} meta={meta} now={now} digest={readDigest()} />;
 }

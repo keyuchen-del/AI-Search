@@ -51,6 +51,7 @@ function buildLocalDaily(
     return {
       label: c.label,
       items: pool.map((i) => ({
+        id: i.id,
         title: i.title,
         summary: i.summary,
         sourceUrl: i.sourceUrl,
@@ -137,6 +138,7 @@ function mockDaily(date?: string): DailyReport {
     return {
       label: c.label,
       items: pool.map((i) => ({
+        id: i.id,
         title: i.title,
         summary: i.summary,
         sourceUrl: i.sourceUrl,

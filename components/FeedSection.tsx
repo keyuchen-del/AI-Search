@@ -33,6 +33,19 @@ export default function FeedSection({
   const [view, setView] = useState<ViewKey>("all");
   const [page, setPage] = useState(1);
   const [settingsOpen, setSettingsOpen] = useState(false);
+  const [copied, setCopied] = useState(false);
+
+  function exportBookmarks() {
+    const md = items
+      .filter((i) => state.bookmarks.includes(i.id))
+      .map((i) => `- [${i.title}](${i.sourceUrl}) — ${i.source}`)
+      .join("\n");
+    if (!md || typeof navigator === "undefined" || !navigator.clipboard) return;
+    navigator.clipboard.writeText(md).then(() => {
+      setCopied(true);
+      setTimeout(() => setCopied(false), 2000);
+    });
+  }
 
   useEffect(() => {
     setPage(1);
@@ -90,6 +103,14 @@ export default function FeedSection({
               </button>
             ))}
           </div>
+          {hydrated && state.bookmarks.length > 0 && (
+            <button
+              onClick={exportBookmarks}
+              className="px-3 h-8 inline-flex items-center rounded-md text-sm border border-gray-200 text-gray-600 hover:border-brand-500 transition"
+            >
+              {copied ? "已复制 ✓" : "导出收藏"}
+            </button>
+          )}
           <button
             onClick={() => setSettingsOpen(true)}
             className={

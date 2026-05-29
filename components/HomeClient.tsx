@@ -7,11 +7,12 @@ import CategoryNav from "./CategoryNav";
 import Sidebar from "./Sidebar";
 import SortTabs from "./SortTabs";
 import FeedSection from "./FeedSection";
+import TopReads from "./TopReads";
 import { filterItems } from "@/lib/filter";
 import { isCategoryKey } from "@/lib/categories";
 import { formatBJDate } from "@/lib/timeFormat";
 import type { StoreMeta } from "@/lib/localStore";
-import type { AIItem, CategoryKey, Mode } from "@/lib/types";
+import type { AIItem, CategoryKey, Digest, Mode } from "@/lib/types";
 
 const ALLOWED_SINCE = ["24h", "3d", "7d", "30d"] as const;
 
@@ -33,15 +34,19 @@ function HomeLayout({
   items,
   meta,
   now,
+  digest,
   state,
 }: {
   items: AIItem[];
   meta: StoreMeta | null;
   now: number;
+  digest: Digest | null;
   state: ViewState;
 }) {
   const { category, keyword, mode, since } = state;
   const trending = filterItems(items, { mode: "selected", since: "7d", sort: "heat" }).slice(0, 8);
+  // 每日必读 only on the default landing view (no active filter/search).
+  const showDigest = !keyword && category === "all";
 
   return (
     <>
@@ -50,6 +55,7 @@ function HomeLayout({
 
       <main className="max-w-7xl mx-auto px-4 py-6 grid grid-cols-1 lg:grid-cols-[1fr_300px] gap-6">
         <section>
+          {showDigest && <TopReads digest={digest} />}
           {keyword && (
             <div className="mb-4 text-sm text-gray-600">
               搜索关键词：<span className="text-brand-600 font-medium">{keyword}</span>
@@ -82,7 +88,17 @@ function HomeLayout({
   );
 }
 
-function HomeInner({ items, meta, now }: { items: AIItem[]; meta: StoreMeta | null; now: number }) {
+function HomeInner({
+  items,
+  meta,
+  now,
+  digest,
+}: {
+  items: AIItem[];
+  meta: StoreMeta | null;
+  now: number;
+  digest: Digest | null;
+}) {
   const params = useSearchParams();
   const state: ViewState = {
     category: isCategoryKey(params.get("category") || undefined)
@@ -94,21 +110,25 @@ function HomeInner({ items, meta, now }: { items: AIItem[]; meta: StoreMeta | nu
       ? (params.get("since") as string)
       : "7d",
   };
-  return <HomeLayout items={items} meta={meta} now={now} state={state} />;
+  return <HomeLayout items={items} meta={meta} now={now} digest={digest} state={state} />;
 }
 
 export default function HomeClient({
   items,
   meta,
   now,
+  digest,
 }: {
   items: AIItem[];
   meta: StoreMeta | null;
   now: number;
+  digest: Digest | null;
 }) {
   return (
-    <Suspense fallback={<HomeLayout items={items} meta={meta} now={now} state={DEFAULT_STATE} />}>
-      <HomeInner items={items} meta={meta} now={now} />
+    <Suspense
+      fallback={<HomeLayout items={items} meta={meta} now={now} digest={digest} state={DEFAULT_STATE} />}
+    >
+      <HomeInner items={items} meta={meta} now={now} digest={digest} />
     </Suspense>
   );
 }

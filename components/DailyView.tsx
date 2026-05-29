@@ -1,9 +1,28 @@
+"use client";
+
 import Link from "next/link";
 import type { DailyReport } from "@/lib/types";
 import { formatBJDate, formatRelative } from "@/lib/timeFormat";
+import { useUserStore } from "@/lib/userStore";
 
 function countItems(d: DailyReport): number {
   return d.sections.reduce((sum, s) => sum + s.items.length, 0);
+}
+
+function Star({ on, onClick }: { on: boolean; onClick: () => void }) {
+  return (
+    <button
+      type="button"
+      onClick={onClick}
+      aria-label={on ? "取消收藏" : "收藏"}
+      title={on ? "取消收藏" : "收藏"}
+      className={"shrink-0 transition " + (on ? "text-amber-500" : "text-gray-300 hover:text-amber-500")}
+    >
+      <svg className="w-4 h-4" viewBox="0 0 24 24" fill={on ? "currentColor" : "none"} stroke="currentColor" strokeWidth="2">
+        <path d="m12 17.3-6.18 3.7 1.64-7.03L2 9.24l7.19-.61L12 2l2.81 6.63 7.19.61-5.46 4.73L18.18 21z" />
+      </svg>
+    </button>
+  );
 }
 
 export default function DailyView({
@@ -15,6 +34,9 @@ export default function DailyView({
   prevDate?: string | null;
   nextDate?: string | null;
 }) {
+  const { state, toggleBookmark, markRead } = useUserStore();
+  const bookmarks = new Set(state.bookmarks);
+  const readSet = new Set(state.read);
   const total = countItems(daily);
   let counter = 0;
 
@@ -26,12 +48,8 @@ export default function DailyView({
         </div>
         {daily.lead ? (
           <>
-            <h1 className="text-xl font-semibold leading-snug mb-2">
-              {daily.lead.title}
-            </h1>
-            <p className="text-sm text-gray-600 leading-relaxed">
-              {daily.lead.leadParagraph}
-            </p>
+            <h1 className="text-xl font-semibold leading-snug mb-2">{daily.lead.title}</h1>
+            <p className="text-sm text-gray-600 leading-relaxed">{daily.lead.leadParagraph}</p>
           </>
         ) : (
           <h1 className="text-xl font-semibold">AI HOT 日报 · {daily.date}</h1>
@@ -45,34 +63,35 @@ export default function DailyView({
             <h2 className="text-base font-semibold mb-3 flex items-center gap-2">
               <span className="w-1 h-4 bg-brand-500 rounded-sm" />
               {sec.label}
-              <span className="text-xs text-gray-400 font-normal">
-                {sec.items.length} 条
-              </span>
+              <span className="text-xs text-gray-400 font-normal">{sec.items.length} 条</span>
             </h2>
             <ol className="space-y-4">
               {sec.items.map((it) => {
                 counter += 1;
+                const read = !!it.id && readSet.has(it.id);
                 return (
-                  <li key={`${sec.label}-${counter}`} className="text-sm">
+                  <li key={`${sec.label}-${counter}`} className={"text-sm" + (read ? " opacity-60" : "")}>
                     <div className="flex gap-2">
                       <span className="shrink-0 w-6 text-right text-gray-400 font-mono text-xs leading-6">
                         {counter}.
                       </span>
                       <div className="min-w-0 flex-1">
-                        <a
-                          href={it.sourceUrl}
-                          target="_blank"
-                          rel="noreferrer"
-                          className="font-medium text-gray-900 hover:text-brand-600 leading-snug"
-                        >
-                          {it.title}
-                        </a>
-                        <span className="text-gray-400 ml-2">— {it.sourceName}</span>
-                        {it.summary && (
-                          <p className="text-gray-600 leading-relaxed mt-1">
-                            {it.summary}
-                          </p>
-                        )}
+                        <div className="flex items-start gap-2">
+                          <div className="min-w-0 flex-1">
+                            <a
+                              href={it.sourceUrl}
+                              target="_blank"
+                              rel="noreferrer"
+                              onClick={() => it.id && markRead(it.id)}
+                              className="font-medium text-gray-900 hover:text-brand-600 leading-snug"
+                            >
+                              {it.title}
+                            </a>
+                            <span className="text-gray-400 ml-2">— {it.sourceName}</span>
+                          </div>
+                          {it.id && <Star on={bookmarks.has(it.id)} onClick={() => toggleBookmark(it.id!)} />}
+                        </div>
+                        {it.summary && <p className="text-gray-600 leading-relaxed mt-1">{it.summary}</p>}
                       </div>
                     </div>
                   </li>
@@ -94,12 +113,7 @@ export default function DailyView({
               <li key={`${f.sourceUrl}-${idx}`} className="flex gap-2">
                 <span className="text-gray-400 shrink-0">·</span>
                 <div className="min-w-0 flex-1">
-                  <a
-                    href={f.sourceUrl}
-                    target="_blank"
-                    rel="noreferrer"
-                    className="text-gray-800 hover:text-brand-600"
-                  >
+                  <a href={f.sourceUrl} target="_blank" rel="noreferrer" className="text-gray-800 hover:text-brand-600">
                     {f.title}
                   </a>
                   <span className="text-gray-400 ml-2 text-xs">
@@ -112,9 +126,7 @@ export default function DailyView({
         </section>
       )}
 
-      <div className="text-xs text-gray-400 text-center">
-        日报生成时间：{formatBJDate(daily.generatedAt)}
-      </div>
+      <div className="text-xs text-gray-400 text-center">日报生成时间：{formatBJDate(daily.generatedAt)}</div>
 
       <DailyNav prevDate={prevDate} nextDate={nextDate} />
     </article>
