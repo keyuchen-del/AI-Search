@@ -47,7 +47,6 @@ const FEEDS: FeedDef[] = [
   { id: "rss:lilianweng", label: "Lil'Log", url: "https://lilianweng.github.io/index.xml", source: "Lilian Weng", category: "tip" },
   { id: "rss:raschka", label: "Ahead of AI", url: "https://magazine.sebastianraschka.com/feed", source: "Sebastian Raschka", category: "tip" },
   { id: "rss:thegradient", label: "The Gradient", url: "https://thegradient.pub/rss/", source: "The Gradient", category: "tip", aiOnly: true },
-  { id: "rss:importai", label: "Import AI", url: "https://importai.substack.com/feed", source: "Import AI", category: "industry" },
 ];
 
 const AI_KEYWORDS = [
