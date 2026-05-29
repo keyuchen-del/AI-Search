@@ -1,6 +1,6 @@
 {
-  "fetchedAt": "2026-05-29T08:59:50.954Z",
-  "count": 528,
+  "fetchedAt": "2026-05-29T09:10:44.580Z",
+  "count": 549,
   "sources": {
     "hf-papers": 50,
     "github": 80,
@@ -25,9 +25,7 @@
     "rss:lilianweng": 20,
     "rss:raschka": 20,
     "rss:thegradient": 14,
-    "arxiv": 0
+    "arxiv": 20
   },
-  "errors": {
-    "arxiv": "HTTP 429 Unknown Error <- https://export.arxiv.org/api/query?search_query=cat:cs.AI+OR+cat:cs.CL+OR+cat:cs.LG&sortBy=submittedDate&sortOrder=descending&max_results=20"
-  }
+  "errors": {}
 }

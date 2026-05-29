@@ -1,0 +1,32 @@
+[
+  {
+    "id": "rss:raschka-1ea34ba049",
+    "title": "A Visual Guide to Attention Variants in Modern LLMs",
+    "summary": "From MHA and GQA to MLA, sparse attention, and hybrid architectures",
+    "source": "Sebastian Raschka",
+    "sourceUrl": "https://magazine.sebastianraschka.com/p/visual-attention-variants",
+    "category": "tip",
+    "publishedAt": "2026-03-22T11:55:40.000Z",
+    "image": "https://substack-post-media.s3.amazonaws.com/public/images/51d52b9a-e820-45d6-8135-f94496ec1745_1600x900.png",
+    "aiSelected": true,
+    "origin": "rss:raschka",
+    "heat": 0,
+    "firstSeen": "2026-03-22T11:55:40.000Z",
+    "aiNote": null
+  },
+  {
+    "id": "rss:bair-b5a755e51d",
+    "title": "Identifying Interactions at Scale for LLMs",
+    "summary": "--> Understanding the behavior of complex machine learning systems, particularly Large Language Models (LLMs), is a critical challenge in modern artificial intelligence. Interpreta…",
+    "source": "Berkeley AI Research",
+    "sourceUrl": "http://bair.berkeley.edu/blog/2026/03/13/spex/",
+    "category": "paper",
+    "publishedAt": "2026-03-13T09:00:00.000Z",
+    "image": "https://bair.berkeley.edu/static/blog/spex/image1.png",
+    "aiSelected": true,
+    "origin": "rss:bair",
+    "heat": 0,
+    "firstSeen": "2026-03-13T09:00:00.000Z",
+    "aiNote": null
+  }
+]
