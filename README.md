@@ -2,7 +2,7 @@
 
 # 🔍 AI Search
 
-**每天自动聚合 20+ 来源的 AI 行业资讯，带个性化、收藏与 AI 点评 —— 纯静态、访客零成本、Fork 一份就有你自己的同款站。**
+**自动聚合全网 AI 资讯的知识库 —— 每日抓取、AI 点评、个性化、可检索、可安装。纯静态、访客零成本、Fork 一份即拥有同款。**
 
 简体中文 ・ [English](README.en.md)
 
@@ -20,104 +20,121 @@
 <!-- 👉 把首页截图放到 docs/images/screenshot-home.png（建议宽 1280px）后取消下一行注释 -->
 <!-- ![AI Search 首页](docs/images/screenshot-home.png) -->
 
-> ⚠️ **README 顶部还缺一张首页截图 / 操作 GIF** —— 这是涨 star 的头号转化点。
-> 录制方法见 [`docs/images/README.md`](docs/images/README.md)，拖进去后取消上面那行注释即可。
+> 📸 **建议在此放一张首页截图 / 操作 GIF**（演示时最直观）。把图放进 `docs/images/` 后取消上面那行注释即可。
 
 </div>
 
 ---
 
-## ✨ 这是什么
+## ✨ 一句话
 
-每天，GitHub Actions 自动从 **20+ 个公开来源**（OpenAI / DeepMind / HuggingFace / arXiv / Hacker News / 量子位 / 36氪 …）抓取最新 AI 资讯，自动去重、分类、打上「首次发现时间」，重新构建并发布到 GitHub Pages。
+> 一个**每天自动更新、带 AI 解读、可个性化、可全文检索、可安装到手机**的 AI 行业资讯站。
+> 没有服务器、没有数据库、访客侧不需要任何 API Key —— 全部跑在 GitHub Pages 的免费额度内。
+> 想要自己的同款？**Fork 一下，5 分钟上线**；换掉数据源，它就是任何垂直领域的资讯知识库模板。
 
-整站是**纯静态站点**：
+## 🎯 核心亮点
 
-- 🆓 **访客零成本** —— 没有后端、没有数据库、访客侧不需要任何 API Key，全部跑在 GitHub Pages 免费额度内
-- 🔄 **永远新鲜** —— 每天自动抓取 + 重新部署，无需人工维护
-- ⚡ **零延迟** —— 筛选 / 搜索 / 排序 / 分页全在浏览器本地完成，数据内嵌进页面
-- 🎯 **千人千面** —— 关注 / 屏蔽来源、关注话题、收藏、已读，全部存在你自己的浏览器
-- 🤖 **AI 增强（可选）** —— 配一个 LLM key，即可为新条目生成「一句话点评」+ 每天精选「必读」
-- 🍴 **可复制** —— Fork 一份，开启 Pages，5 分钟拥有你自己的同款 AI 资讯站
+- 🤖 **AI 增强**：为每条资讯生成「一句话点评」，每天自动挑选「必读」，日报每条配 AI 导读。
+- 🧠 **会沉淀的知识库**：历史归档 + 自动生成的「话题页 / 来源页」+ 全文模糊搜索，资讯不再阅后即焚。
+- 🎨 **杂志式阅读**：头条 Hero + 封面图 + 小红书式错落瀑布流，干净好看。
+- 🎯 **千人千面**：关注 / 屏蔽来源、关注话题、收藏、已读 —— 全存在你自己的浏览器，无需登录。
+- ⚡ **零成本 · 零延迟**：纯静态，筛选 / 搜索 / 排序全在本地即时完成；每天 GitHub Actions 自动抓取重建。
+- 🍴 **Fork 即用**：开 Pages、（可选）配一个 LLM Key，就有你自己的站；加数据源只需一行。
 
-## 🚀 功能一览
+## 📸 界面预览
 
-| 功能 | 说明 |
-|------|------|
-| 分类浏览 | 模型发布 / 产品更新 / 行业动态 / 论文研究 / 技巧观点 五大分类 |
-| 精选 / 全部 | 默认精选条目，可切换查看全量 |
-| 时间窗筛选 | 24 小时 / 3 天 / 7 天 / 30 天 |
-| 关键词搜索 | 标题 + 摘要 + 来源 + 标签即时匹配，命中处**高亮**（纯前端，零延迟） |
-| 视图切换 | 全部 / 今日新增 / 收藏 / 未读 |
-| NEW 角标 | 基于「本站首次发现时间」(firstSeen)，48 小时内的新内容自动标 NEW |
-| ⭐ 收藏 | 点卡片右上角收藏，「收藏」视图集中查看，可一键**导出为 Markdown** |
-| 已读 | 点开原文自动标记已读、卡片淡化，「未读」视图只看没读过的 |
-| 个性化 | 关注 / 屏蔽来源、关注话题；关注的优先靠前、屏蔽的隐藏（存本地） |
-| AI 一句话点评 | 为新条目生成不超过 40 字的中文点评（需 LLM key，构建时生成、缓存） |
-| AI 每日必读 | 每天从当天内容精选 3–5 条 + 推荐理由，首页置顶（需 LLM key） |
-| 来源健康看板 | 侧栏展示各数据源条数、更新时间、失败来源 |
-| AI 日报 | 按天聚合的日报，含主编点评、分类摘要、快讯；条目支持收藏 / 已读 |
-| 日报存档 | 按日期回溯历史日报 |
-| 热门榜单 | 侧边栏按热度（Star / 点赞 / HN points）排序 Top 8 |
-| 自动刷新 | GitHub Actions 每日抓取 + 重新构建 + 部署 |
-| 响应式 | 适配桌面端与移动端 |
+<!-- 放进 docs/images/ 后取消注释 -->
+<!--
+| 首页（头条 + 瀑布流） | AI 资讯日报 | 话题页 |
+| :---: | :---: | :---: |
+| ![首页](docs/images/screenshot-home.png) | ![日报](docs/images/screenshot-daily.png) | ![话题](docs/images/screenshot-topic.png) |
+-->
 
-## 🤖 AI 增强（可选）
+_截图占位中 —— 演示前补上效果最佳。_
 
-两个 AI 功能都在**构建时**由 GitHub Actions 调用 LLM 生成、结果缓存进快照 —— 所以**访客侧依旧是纯静态、零 Key、零延迟**，只有维护者需要配一个 key。
+## 🚀 功能全景
+
+**内容与聚合**
 
 | 功能 | 说明 |
 |------|------|
-| 一句话点评 | 每次构建为「新」条目生成中文点评，已生成的缓存进 `items.json` 不重复花钱；每次封顶 `AI_NOTE_MAX`（默认 30）条 |
-| 每日必读 | 每天（按北京日期）从当天内容选 `DIGEST_PICKS`（默认 5）条 + 理由，写入 `data/digest.json`，同日重复构建不再调用 |
+| 多源抓取 | 每日并行抓取 20+ 公开来源（模型实验室 / 学术 / 媒体 / 社区 / 中文），单源失败不影响整体 |
+| 智能归一 | 去重（URL + 跨源同标题）、自动分类、清洗乱码（HTML/实体）、`firstSeen` 收录时间标记 |
+| AI 资讯日报 | 按「当天新收录」自动汇编：今日精选（跨板块）+ 五大板块重点 + 快讯，每条带 AI 导读 |
+| 来源健康看板 | 侧栏展示各源条数、更新时间、失败来源 |
 
-**启用方式**：在仓库加一个 Secret（默认用 [DeepSeek](https://platform.deepseek.com/)，便宜、中文好）：
+**浏览与发现**
 
-```bash
-gh secret set DEEPSEEK_API_KEY -R <你的用户名>/AI-Search   # 粘贴你的 key
-```
+| 功能 | 说明 |
+|------|------|
+| 分类 / 时间窗 | 模型 / 产品 / 行业 / 论文 / 观点；24h / 3d / 7d / 30d |
+| 来源筛选 | 点侧栏来源即筛选，支持一键清除 |
+| 排序 | 最新 / 最热 切换 |
+| 视图 | 全部 / 今日新增 / 收藏 / 未读 + NEW 角标（48h 内） |
+| 命令面板 ⌘K | 快捷搜索资讯、跳转分类 / 来源 / 日报（全文模糊搜索） |
+| 话题页 | 自动生成 `/topic/openai`、`/topic/anthropic`、`/topic/agent` 等，聚合该实体全部历史 |
+| 热门榜单 | 「本周最热」按 GitHub Star / HN 讨论度排序，每条标注来源指标 |
 
-> 不配 key 也能正常用 —— 这两个 AI 功能会自动跳过，点评行与必读卡片隐藏，其余功能不受影响。
-> 想换模型：`LLM_MODEL`（默认 `deepseek-chat`）。适配层在 `scripts/lib/aiNote.ts` / `scripts/lib/digest.ts`。
+**个性化（纯浏览器本地，无需登录）**
 
-## 🎯 个性化与收藏（纯浏览器本地）
+| 功能 | 说明 |
+|------|------|
+| 关注 / 屏蔽来源 | 关注的优先靠前，屏蔽的隐藏 |
+| 关注话题 | 命中话题的内容加权靠前 |
+| 收藏 / 已读 | 一键收藏、点开标已读、淡化已读；收藏可一键导出为 Markdown |
 
-无需登录、无账号、无服务器 —— 所有个人数据只存在你这台浏览器的 `localStorage`：
+**AI 能力（构建时生成，访客零 Key）**
 
-- **关注 / 屏蔽来源**、**关注话题**：关注的内容在「综合」里优先靠前，屏蔽的来源直接隐藏。
-- **收藏（★）**：随手收藏，「收藏」视图集中看，支持**导出为 Markdown**（复制到剪贴板）。
-- **已读**：点开即标记，支持「只看未读」。
-- 首页与「日报」页**共享同一份收藏 / 已读状态**。
+| 功能 | 说明 |
+|------|------|
+| 一句话点评 | 为新条目生成 ≤40 字中文点评，缓存进快照、不重复花钱、每次封顶 |
+| AI 每日必读 | 每天从当天内容精选 3–5 条 + 推荐理由，首页置顶 |
+| 日报 AI 导读 | 日报每条标题下的简明 AI 介绍 |
 
-## 🍴 一键拥有你自己的站点
+**体验**
 
-1. 点击右上角 **Fork** 本仓库
-2. 打开你 Fork 仓库的 **Settings → Pages**，将 **Source** 选为 **GitHub Actions**
-3.（可选）加 Secret `DEEPSEEK_API_KEY` 以启用 AI 点评 / 每日必读
-4. 打开 **Actions** 标签页，运行一次 **Build & Deploy to GitHub Pages**（或随意推送一次代码）
-5. 等待绿色对勾，访问 `https://<你的用户名>.github.io/AI-Search/`
+| 功能 | 说明 |
+|------|------|
+| 杂志式视觉 | 头条 Hero + 封面缩略图 + 错落瀑布流（无图优雅降级） |
+| PWA | 可「添加到主屏」、离线可读已访问内容 |
+| 响应式 | 桌面 / 移动自适应 |
 
-之后每天工作流会自动重新抓取数据并发布，站点始终保持新鲜。想加自己关注的来源？只需在 `scripts/sources/rss.ts` 的 `FEEDS` 数组里加一行 —— 详见 [CONTRIBUTING](CONTRIBUTING.md)。
+## 🤖 AI 能力（可选 · 成本可控）
+
+三项 AI 能力都在**构建时**由 GitHub Actions 调用 LLM 生成、结果缓存进快照 —— 所以**访客侧依旧是纯静态、零 Key、零延迟**，只有维护者需要配一个 key。
+
+- 默认用 **DeepSeek**（便宜、中文好）；只分析「新」条目、结果缓存、每次封顶（`AI_NOTE_MAX`），日报必读按天缓存 → **每日成本极低**。
+- 启用：仓库加一个 Secret —— `gh secret set DEEPSEEK_API_KEY -R <你的用户名>/AI-Search`。
+- **不配也能用**：AI 功能自动跳过、相关区域隐藏，其余功能不受影响。可换模型（`LLM_MODEL`）。
+
+## 🧠 知识库 / 架构亮点
+
+- **历史归档**：`data/archive/YYYY-MM.json` 月度分片、按 id 去重、保留近 3 月 —— 站点从「今日快照」变成可沉淀、可回溯的知识库。
+- **话题页**：`lib/entities.ts` 抽取实体（模型 / 公司 / 主题），`generateStaticParams` 为出现≥5 次的实体生成静态聚合页，**展示深度 + SEO 双赢**，且不增加首页复杂度。
+- **全文搜索**：构建期之外，客户端首次搜索时懒加载 **MiniSearch**，模糊 / 前缀 / 标题加权。
+- **可离线**：service worker 缓存应用壳与已访问页。
 
 ## 📡 数据来源（全部为公开 RSS / API）
 
-- **模型实验室 / 研究机构**：OpenAI、Google AI、Google DeepMind、HuggingFace（Blog + Daily Papers）、Berkeley AI Research、MIT News、Microsoft Research
-- **学术 / 深度**：arXiv（cs.AI / cs.CL / cs.LG）、HuggingFace Daily Papers、Lil'Log、Ahead of AI（Sebastian Raschka）、The Gradient
-- **代码 / 工具**：GitHub（按 llm / ai-agent / rag / multimodal 等话题的新仓库）、AWS Machine Learning Blog
-- **科技媒体**：The Verge、TechCrunch、VentureBeat、Ars Technica、MIT Technology Review
-- **社区**：Hacker News（AI 相关高热故事）、Simon Willison
+- **模型实验室 / 研究**：OpenAI、Google AI、DeepMind、HuggingFace（Blog + Daily Papers）、Microsoft Research、Berkeley AI、MIT News
+- **学术 / 深度**：arXiv（cs.AI / cs.CL / cs.LG）、Lil'Log、Ahead of AI、The Gradient
+- **代码 / 工具**：GitHub（按话题的新仓库）、AWS ML Blog
+- **科技媒体**：The Verge、TechCrunch、VentureBeat、Ars Technica、MIT Tech Review
+- **社区**：Hacker News、Simon Willison
 - **中文**：量子位、36氪、InfoQ
 
-每条内容均保留原始来源链接，点击可追溯到源站。失效 / 被限流的来源会在「来源健康看板」中标出。
+> 每条内容保留原始链接可溯源；失效 / 被限流的源会在「数据来源」看板标出。**加一个源只需在 `scripts/sources/rss.ts` 加一行。**
 
 ## 🛠 技术栈
 
-- **框架**：Next.js 14（App Router，`output: 'export'` 全静态导出）+ TypeScript + Tailwind CSS
-- **交互**：首屏服务端预渲染默认视图，筛选 / 搜索 / 排序 / 个性化 / 分页全部在浏览器内完成（数据内嵌，无需请求）
-- **抓取**：`scripts/crawl.ts`，各来源并行、互不影响（一个失败不影响整体）
-- **管线**：归一 → 去重（URL + 跨源同标题）→ firstSeen 快照 diff → 分类 → 打分
-- **AI（可选）**：构建时 DeepSeek 生成一句话点评 + 每日必读，缓存进快照
-- **部署**：GitHub Actions → GitHub Pages（零服务器、访客零成本）
+| 层 | 选型 |
+|----|------|
+| 框架 | Next.js 14（App Router · `output: 'export'` 全静态导出）+ TypeScript |
+| 样式 | Tailwind CSS 3.4 |
+| 抓取 | `scripts/crawl.ts` 并行 + 失败隔离；归一 / 去重 / firstSeen / 分类 纯函数 |
+| 搜索 | MiniSearch（客户端懒加载） |
+| AI | DeepSeek（构建时，可选） |
+| 部署 | GitHub Actions（每日 cron + push + 手动）→ GitHub Pages |
 
 ## 🏗 架构
 
@@ -125,112 +142,107 @@ gh secret set DEEPSEEK_API_KEY -R <你的用户名>/AI-Search   # 粘贴你的 k
 GitHub Actions（每日 cron / push / 手动）
         │
         ▼
-  npm run crawl ── 并行抓取 20+ 来源 ──▶ 去重 + firstSeen diff + 分类
-        │                                      │
-        │                         （可选）DeepSeek 一句话点评 + 每日必读
-        │                                      ▼
-        │                          data/items.json + data/digest.json
+  npm run crawl ── 并行抓取 20+ 源 ──▶ 去重 + firstSeen + 分类 + 清洗
+        │                                   │
+        │                  （可选）DeepSeek 点评 / 每日必读 / 日报导读
+        │                                   ▼
+        │            data/items.json · meta.json · digest.json · archive/*.json
         ▼
-  next build (output: export, DATA_SOURCE=local)
-        │  读取快照，内嵌进静态页面
+  next build (output: export) ── 读取快照内嵌 + 生成话题静态页
         ▼
-       out/  ──▶ upload-pages-artifact ──▶ deploy-pages ──▶ GitHub Pages
+       out/ ──▶ deploy-pages ──▶ GitHub Pages（纯静态）
+        │
+        ▼
+   浏览器：筛选 / 搜索 / 排序 / 个性化 / 收藏 全在本地即时计算（零延迟）
 ```
 
-浏览器加载后，全部 Query（分类 / 时间窗 / 关键词 / 视图 / 个性化 / 分页）在本地对内嵌数据集即时计算，交互零延迟、不依赖任何运行时服务。
+## 🍴 5 分钟拥有你自己的站点
+
+1. 点右上角 **Fork**
+2. Fork 仓库 **Settings → Pages → Source 选 GitHub Actions**
+3.（可选）加 Secret `DEEPSEEK_API_KEY` 启用 AI 能力
+4. **Actions** 里跑一次 **Build & Deploy**（或推送一次代码）
+5. 访问 `https://<你的用户名>.github.io/AI-Search/`
+
+之后每天自动抓取重建，无需维护。
 
 ## 💻 本地开发
 
 ```bash
 git clone https://github.com/keyuchen-del/AI-Search.git
-cd AI-Search
-npm install
+cd AI-Search && npm install
 
-# 1) 抓取真实数据到 data/（可选，仓库已自带一份快照）
-#    配了 DEEPSEEK_API_KEY 才会生成 AI 点评 / 每日必读
-CRAWL_ARXIV=1 npm run crawl
-
-# 2) 开发服务器
-npm run dev            # http://localhost:3000
-
-# 3) 生产静态构建（产物在 out/）
-DATA_SOURCE=local npm run build
+npm run crawl                 # 抓取真实数据到 data/（仓库已自带快照）
+npm run dev                   # http://localhost:3000
+DATA_SOURCE=local npm run build   # 生产静态构建（产物 out/）
 ```
 
-> 注意：`npm run dev` 下 `basePath` 为空（根路径）；只有 CI 构建会注入 `NEXT_PUBLIC_BASE_PATH=/AI-Search` 以适配 Pages 子路径。
-
 <details>
-<summary>📖 环境变量 / 分类体系 / 脚本 / 项目结构（点击展开）</summary>
+<summary>📖 环境变量 / 脚本 / 项目结构（点击展开）</summary>
 
 ### 环境变量
 
 | 变量 | 默认 | 说明 |
 |------|------|------|
-| `NEXT_PUBLIC_BASE_PATH` | 空 | Pages 子路径前缀（CI 设为 `/AI-Search`） |
-| `DATA_SOURCE` | `auto` | `auto` / `local` / `mock`；构建静态站点用 `local` |
-| `STORE_MAX_AGE_HOURS` | `168` | `auto` 模式下快照过期阈值（小时），0 表示不过期 |
-| `GITHUB_TOKEN` | — | 抓取 GitHub 时提升限额（CI 自带） |
-| `RSS_MAX_PER_FEED` | `20` | 每个 RSS 源最多抓取条数 |
-| `HN_MIN_POINTS` | `40` | Hacker News 收录的最低点数 |
-| `CRAWL_ARXIV` | 关 | 置 `1` 抓取 arXiv（CI 默认开启） |
-| `DEEPSEEK_API_KEY` | — | 启用 AI 点评 / 每日必读（不设则跳过） |
-| `LLM_MODEL` | `deepseek-chat` | AI 功能使用的模型 |
+| `NEXT_PUBLIC_BASE_PATH` | 空 | Pages 子路径（CI 设 `/AI-Search`） |
+| `DATA_SOURCE` | `auto` | `auto` / `local` / `mock`；构建用 `local` |
+| `DEEPSEEK_API_KEY` | — | 启用 AI 能力（不设则跳过） |
+| `LLM_MODEL` | `deepseek-chat` | AI 模型 |
 | `AI_NOTE_MAX` | `30` | 每次构建最多生成多少条新点评 |
-| `DIGEST_PICKS` | `5` | 每日必读挑选的条数 |
-
-### 分类体系
-
-| Key | 标签 | 说明 |
-|-----|------|------|
-| `ai-models` | 模型发布/更新 | 大模型与基础模型的发布与更新 |
-| `ai-products` | 产品发布/更新 | 新产品、新功能、开源项目 |
-| `industry` | 行业动态 | 融资、政策、商业与重大事件 |
-| `paper` | 论文研究 | 论文、技术报告与研究进展 |
-| `tip` | 技巧与观点 | 实用技巧与深度观点 |
+| `DIGEST_PICKS` | `5` | 每日必读条数 |
+| `ARCHIVE_MONTHS` | `3` | 历史归档保留月数 |
+| `GITHUB_TOKEN` | — | 抓取 GitHub 限额（CI 自带） |
 
 ### 脚本
 
 | 命令 | 说明 |
 |------|------|
-| `npm run dev` | 启动开发服务器（热重载） |
-| `npm run build` | 生产静态构建（输出到 `out/`） |
-| `npm run crawl` | 抓取所有来源到 `data/items.json`（+ 可选 AI 点评 / 每日必读） |
-| `npm run crawl -- --only=hf,github` | 仅抓取指定来源 |
-| `npm run lint` | ESLint 检查 |
+| `npm run dev` | 开发服务器 |
+| `npm run build` | 生产静态构建（`out/`） |
+| `npm run crawl` | 抓取 + 可选 AI + 写归档 |
+| `npm run crawl -- --only=hf,github` | 仅抓指定源 |
 
 ### 项目结构
 
 ```
 AI-Search/
-├── app/                        # 路由：首页 / 日报 / globals.css
-├── components/                 # HomeClient / FeedSection / ItemCard / Sidebar
-│   ├── PersonalizeModal.tsx    # 关注 / 屏蔽来源 + 话题
-│   ├── TopReads.tsx            # AI 每日必读卡片
-│   └── DailyView.tsx           # 日报（支持收藏 / 已读）
-├── lib/
-│   ├── classify.ts             # 纯分类器
-│   ├── filter.ts               # 纯筛选 / 排序 / 分页
-│   ├── personalize.ts          # 关注 / 屏蔽 / 话题加权
-│   ├── userStore.ts            # 收藏 / 已读 / 关注（localStorage）
-│   ├── highlight.tsx           # 搜索关键词高亮
-│   ├── localStore.ts / config.ts
+├── app/                 # 路由：首页 / 日报 / 话题页 / manifest
+├── components/          # HomeClient / FeedSection / ItemCard / Hero / Sidebar
+│                        # CommandPalette / PersonalizeModal / TopReads / DailyView / TopicFeed
+├── lib/                 # types / filter / personalize / userStore / entities
+│                        # archive / text(清洗) / highlight / href / config
 ├── scripts/
-│   ├── crawl.ts                # 抓取编排（并行 + dedupe + firstSeen + AI）
-│   ├── lib/                    # fetch / persist(快照 diff) / aiNote / digest
-│   └── sources/                # arxiv / github / hackernews / hfPapers / rss
-├── data/                       # items.json / meta.json / digest.json（CI 每日刷新）
+│   ├── crawl.ts         # 抓取编排
+│   ├── lib/             # fetch / persist(快照 diff) / aiNote / digest / archive
+│   └── sources/         # arxiv / github / hackernews / hfPapers / rss
+├── data/                # items.json / meta.json / digest.json / archive/*.json
 └── .github/workflows/deploy.yml
 ```
 
 </details>
 
+## 🧱 适用场景（可复用为任意领域的资讯知识库）
+
+本项目本质是一个**「自动抓取 → AI 加工 → 静态托管」的资讯站模板**。换掉数据源与分类，即可几乎零成本地搭出：
+
+- 团队 / 公司的**行业情报站**（自动汇编每日要点）
+- 某个垂直领域（医疗 AI、芯片、出海、Web3…）的**资讯聚合站**
+- 个人**领域知识库 / 周报源**
+
+零服务器、零运维、按需配 AI —— 适合做 Demo、内部工具或对外产品的起点。
+
+## 🗺 Roadmap
+
+- [ ] `/topics` 话题总览页 · 话题热度趋势图
+- [ ] AI 周报 `/weekly`
+- [ ] 英文界面 i18n
+- [ ] 更多无图源的统一封面 / 来源 logo
+
 ## 🤝 贡献
 
-欢迎 PR！最常见的贡献是**新增一个数据源**（在 `FEEDS` 加一行即可）。详见 [CONTRIBUTING.md](CONTRIBUTING.md)。
+欢迎 PR！最常见的贡献是**加一个数据源**（`FEEDS` 加一行）。详见 [CONTRIBUTING.md](CONTRIBUTING.md)。
 
 ## ⭐ Star History
-
-如果这个项目对你有用，点个 Star 支持一下 —— 这是对开源最好的鼓励。
 
 [![Star History Chart](https://api.star-history.com/svg?repos=keyuchen-del/AI-Search&type=Date)](https://star-history.com/#keyuchen-del/AI-Search&Date)
 

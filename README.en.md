@@ -2,7 +2,7 @@
 
 # 🔍 AI Search
 
-**A self-updating AI news hub that aggregates 20+ sources daily — fully static, zero-cost, fork it and you have your own.**
+**A self-updating knowledge base for AI news — daily crawl, AI commentary, personalization, full-text search, installable. Fully static, zero cost for visitors, fork it and you have your own.**
 
 [简体中文](README.md) ・ English
 
@@ -11,85 +11,85 @@
 [![Stars](https://img.shields.io/github/stars/keyuchen-del/AI-Search?style=flat&logo=github)](https://github.com/keyuchen-del/AI-Search/stargazers)
 [![Forks](https://img.shields.io/github/forks/keyuchen-del/AI-Search?style=flat&logo=github)](https://github.com/keyuchen-del/AI-Search/network/members)
 [![Deploy](https://img.shields.io/github/actions/workflow/status/keyuchen-del/AI-Search/deploy.yml?logo=githubactions&logoColor=white&label=daily%20deploy)](https://github.com/keyuchen-del/AI-Search/actions)
-[![Last Commit](https://img.shields.io/github/last-commit/keyuchen-del/AI-Search?logo=git&logoColor=white)](https://github.com/keyuchen-del/AI-Search/commits)
 [![License](https://img.shields.io/github/license/keyuchen-del/AI-Search)](LICENSE)
 [![Next.js](https://img.shields.io/badge/Next.js-14-black?logo=next.js)](https://nextjs.org/)
-
-<br/>
-
-<!-- 👉 Drop a homepage screenshot at docs/images/screenshot-home.png (≈1280px wide), then uncomment the line below -->
-<!-- ![AI Search homepage](docs/images/screenshot-home.png) -->
 
 </div>
 
 ---
 
-## What is this?
+## ✨ What is it
 
-Every day at 22:17 UTC, a GitHub Actions workflow crawls **20+ public sources** (OpenAI, DeepMind, HuggingFace, arXiv, Hacker News, and more), dedupes and classifies the items, rebuilds the site, and redeploys to GitHub Pages.
+> A **daily-updating, AI-augmented, personalizable, fully searchable, installable** AI-industry news site.
+> No server, no database, no API key required for visitors — it all runs within GitHub Pages' free tier.
+> Want your own? **Fork it, live in 5 minutes.** Swap the sources and it becomes a news knowledge base for any vertical.
 
-The whole thing is a **static site** — so:
+## 🎯 Highlights
 
-- 🆓 **Zero cost** — no backend, no database, no API keys. Runs entirely within GitHub Pages' free tier.
-- 🔄 **Always fresh** — crawls and redeploys daily, fully unattended.
-- ⚡ **Instant** — filtering / search / pagination all happen client-side; data is inlined into the page.
-- 🍴 **Forkable** — fork it, enable Pages, and you have your own AI news hub in ~5 minutes.
-
-## 🍴 Run your own in 3 minutes
-
-1. Click **Fork** (top-right).
-2. In your fork: **Settings → Pages**, set **Source** to **GitHub Actions**.
-3. Open the **Actions** tab and run **Build & Deploy to GitHub Pages** once (or push any commit).
-4. Wait for the green check, then visit `https://<your-username>.github.io/AI-Search/`.
-
-From then on, the workflow re-crawls and redeploys every day — your site stays fresh on its own.
-
-Want your own sources? Add one line to the `FEEDS` array in `scripts/sources/rss.ts` — see [CONTRIBUTING](CONTRIBUTING.md).
-
-## 📸 Preview
-
-<!-- Drop screenshots into docs/images/ then uncomment. See docs/images/README.md -->
-<!--
-| Home (categories + search) | Daily digest |
-| :---: | :---: |
-| ![home](docs/images/screenshot-home.png) | ![daily](docs/images/screenshot-daily.png) |
--->
-
-_Screenshots coming — see [`docs/images/README.md`](docs/images/README.md)._
+- 🤖 **AI-augmented** — a one-line take on every item, an auto-picked "must-read" digest daily, and an AI lead-in for each daily entry.
+- 🧠 **A knowledge base that remembers** — historical archive + auto-generated topic/source pages + fuzzy full-text search.
+- 🎨 **Magazine reading** — hero headline + cover images + a Xiaohongshu-style masonry feed.
+- 🎯 **Personal** — follow/mute sources, follow topics, bookmark, mark-as-read — all stored in your browser, no login.
+- ⚡ **Zero cost · zero latency** — fully static; filter/search/sort happen locally; GitHub Actions rebuilds daily.
+- 🍴 **Fork-and-go** — enable Pages, (optionally) add one LLM key, and adding a source is a single line.
 
 ## 🚀 Features
 
-| Feature | Description |
-|---------|-------------|
-| Category browsing | Models / Products / Industry / Papers / Tips — 5 categories |
-| Featured / All | Curated items by default, toggle to see everything |
-| Time window | 24h / 3d / 7d / 30d filters |
-| Keyword search | Instant client-side match over title + summary + source + tags |
-| AI Daily | Per-day digest with editor's note, category summaries, and quick hits |
-| Daily archive | Browse historical digests by date |
-| Trending | Sidebar Top 8 ranked by heat (stars / upvotes / HN points) |
-| Auto refresh | GitHub Actions crawls + rebuilds + deploys daily |
-| Responsive | Works on desktop and mobile |
+**Content & aggregation**
 
-## 📡 Data sources (all public RSS / APIs)
+| Feature | Notes |
+|---|---|
+| Multi-source crawl | 20+ public sources daily, in parallel; one failure never sinks the run |
+| Normalization | dedupe (URL + cross-source title), classification, HTML/entity cleanup, `firstSeen` stamping |
+| AI daily report | compiled from "newly collected today": featured + 5 sections + flashes, each with an AI lead-in |
+| Source health | per-source counts, last update, failed sources |
 
-- **Labs / research**: OpenAI, Google AI, Google DeepMind, HuggingFace (Blog + Daily Papers), Berkeley AI Research, MIT News
-- **Academic**: arXiv (cs.AI / cs.CL / cs.LG), HuggingFace Daily Papers
-- **Code / tools**: GitHub (new repos by topic: llm / ai-agent / rag / multimodal …)
-- **Tech media**: The Verge, TechCrunch, VentureBeat, Ars Technica, MIT Technology Review
-- **Community**: Hacker News (high-signal AI stories), Simon Willison
-- **Chinese**: QbitAI, 36Kr, InfoQ
+**Browse & discover**
 
-Every item links back to its original source.
+| Feature | Notes |
+|---|---|
+| Category / time window | models / products / industry / papers / tips · 24h–30d |
+| Source filter & sort | click a source to filter; latest / hottest |
+| Views | all / new today / bookmarks / unread + NEW badge |
+| Command palette ⌘K | fuzzy full-text search + jump to category/source/daily |
+| Topic pages | auto-generated `/topic/openai`, `/topic/agent`… aggregating full history |
+| Trending | "hottest this week" by GitHub stars / HN points, labeled per source |
+
+**Personalization (browser-local, no login)**
+
+| Feature | Notes |
+|---|---|
+| Follow / mute sources | followed float up, muted hidden |
+| Follow topics | matching items boosted |
+| Bookmark / read | one-tap bookmark, auto mark-read, export bookmarks to Markdown |
+
+**AI (build-time, zero key for visitors)**
+
+| Feature | Notes |
+|---|---|
+| One-line take | ≤40-char note per new item, cached, capped per run |
+| Daily must-read | 3–5 picks + reasons, pinned on home |
+| Daily lead-ins | concise AI intro under each daily entry |
+
+**Experience** — magazine visuals (hero + thumbnails + masonry), PWA (installable + offline), responsive.
+
+## 🤖 AI (optional · cost-controlled)
+
+All AI runs **at build time** in GitHub Actions and is cached into the snapshot — so visitors get a pure static, zero-key, zero-latency site; only the maintainer needs a key.
+
+- Defaults to **DeepSeek**; only new items are analyzed, results cached, capped per run → very low daily cost.
+- Enable: `gh secret set DEEPSEEK_API_KEY -R <you>/AI-Search`. Without it, AI features are skipped gracefully.
+
+## 🧠 Knowledge base / architecture
+
+- **Historical archive** — `data/archive/YYYY-MM.json` monthly shards, deduped by id, last 3 months.
+- **Topic pages** — entities extracted in `lib/entities.ts`; `generateStaticParams` builds a static page per entity with ≥5 items (depth + SEO, no home-page bloat).
+- **Full-text search** — MiniSearch lazy-loaded on first search (fuzzy / prefix / title-weighted).
+- **Offline** — service worker caches the app shell and visited pages.
 
 ## 🛠 Tech stack
 
-- **Framework**: Next.js 14 (App Router, `output: 'export'` full static export) + TypeScript
-- **Styling**: Tailwind CSS 3.4
-- **Interactivity**: server-prerendered default view; filtering / search / pagination run entirely in the browser against inlined data (no runtime requests)
-- **Crawling**: `scripts/crawl.ts`, sources run in parallel and fail independently
-- **Classification**: `lib/classify.ts`, pure functions mapping heterogeneous sources into 5 categories
-- **Deploy**: GitHub Actions → GitHub Pages (zero servers, zero cost)
+Next.js 14 (App Router, `output: 'export'`) · TypeScript · Tailwind CSS · MiniSearch · DeepSeek (build-time, optional) · GitHub Actions → GitHub Pages.
 
 ## 🏗 Architecture
 
@@ -97,45 +97,44 @@ Every item links back to its original source.
 GitHub Actions (daily cron / push / manual)
         │
         ▼
-  npm run crawl ── crawl 20+ sources in parallel ──▶ dedupe + classify ──▶ data/items.json
-        │
+  npm run crawl ── parallel fetch 20+ sources ──▶ dedupe + firstSeen + classify + clean
+        │                              │
+        │            (optional) DeepSeek notes / must-read / daily lead-ins
+        │                              ▼
+        │     data/items.json · meta.json · digest.json · archive/*.json
         ▼
-  next build (output: export, DATA_SOURCE=local)
-        │  reads data/items.json, inlines it into static pages
+  next build (output: export) ── embed snapshot + generate topic pages
         ▼
-       out/  ──▶ upload-pages-artifact ──▶ deploy-pages ──▶ GitHub Pages
+       out/ ──▶ deploy-pages ──▶ GitHub Pages (fully static)
 ```
+
+## 🍴 Get your own in 5 minutes
+
+1. **Fork**
+2. **Settings → Pages → Source: GitHub Actions**
+3. (optional) add secret `DEEPSEEK_API_KEY`
+4. Run **Build & Deploy** in Actions
+5. Visit `https://<you>.github.io/AI-Search/`
 
 ## 💻 Local development
 
 ```bash
 git clone https://github.com/keyuchen-del/AI-Search.git
-cd AI-Search
-npm install
-
-# 1) Crawl real data into data/items.json (optional, a snapshot ships with the repo)
-CRAWL_ARXIV=1 npm run crawl
-
-# 2) Dev server
-npm run dev            # http://localhost:3000
-
-# 3) Production static build (output in out/)
-DATA_SOURCE=local npm run build
+cd AI-Search && npm install
+npm run crawl
+npm run dev                       # http://localhost:3000
+DATA_SOURCE=local npm run build   # static export -> out/
 ```
 
-> Note: under `npm run dev`, `basePath` is empty (root). Only CI builds inject `NEXT_PUBLIC_BASE_PATH=/AI-Search` for the Pages sub-path.
+See env vars / scripts / structure in the [Chinese README](README.md).
 
-See the [Chinese README](README.md) for the full env-var / category / script / project-structure reference.
+## 🧱 Use cases
+
+It's essentially a **"crawl → AI-process → static host" news-site template**. Swap the sources and classification to spin up an industry-intelligence hub, a vertical news aggregator, or a personal knowledge base — serverless, no ops, AI optional.
 
 ## 🤝 Contributing
 
-PRs welcome! The most common contribution is **adding a new data source** (one line in `FEEDS`). See [CONTRIBUTING.md](CONTRIBUTING.md).
-
-## ⭐ Star History
-
-If this is useful to you, a Star goes a long way.
-
-[![Star History Chart](https://api.star-history.com/svg?repos=keyuchen-del/AI-Search&type=Date)](https://star-history.com/#keyuchen-del/AI-Search&Date)
+PRs welcome — the most common is **adding a source** (one line in `FEEDS`). See [CONTRIBUTING.md](CONTRIBUTING.md).
 
 ## 📄 License
 
