@@ -5,8 +5,9 @@ import { hasFreshLocalData, readLocalItems, readStoreMeta } from "./localStore";
 import { MOCK_ITEMS } from "./mockData";
 import type { AIItem, DailyIndexItem, DailyReport, DataOrigin } from "./types";
 
-const ITEMS_PER_SECTION = 8;
+const ITEMS_PER_SECTION = 6;
 const FLASH_COUNT = 6;
+const FEATURED_COUNT = 6;
 
 function dayOf(iso: string | null | undefined): string | null {
   if (!iso) return null;
@@ -41,11 +42,26 @@ function buildLocalDaily(
   windowStart: string,
   windowEnd: string,
 ): DailyReport {
+  // 重点优先：热度高的（GitHub stars / HN points）在前，其次按收录/发布新近度。
+  const byImportance = (a: AIItem, b: AIItem) =>
+    (b.heat ?? 0) - (a.heat ?? 0) ||
+    (b.publishedAt ?? b.firstSeen ?? "").localeCompare(a.publishedAt ?? a.firstSeen ?? "");
+
+  const featured = [...dayItems]
+    .filter((i) => i.aiSelected !== false)
+    .sort(byImportance)
+    .slice(0, FEATURED_COUNT)
+    .map((i) => ({
+      id: i.id,
+      title: i.title,
+      summary: i.summary,
+      sourceUrl: i.sourceUrl,
+      sourceName: i.source,
+      category: i.category,
+    }));
+
   const sections = CATEGORIES.map((c) => {
-    const pool = dayItems
-      .filter((i) => i.category === c.key)
-      .sort((a, b) => (b.publishedAt ?? "").localeCompare(a.publishedAt ?? ""))
-      .slice(0, ITEMS_PER_SECTION);
+    const pool = dayItems.filter((i) => i.category === c.key).sort(byImportance).slice(0, ITEMS_PER_SECTION);
     return {
       label: c.label,
       items: pool.map((i) => ({
@@ -84,6 +100,7 @@ function buildLocalDaily(
     windowStart,
     windowEnd,
     lead,
+    featured,
     sections,
     flashes,
   };

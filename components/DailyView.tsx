@@ -2,6 +2,7 @@
 
 import Link from "next/link";
 import type { DailyReport } from "@/lib/types";
+import { CATEGORY_MAP } from "@/lib/categories";
 import { formatBJDate, formatRelative } from "@/lib/timeFormat";
 import { useUserStore } from "@/lib/userStore";
 
@@ -52,6 +53,54 @@ export default function DailyView({
           本日报由系统根据当天新收录的公开资讯自动汇编、按方向归类，非 AI 生成；点击任意条目可溯源原文。
         </p>
       </header>
+
+      {daily.featured && daily.featured.length > 0 && (
+        <section className="card p-5">
+          <h2 className="text-base font-semibold mb-3 flex items-center gap-2">
+            <span className="w-1 h-4 bg-brand-500 rounded-sm" />
+            今日精选
+            <span className="text-xs text-gray-400 font-normal">{daily.featured.length} 条</span>
+          </h2>
+          <ol className="space-y-4">
+            {daily.featured.map((it, idx) => {
+              const read = !!it.id && readSet.has(it.id);
+              const cat = it.category ? CATEGORY_MAP[it.category] : null;
+              return (
+                <li key={`f-${idx}`} className={"text-sm" + (read ? " opacity-60" : "")}>
+                  <div className="flex gap-2">
+                    <span className="shrink-0 w-6 text-right text-brand-500 font-mono text-xs leading-6 font-semibold">
+                      {idx + 1}.
+                    </span>
+                    <div className="min-w-0 flex-1">
+                      <div className="flex items-start gap-2">
+                        <div className="min-w-0 flex-1">
+                          {cat && (
+                            <span className="inline-block mr-2 px-1.5 py-0.5 rounded bg-brand-50 text-brand-600 text-[11px] align-middle">
+                              {cat.label}
+                            </span>
+                          )}
+                          <a
+                            href={it.sourceUrl}
+                            target="_blank"
+                            rel="noreferrer"
+                            onClick={() => it.id && markRead(it.id)}
+                            className="font-medium text-gray-900 hover:text-brand-600 leading-snug"
+                          >
+                            {it.title}
+                          </a>
+                          <span className="text-gray-400 ml-2">— {it.sourceName}</span>
+                        </div>
+                        {it.id && <Star on={bookmarks.has(it.id)} onClick={() => toggleBookmark(it.id!)} />}
+                      </div>
+                      {it.summary && <p className="text-gray-600 leading-relaxed mt-1">{it.summary}</p>}
+                    </div>
+                  </div>
+                </li>
+              );
+            })}
+          </ol>
+        </section>
+      )}
 
       {daily.sections.map((sec) => {
         if (sec.items.length === 0) return null;

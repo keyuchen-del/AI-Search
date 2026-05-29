@@ -66,6 +66,15 @@ export interface DailyReport {
   windowStart: string;
   windowEnd: string;
   lead: { title: string; leadParagraph: string } | null;
+  /** 今日精选 —— 跨板块的当日重点条目。 */
+  featured?: {
+    id?: string;
+    title: string;
+    summary: string | null;
+    sourceUrl: string;
+    sourceName: string;
+    category: CategoryKey | null;
+  }[];
   sections: {
     label: string;
     items: {
