@@ -3,6 +3,8 @@ import DataSourceBanner from "@/components/DataSourceBanner";
 import DailyView from "@/components/DailyView";
 import { getDaily, listDailyDates } from "@/lib/dailyData";
 import { notFound } from "next/navigation";
+import type { Metadata } from "next";
+import { abs } from "@/lib/seo";
 
 const DATE_RE = /^\d{4}-\d{2}-\d{2}$/;
 
@@ -11,6 +13,14 @@ export function generateStaticParams() {
   return listDailyDates().map((date) => ({ date }));
 }
 export const dynamicParams = false;
+
+export function generateMetadata({ params }: { params: { date: string } }): Metadata {
+  return {
+    title: `${params.date} AI 资讯日报`,
+    description: `${params.date} 当天新收录的 AI 资讯自动汇编：今日精选、分板块重点与快讯。`,
+    alternates: { canonical: abs(`/daily/${params.date}`) },
+  };
+}
 
 interface Props {
   params: { date: string };

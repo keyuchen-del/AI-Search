@@ -2,6 +2,7 @@ import HomeClient from "@/components/HomeClient";
 import { readDigest, readLocalItems, readStoreMeta } from "@/lib/localStore";
 import { normalizeItems } from "@/lib/classify";
 import { MOCK_ITEMS } from "@/lib/mockData";
+import { SITE_DESC, SITE_NAME, SITE_URL } from "@/lib/seo";
 
 // Static export: the snapshot is read at build time and baked into the page;
 // all filtering/search/pagination then happens client-side in the browser.
@@ -13,5 +14,26 @@ export default function Home() {
   // so NEW/今日新增 windows don't cause hydration mismatch).
   const now = meta?.fetchedAt ? new Date(meta.fetchedAt).getTime() : Date.now();
 
-  return <HomeClient items={items} meta={meta} now={now} digest={readDigest()} />;
+  const jsonLd = {
+    "@context": "https://schema.org",
+    "@graph": [
+      { "@type": "WebSite", name: SITE_NAME, url: SITE_URL, description: SITE_DESC, inLanguage: "zh-CN" },
+      {
+        "@type": "ItemList",
+        itemListElement: items.slice(0, 20).map((it, i) => ({
+          "@type": "ListItem",
+          position: i + 1,
+          url: it.sourceUrl,
+          name: it.title,
+        })),
+      },
+    ],
+  };
+
+  return (
+    <>
+      <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(jsonLd) }} />
+      <HomeClient items={items} meta={meta} now={now} digest={readDigest()} />
+    </>
+  );
 }

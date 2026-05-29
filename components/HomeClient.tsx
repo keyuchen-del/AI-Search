@@ -1,6 +1,7 @@
 "use client";
 
 import { Suspense } from "react";
+import Link from "next/link";
 import { useSearchParams } from "next/navigation";
 import Header from "./Header";
 import CategoryNav from "./CategoryNav";
@@ -109,14 +110,18 @@ function HomeLayout({
             © {new Date().getFullYear()} AI Search · 共 {items.length} 条
             {meta?.fetchedAt && <> · 数据更新于 {formatBJDate(meta.fetchedAt)}</>}
           </span>
-          <a
-            href="https://github.com/keyuchen-del/AI-Search"
-            target="_blank"
-            rel="noreferrer"
-            className="hover:text-brand-600"
-          >
-            GitHub: keyuchen-del/AI-Search
-          </a>
+          <div className="flex items-center gap-3">
+            <Link href="/about" className="hover:text-brand-600">关于</Link>
+            <Link href="/privacy" className="hover:text-brand-600">隐私</Link>
+            <a
+              href="https://github.com/keyuchen-del/AI-Search"
+              target="_blank"
+              rel="noreferrer"
+              className="hover:text-brand-600"
+            >
+              GitHub
+            </a>
+          </div>
         </div>
       </footer>
     </>

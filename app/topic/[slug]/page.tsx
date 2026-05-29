@@ -6,6 +6,7 @@ import TopicFeed from "@/components/TopicFeed";
 import { readArchive } from "@/lib/archive";
 import { readLocalItems } from "@/lib/localStore";
 import { ENTITIES, ENTITY_MAP, entitiesOf, entityCounts } from "@/lib/entities";
+import { abs } from "@/lib/seo";
 
 export const dynamic = "force-static";
 
@@ -21,7 +22,15 @@ export function generateStaticParams() {
 
 export function generateMetadata({ params }: { params: { slug: string } }): Metadata {
   const e = ENTITY_MAP[params.slug];
-  return { title: e ? `${e.name} · AI Search` : "话题 · AI Search" };
+  if (!e) return { title: "话题" };
+  const description = `${e.name} 相关的 AI 资讯聚合与历史回溯，由 AI Search 自动收录整理。`;
+  const url = abs(`/topic/${params.slug}`);
+  return {
+    title: e.name,
+    description,
+    alternates: { canonical: url },
+    openGraph: { type: "website", title: `${e.name} · AI Search`, description, url },
+  };
 }
 
 export default function TopicPage({ params }: { params: { slug: string } }) {
@@ -31,9 +40,25 @@ export default function TopicPage({ params }: { params: { slug: string } }) {
     .filter((it) => entitiesOf(it).includes(params.slug))
     .sort((a, b) => (b.publishedAt ?? b.firstSeen ?? "").localeCompare(a.publishedAt ?? a.firstSeen ?? ""));
   const now = Date.now();
+  const jsonLd = {
+    "@context": "https://schema.org",
+    "@type": "CollectionPage",
+    name: `${ent.name} · AI Search`,
+    url: abs(`/topic/${params.slug}`),
+    mainEntity: {
+      "@type": "ItemList",
+      itemListElement: items.slice(0, 20).map((it, i) => ({
+        "@type": "ListItem",
+        position: i + 1,
+        url: it.sourceUrl,
+        name: it.title,
+      })),
+    },
+  };
 
   return (
     <>
+      <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(jsonLd) }} />
       <Header />
       <main className="max-w-5xl mx-auto px-4 py-6">
         <div className="mb-4">
