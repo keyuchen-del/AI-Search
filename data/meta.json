@@ -1,5 +1,5 @@
 {
-  "fetchedAt": "2026-05-29T07:51:50.040Z",
+  "fetchedAt": "2026-05-29T07:58:39.810Z",
   "count": 527,
   "sources": {
     "hf-papers": 50,
@@ -28,6 +28,6 @@
     "arxiv": 0
   },
   "errors": {
-    "arxiv": "HTTP 429 Unknown Error <- https://export.arxiv.org/api/query?search_query=cat:cs.AI+OR+cat:cs.CL+OR+cat:cs.LG&sortBy=submittedDate&sortOrder=descending&max_results=20"
+    "arxiv": "This operation was aborted"
   }
 }
