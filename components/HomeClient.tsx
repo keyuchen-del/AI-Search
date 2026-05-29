@@ -8,6 +8,7 @@ import Sidebar from "./Sidebar";
 import SortTabs from "./SortTabs";
 import FeedSection from "./FeedSection";
 import TopReads from "./TopReads";
+import CommandPalette from "./CommandPalette";
 import { filterItems } from "@/lib/filter";
 import { sourceCounts } from "@/lib/personalize";
 import { isCategoryKey } from "@/lib/categories";
@@ -129,10 +130,13 @@ export default function HomeClient({
   digest: Digest | null;
 }) {
   return (
-    <Suspense
-      fallback={<HomeLayout items={items} meta={meta} now={now} digest={digest} state={DEFAULT_STATE} />}
-    >
-      <HomeInner items={items} meta={meta} now={now} digest={digest} />
-    </Suspense>
+    <>
+      <Suspense
+        fallback={<HomeLayout items={items} meta={meta} now={now} digest={digest} state={DEFAULT_STATE} />}
+      >
+        <HomeInner items={items} meta={meta} now={now} digest={digest} />
+      </Suspense>
+      <CommandPalette items={items} sources={sourceCounts(items).map(([s]) => s)} />
+    </>
   );
 }

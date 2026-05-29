@@ -2,6 +2,7 @@
 
 import { useRouter, useSearchParams } from "next/navigation";
 import { useState } from "react";
+import { OPEN_CMDK_EVENT } from "./CommandPalette";
 
 export default function SearchBar({ defaultValue = "" }: { defaultValue?: string }) {
   const router = useRouter();
@@ -23,7 +24,7 @@ export default function SearchBar({ defaultValue = "" }: { defaultValue?: string
         value={value}
         onChange={(e) => setValue(e.target.value)}
         placeholder="搜索 AI 资讯、模型、工具..."
-        className="w-full h-9 pl-9 pr-3 rounded-full border border-gray-200 bg-gray-50 text-sm focus:outline-none focus:ring-2 focus:ring-brand-500/40 focus:bg-white"
+        className="w-full h-9 pl-9 pr-12 rounded-full border border-gray-200 bg-gray-50 text-sm focus:outline-none focus:ring-2 focus:ring-brand-500/40 focus:bg-white"
       />
       <svg
         className="absolute left-3 top-1/2 -translate-y-1/2 w-4 h-4 text-gray-400"
@@ -35,6 +36,14 @@ export default function SearchBar({ defaultValue = "" }: { defaultValue?: string
         <circle cx="11" cy="11" r="7" />
         <path d="m20 20-3.5-3.5" />
       </svg>
+      <button
+        type="button"
+        onClick={() => window.dispatchEvent(new Event(OPEN_CMDK_EVENT))}
+        title="快速命令面板 (⌘K)"
+        className="absolute right-2 top-1/2 -translate-y-1/2 text-[10px] leading-none text-gray-400 border border-gray-200 rounded px-1.5 py-1 hover:border-brand-400 hover:text-brand-500"
+      >
+        ⌘K
+      </button>
     </form>
   );
 }
