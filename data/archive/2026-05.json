@@ -145,7 +145,7 @@
     "tags": [
       "Hacker News"
     ],
-    "heat": 140,
+    "heat": 144,
     "aiSelected": true,
     "origin": "hackernews",
     "firstSeen": "2026-05-29T05:45:36Z",
@@ -162,7 +162,7 @@
     "tags": [
       "Hacker News"
     ],
-    "heat": 317,
+    "heat": 318,
     "aiSelected": true,
     "origin": "hackernews",
     "firstSeen": "2026-05-29T03:01:00Z",
@@ -365,7 +365,7 @@
     "tags": [
       "Hacker News"
     ],
-    "heat": 386,
+    "heat": 390,
     "aiSelected": true,
     "origin": "hackernews",
     "firstSeen": "2026-05-28T21:45:54Z",
@@ -536,7 +536,7 @@
     "tags": [
       "Hacker News"
     ],
-    "heat": 303,
+    "heat": 304,
     "aiSelected": true,
     "origin": "hackernews",
     "firstSeen": "2026-05-28T19:02:18Z",
@@ -647,7 +647,7 @@
     "tags": [
       "Hacker News"
     ],
-    "heat": 340,
+    "heat": 342,
     "aiSelected": true,
     "origin": "hackernews",
     "firstSeen": "2026-05-28T18:09:44Z",
@@ -1116,7 +1116,7 @@
     "tags": [
       "Hacker News"
     ],
-    "heat": 1514,
+    "heat": 1519,
     "aiSelected": true,
     "origin": "hackernews",
     "firstSeen": "2026-05-28T16:49:14Z",
@@ -1591,7 +1591,7 @@
     "tags": [
       "Hacker News"
     ],
-    "heat": 319,
+    "heat": 320,
     "aiSelected": true,
     "origin": "hackernews",
     "firstSeen": "2026-05-28T13:02:00Z",
@@ -1638,7 +1638,7 @@
     "tags": [
       "Hacker News"
     ],
-    "heat": 488,
+    "heat": 489,
     "aiSelected": true,
     "origin": "hackernews",
     "firstSeen": "2026-05-28T12:20:19Z",
@@ -1700,7 +1700,7 @@
     "tags": [
       "Hacker News"
     ],
-    "heat": 159,
+    "heat": 160,
     "aiSelected": true,
     "origin": "hackernews",
     "firstSeen": "2026-05-28T10:39:32Z",
@@ -1968,7 +1968,7 @@
       "codex-skill",
       "handdrawn"
     ],
-    "heat": 431,
+    "heat": 438,
     "aiSelected": true,
     "origin": "github",
     "firstSeen": "2026-05-27T22:47:56Z",
@@ -2978,7 +2978,7 @@
       "claude-code",
       "HTML"
     ],
-    "heat": 1037,
+    "heat": 1038,
     "aiSelected": true,
     "origin": "github",
     "firstSeen": "2026-05-27T12:05:05Z",
@@ -3110,7 +3110,7 @@
       "ai-development",
       "JavaScript"
     ],
-    "heat": 433,
+    "heat": 434,
     "aiSelected": true,
     "origin": "github",
     "firstSeen": "2026-05-27T05:46:25Z",
@@ -3363,7 +3363,7 @@
       "论文",
       "arXiv"
     ],
-    "heat": 18,
+    "heat": 19,
     "aiSelected": true,
     "origin": "hf-papers",
     "firstSeen": "2026-05-26T20:00:00.000Z",
@@ -3888,7 +3888,7 @@
       "ai-agents",
       "TypeScript"
     ],
-    "heat": 496,
+    "heat": 497,
     "aiSelected": true,
     "origin": "github",
     "firstSeen": "2026-05-25T11:06:35Z",
@@ -4546,7 +4546,7 @@
     "origin": "rss:mit-news-ai",
     "heat": 0,
     "firstSeen": "2026-05-21T04:00:00.000Z",
-    "aiNote": null
+    "aiNote": "AI对青年技能岗位的就业影响需关注历史规律与未来差异。"
   },
   {
     "id": "gh-eynzof-hermes-agent-cn-desktop",
@@ -4567,7 +4567,7 @@
     "aiSelected": true,
     "origin": "github",
     "firstSeen": "2026-05-21T03:58:05Z",
-    "aiNote": null
+    "aiNote": "用Tauri和Rust构建的Windows桌面应用，实现核心隔离，技术选型值得开发者关注。"
   },
   {
     "id": "hn-a4cd3db04e",
@@ -4584,7 +4584,7 @@
     "aiSelected": true,
     "origin": "hackernews",
     "firstSeen": "2026-05-21T02:24:35Z",
-    "aiNote": null
+    "aiNote": "OpenAI加速上市进程，AI赛道估值标杆或重塑。"
   },
   {
     "id": "hn-f5dfc42378",
@@ -4601,7 +4601,7 @@
     "aiSelected": true,
     "origin": "hackernews",
     "firstSeen": "2026-05-20T20:55:52Z",
-    "aiNote": null
+    "aiNote": "Anthropic采用GB200芯片，算力飞跃预示大模型竞争进入新阶段。"
   },
   {
     "id": "rss:google-ai-ed67995bed",
@@ -4616,7 +4616,7 @@
     "origin": "rss:google-ai",
     "heat": 0,
     "firstSeen": "2026-05-20T20:40:00.000Z",
-    "aiNote": null
+    "aiNote": "助力密苏里州人才与能源双升级，展现科技企业深耕区域经济的战略布局。"
   },
   {
     "id": "hf-2605.22189",
@@ -4634,7 +4634,7 @@
     "aiSelected": true,
     "origin": "hf-papers",
     "firstSeen": "2026-05-20T20:00:00.000Z",
-    "aiNote": null
+    "aiNote": "突破遮挡环境下的不确定性，统一风险地图让自动驾驶感知更安全，解决部分可观测性核心难题。"
   },
   {
     "id": "rss:google-ai-02632956eb",
@@ -4649,7 +4649,7 @@
     "origin": "rss:google-ai",
     "heat": 0,
     "firstSeen": "2026-05-20T19:30:00.000Z",
-    "aiNote": null
+    "aiNote": "AI年度盛典的百项创新，浓缩了未来技术风向和商业趋势。"
   },
   {
     "id": "gh-nanoflow-io-engram",
@@ -4670,7 +4670,7 @@
     "aiSelected": true,
     "origin": "github",
     "firstSeen": "2026-05-20T19:14:42Z",
-    "aiNote": null
+    "aiNote": "将结构化与语义记忆结合，为智能体提供更精准、持久的混合记忆解决方案。"
   },
   {
     "id": "hn-30f9614788",
@@ -4687,7 +4687,7 @@
     "aiSelected": true,
     "origin": "hackernews",
     "firstSeen": "2026-05-20T19:05:30Z",
-    "aiNote": null
+    "aiNote": "OpenAI模型破解离散几何核心猜想，标志AI在纯数学领域实现突破性验证。"
   },
   {
     "id": "gh-zhongweiv-hermes-edu-skills",
@@ -4708,7 +4708,7 @@
     "aiSelected": true,
     "origin": "github",
     "firstSeen": "2026-05-20T18:52:14Z",
-    "aiNote": null
+    "aiNote": "开源中文教育Agent工具包，填补垂直领域空白，可直接对接多个主流AI平台，实用性强。"
   },
   {
     "id": "gh-qinshihu-itops-agent-platform",
@@ -4725,11 +4725,11 @@
       "docker",
       "TypeScript"
     ],
-    "heat": 70,
+    "heat": 72,
     "aiSelected": true,
     "origin": "github",
     "firstSeen": "2026-05-20T18:29:31Z",
-    "aiNote": null
+    "aiNote": "国内首个企业级IT运维多Agent平台，实现AI驱动的自动化运维流水线，提升故障处理效率。"
   },
   {
     "id": "rss:arstechnica-ai-d0c97bf405",
@@ -4744,7 +4744,7 @@
     "origin": "rss:arstechnica-ai",
     "heat": 0,
     "firstSeen": "2026-05-20T17:31:04.000Z",
-    "aiNote": null
+    "aiNote": "谷歌计划2026年用代理式AI重塑搜索，标志着AI从工具进化为主动服务者。"
   },
   {
     "id": "rss:google-ai-369fda1554",
@@ -4759,7 +4759,7 @@
     "origin": "rss:google-ai",
     "heat": 0,
     "firstSeen": "2026-05-20T16:45:00.000Z",
-    "aiNote": null
+    "aiNote": "用真实尺寸音画还原会议场景，让远程协作体验更贴近面对面交流。"
   },
   {
     "id": "hn-761315c79f",
@@ -4776,7 +4776,7 @@
     "aiSelected": true,
     "origin": "hackernews",
     "firstSeen": "2026-05-20T16:24:42Z",
-    "aiNote": null
+    "aiNote": "OpenAI启动IPO，标志AI商业化进入资本扩张新阶段。"
   },
   {
     "id": "rss:arstechnica-ai-14d8b8139c",
@@ -4791,7 +4791,7 @@
     "origin": "rss:arstechnica-ai",
     "heat": 0,
     "firstSeen": "2026-05-20T11:00:34.000Z",
-    "aiNote": null
+    "aiNote": "Figure AI直播展示人形机器人分拣包裹，引发全网围观，折射人类对类人智能的天然好奇。"
   },
   {
     "id": "rss:mit-news-ai-aad6b2d9d4",
@@ -4806,7 +4806,7 @@
     "origin": "rss:mit-news-ai",
     "heat": 0,
     "firstSeen": "2026-05-20T04:00:00.000Z",
-    "aiNote": null
+    "aiNote": "化学原理与AI结合，有望加速新药发现，展现跨学科创新的巨大潜力。"
   },
   {
     "id": "rss:openai-cb920945cf",
@@ -4821,7 +4821,7 @@
     "origin": "rss:openai",
     "heat": 0,
     "firstSeen": "2026-05-20T00:00:00.000Z",
-    "aiNote": null
+    "aiNote": "Codex结合GPT-5.5将代码评审从小时级缩短到分钟级，效率提升显著。"
   },
   {
     "id": "rss:openai-52bd1afbd8",
@@ -4836,7 +4836,7 @@
     "origin": "rss:openai",
     "heat": 0,
     "firstSeen": "2026-05-20T00:00:00.000Z",
-    "aiNote": null
+    "aiNote": "教育领域AI规模化落地，OpenAI此举将重塑全球教学与学习模式。"
   },
   {
     "id": "rss:mit-news-ai-58cf7a32b3",
@@ -4851,7 +4851,7 @@
     "origin": "rss:mit-news-ai",
     "heat": 0,
     "firstSeen": "2026-05-19T21:10:00.000Z",
-    "aiNote": null
+    "aiNote": "麻省理工学者专注工程教育改革，探索教学新路径，为AI人才培养提供新思路。"
   },
   {
     "id": "rss:openai-e0640ad032",
@@ -4866,7 +4866,7 @@
     "origin": "rss:openai",
     "heat": 0,
     "firstSeen": "2026-05-19T20:30:00.000Z",
-    "aiNote": null
+    "aiNote": "OpenAI首次在新加坡布局，将推动东南亚AI生态与本地化应用加速发展。"
   },
   {
     "id": "rss:techreview-ai-a016ab0208",
@@ -4881,7 +4881,7 @@
     "origin": "rss:techreview-ai",
     "heat": 0,
     "firstSeen": "2026-05-19T20:15:18.000Z",
-    "aiNote": null
+    "aiNote": "马斯克起诉OpenAI案败诉，揭示AI行业创始人间信任危机与商业伦理博弈。"
   },
   {
     "id": "rss:arstechnica-ai-dbf460fe31",
@@ -4896,7 +4896,7 @@
     "origin": "rss:arstechnica-ai",
     "heat": 0,
     "firstSeen": "2026-05-19T18:55:56.000Z",
-    "aiNote": null
+    "aiNote": "两款AI科研助手在药物重定位任务中展现推理与数据分析能力，标志着AI正从辅助工具向科研协作者进化。"
   },
   {
     "id": "rss:hf-blog-bda6dcb322",
@@ -4911,7 +4911,7 @@
     "origin": "rss:hf-blog",
     "heat": 0,
     "firstSeen": "2026-05-19T18:38:09.000Z",
-    "aiNote": null
+    "aiNote": "地球观测模型效率提升，助力遥感与气候监测应用更快速精准。"
   },
   {
     "id": "rss:arstechnica-ai-ad53268187",
@@ -4926,7 +4926,7 @@
     "origin": "rss:arstechnica-ai",
     "heat": 0,
     "firstSeen": "2026-05-19T18:37:02.000Z",
-    "aiNote": null
+    "aiNote": "谷歌开源水印技术获行业巨头采纳，标志着AI内容溯源标准迈向统一。"
   },
   {
     "id": "rss:arstechnica-ai-f6d76fdb41",
@@ -4941,7 +4941,7 @@
     "origin": "rss:arstechnica-ai",
     "heat": 0,
     "firstSeen": "2026-05-19T18:11:50.000Z",
-    "aiNote": null
+    "aiNote": "低延迟推理突破使生成式AI实时应用成为可能，加速智能体落地。"
   },
   {
     "id": "rss:google-ai-eeffe9e815",
@@ -4956,7 +4956,7 @@
     "origin": "rss:google-ai",
     "heat": 0,
     "firstSeen": "2026-05-19T17:45:00.000Z",
-    "aiNote": null
+    "aiNote": "谷歌2026年开发者大会聚焦AI普惠化，多项新发布或将重塑行业格局。"
   },
   {
     "id": "rss:google-ai-8fc9597adf",
@@ -4971,7 +4971,7 @@
     "origin": "rss:google-ai",
     "heat": 0,
     "firstSeen": "2026-05-19T17:45:00.000Z",
-    "aiNote": null
+    "aiNote": "AI搜索正从关键词转向自然语言，改变用户习惯，预示搜索行业未来方向。"
   },
   {
     "id": "rss:google-ai-4a09b699f2",
@@ -4986,7 +4986,7 @@
     "origin": "rss:google-ai",
     "heat": 0,
     "firstSeen": "2026-05-19T17:45:00.000Z",
-    "aiNote": null
+    "aiNote": "谷歌办公套件新增语音交互与AI设计工具，提升工作效率与创作体验。"
   },
   {
     "id": "rss:google-ai-ab50a6a962",
@@ -5001,7 +5001,7 @@
     "origin": "rss:google-ai",
     "heat": 0,
     "firstSeen": "2026-05-19T17:45:00.000Z",
-    "aiNote": null
+    "aiNote": "谷歌I/O展示Gemini代理能力，标志AI从工具向自主行动者演进的关键转折。"
   },
   {
     "id": "rss:google-ai-e4e059ae9e",
@@ -5016,7 +5016,7 @@
     "origin": "rss:google-ai",
     "heat": 0,
     "firstSeen": "2026-05-19T17:45:00.000Z",
-    "aiNote": null
+    "aiNote": "谷歌首次将前沿智能与行动能力整合，标志着AI从思考迈向自主执行的关键转折。"
   },
   {
     "id": "rss:google-ai-1f20374349",
@@ -6366,7 +6366,7 @@
       "ai-design",
       "HTML"
     ],
-    "heat": 5340,
+    "heat": 5341,
     "aiSelected": true,
     "origin": "github",
     "firstSeen": "2026-05-11T09:40:38Z",
