@@ -145,7 +145,7 @@
     "tags": [
       "Hacker News"
     ],
-    "heat": 155,
+    "heat": 166,
     "aiSelected": true,
     "origin": "hackernews",
     "firstSeen": "2026-05-29T05:45:36Z",
@@ -162,7 +162,7 @@
     "tags": [
       "Hacker News"
     ],
-    "heat": 325,
+    "heat": 331,
     "aiSelected": true,
     "origin": "hackernews",
     "firstSeen": "2026-05-29T03:01:00Z",
@@ -271,7 +271,7 @@
     "tags": [
       "Hacker News"
     ],
-    "heat": 76,
+    "heat": 79,
     "aiSelected": true,
     "origin": "hackernews",
     "firstSeen": "2026-05-29T00:09:35Z",
@@ -333,7 +333,7 @@
     "tags": [
       "Hacker News"
     ],
-    "heat": 208,
+    "heat": 210,
     "aiSelected": true,
     "origin": "hackernews",
     "firstSeen": "2026-05-28T23:42:47Z",
@@ -365,7 +365,7 @@
     "tags": [
       "Hacker News"
     ],
-    "heat": 391,
+    "heat": 393,
     "aiSelected": true,
     "origin": "hackernews",
     "firstSeen": "2026-05-28T21:45:54Z",
@@ -519,7 +519,7 @@
     "tags": [
       "Hacker News"
     ],
-    "heat": 212,
+    "heat": 213,
     "aiSelected": true,
     "origin": "hackernews",
     "firstSeen": "2026-05-28T19:43:14Z",
@@ -536,7 +536,7 @@
     "tags": [
       "Hacker News"
     ],
-    "heat": 307,
+    "heat": 308,
     "aiSelected": true,
     "origin": "hackernews",
     "firstSeen": "2026-05-28T19:02:18Z",
@@ -647,7 +647,7 @@
     "tags": [
       "Hacker News"
     ],
-    "heat": 342,
+    "heat": 344,
     "aiSelected": true,
     "origin": "hackernews",
     "firstSeen": "2026-05-28T18:09:44Z",
@@ -1039,7 +1039,7 @@
     "tags": [
       "Hacker News"
     ],
-    "heat": 101,
+    "heat": 102,
     "aiSelected": true,
     "origin": "hackernews",
     "firstSeen": "2026-05-28T17:43:36Z",
@@ -1116,7 +1116,7 @@
     "tags": [
       "Hacker News"
     ],
-    "heat": 1525,
+    "heat": 1533,
     "aiSelected": true,
     "origin": "hackernews",
     "firstSeen": "2026-05-28T16:49:14Z",
@@ -1148,7 +1148,7 @@
     "tags": [
       "Hacker News"
     ],
-    "heat": 89,
+    "heat": 91,
     "aiSelected": true,
     "origin": "hackernews",
     "firstSeen": "2026-05-28T16:40:33Z",
@@ -1591,7 +1591,7 @@
     "tags": [
       "Hacker News"
     ],
-    "heat": 322,
+    "heat": 325,
     "aiSelected": true,
     "origin": "hackernews",
     "firstSeen": "2026-05-28T13:02:00Z",
@@ -1968,7 +1968,7 @@
       "codex-skill",
       "handdrawn"
     ],
-    "heat": 447,
+    "heat": 461,
     "aiSelected": true,
     "origin": "github",
     "firstSeen": "2026-05-27T22:47:56Z",
@@ -2313,7 +2313,7 @@
       "论文",
       "arXiv"
     ],
-    "heat": 22,
+    "heat": 23,
     "aiSelected": true,
     "origin": "hf-papers",
     "firstSeen": "2026-05-27T20:00:00.000Z",
@@ -2421,7 +2421,7 @@
       "论文",
       "arXiv"
     ],
-    "heat": 30,
+    "heat": 29,
     "aiSelected": true,
     "origin": "hf-papers",
     "firstSeen": "2026-05-27T20:00:00.000Z",
@@ -2547,7 +2547,7 @@
       "论文",
       "arXiv"
     ],
-    "heat": 23,
+    "heat": 24,
     "aiSelected": true,
     "origin": "hf-papers",
     "firstSeen": "2026-05-27T20:00:00.000Z",
@@ -2778,7 +2778,7 @@
     "tags": [
       "Hacker News"
     ],
-    "heat": 609,
+    "heat": 610,
     "aiSelected": true,
     "origin": "hackernews",
     "firstSeen": "2026-05-27T16:53:25Z",
@@ -2978,7 +2978,7 @@
       "claude-code",
       "HTML"
     ],
-    "heat": 1043,
+    "heat": 1048,
     "aiSelected": true,
     "origin": "github",
     "firstSeen": "2026-05-27T12:05:05Z",
@@ -2995,7 +2995,7 @@
     "tags": [
       "Hacker News"
     ],
-    "heat": 98,
+    "heat": 99,
     "aiSelected": true,
     "origin": "hackernews",
     "firstSeen": "2026-05-27T11:40:49Z",
@@ -3110,7 +3110,7 @@
       "ai-development",
       "JavaScript"
     ],
-    "heat": 435,
+    "heat": 441,
     "aiSelected": true,
     "origin": "github",
     "firstSeen": "2026-05-27T05:46:25Z",
@@ -3888,7 +3888,7 @@
       "ai-agents",
       "TypeScript"
     ],
-    "heat": 497,
+    "heat": 499,
     "aiSelected": true,
     "origin": "github",
     "firstSeen": "2026-05-25T11:06:35Z",
@@ -4725,7 +4725,7 @@
       "docker",
       "TypeScript"
     ],
-    "heat": 72,
+    "heat": 73,
     "aiSelected": true,
     "origin": "github",
     "firstSeen": "2026-05-20T18:29:31Z",
@@ -5699,7 +5699,7 @@
     "sourceUrl": "https://www.microsoft.com/en-us/research/blog/further-notes-on-our-recent-research-on-ai-delegation-and-long-horizon-reliability/",
     "category": "paper",
     "publishedAt": "2026-05-15T18:06:57.000Z",
-    "image": "https://www.microsoft.com/en-us/research/wp-content/uploads/2025/06/Episode7-PeterBillSebastien-AIRevolution_Hero_Feature_River_No_Text_1400x788.jpg",
+    "image": "https://www.microsoft.com/en-us/research/wp-content/uploads/2019/09/Newsletter_Banner_08_2019_v1_1920x1080.png",
     "aiSelected": true,
     "origin": "rss:msr",
     "heat": 0,
@@ -5959,7 +5959,7 @@
     "aiSelected": true,
     "origin": "hackernews",
     "firstSeen": "2026-05-14T15:15:05Z",
-    "aiNote": null
+    "aiNote": "200亿美元合作彰显AI慈善新方向，盖茨基金会背书加速技术落地。"
   },
   {
     "id": "hn-5f8a93c77a",
@@ -5976,7 +5976,7 @@
     "aiSelected": true,
     "origin": "hackernews",
     "firstSeen": "2026-05-14T13:08:00Z",
-    "aiNote": null
+    "aiNote": "分析AI公司Anthropic内部争议的深层原因，揭示行业权力博弈与伦理困境。"
   },
   {
     "id": "hn-0b8804bf0b",
@@ -5993,7 +5993,7 @@
     "aiSelected": true,
     "origin": "hackernews",
     "firstSeen": "2026-05-14T12:27:29Z",
-    "aiNote": null
+    "aiNote": "OpenAI上市前，CEO商业行为受共和党审查，影响市场信心。"
   },
   {
     "id": "gh-purewhiter-mobilegym",
@@ -6010,11 +6010,11 @@
       "android",
       "TypeScript"
     ],
-    "heat": 149,
+    "heat": 152,
     "aiSelected": true,
     "origin": "github",
     "firstSeen": "2026-05-14T11:09:52Z",
-    "aiNote": null
+    "aiNote": "为移动端GUI智能体研究提供可验证的高效并行模拟环境，浏览器运行降低门槛。"
   },
   {
     "id": "hn-c874e81a5d",
@@ -6031,7 +6031,7 @@
     "aiSelected": true,
     "origin": "hackernews",
     "firstSeen": "2026-05-14T03:59:35Z",
-    "aiNote": null
+    "aiNote": "企业级AI工具下沉，让小型团队低成本接入智能助手，提升运营效率。"
   },
   {
     "id": "hn-8f63f4eada",
@@ -6048,7 +6048,7 @@
     "aiSelected": true,
     "origin": "hackernews",
     "firstSeen": "2026-05-14T03:19:05Z",
-    "aiNote": null
+    "aiNote": "可视化模型性能动态变化，直观追踪AI迭代节奏，辅助决策与趋势洞察。"
   },
   {
     "id": "rss:hf-blog-f6eafc08e7",
@@ -6063,7 +6063,7 @@
     "origin": "rss:hf-blog",
     "heat": 0,
     "firstSeen": "2026-05-14T00:00:00.000Z",
-    "aiNote": null
+    "aiNote": "异步批处理优化，显著提升大模型推理吞吐和资源利用率。"
   },
   {
     "id": "hn-3998358335",
@@ -6080,7 +6080,7 @@
     "aiSelected": true,
     "origin": "hackernews",
     "firstSeen": "2026-05-13T18:46:51Z",
-    "aiNote": null
+    "aiNote": "OpenAI庭审揭露CEO诚信问题，或将影响AI行业信任格局。"
   },
   {
     "id": "gh-hao0321-ai-media-generator",
@@ -6100,7 +6100,7 @@
     "aiSelected": true,
     "origin": "github",
     "firstSeen": "2026-05-13T13:26:06Z",
-    "aiNote": null
+    "aiNote": "零门槛影视创作工具，让AI自动执行导演级提示词，革新内容生产方式。"
   },
   {
     "id": "hn-78b3b6c408",
@@ -6117,7 +6117,7 @@
     "aiSelected": true,
     "origin": "hackernews",
     "firstSeen": "2026-05-13T12:14:26Z",
-    "aiNote": null
+    "aiNote": "极简架构的LLM可观测工具，无需Postgres和Redis，降低部署门槛，适合个人开发者。"
   },
   {
     "id": "gh-wantongc-journal-adapt-writing-skill",
@@ -6137,7 +6137,7 @@
     "aiSelected": true,
     "origin": "github",
     "firstSeen": "2026-05-13T04:33:17Z",
-    "aiNote": null
+    "aiNote": "用AI解析期刊写作惯例并逐段改写，大幅提升论文投稿命中率。"
   },
   {
     "id": "hn-6602178427",
@@ -6154,7 +6154,7 @@
     "aiSelected": true,
     "origin": "hackernews",
     "firstSeen": "2026-05-12T15:45:20Z",
-    "aiNote": null
+    "aiNote": "聚焦AI Agent用户行为分析，填补了AI产品团队数据洞察的空白。"
   },
   {
     "id": "rss:mit-news-ai-798897701a",
@@ -6169,7 +6169,7 @@
     "origin": "rss:mit-news-ai",
     "heat": 0,
     "firstSeen": "2026-05-12T15:00:00.000Z",
-    "aiNote": null
+    "aiNote": "探索麻省理工全球教育新路径，开放学习计划突破传统边界，值得关注其如何重塑未来教育模式。"
   },
   {
     "id": "rss:mit-news-ai-c0a4d78907",
@@ -6184,7 +6184,7 @@
     "origin": "rss:mit-news-ai",
     "heat": 0,
     "firstSeen": "2026-05-12T15:00:00.000Z",
-    "aiNote": null
+    "aiNote": "MIT开放学习推出免费AI课程，结合个性化学习，降低了AI教育的门槛。"
   },
   {
     "id": "rss:deepmind-28fd7a886b",
@@ -6199,7 +6199,7 @@
     "origin": "rss:deepmind",
     "heat": 0,
     "firstSeen": "2026-05-12T14:40:07.000Z",
-    "aiNote": null
+    "aiNote": "多智能体协作突破科研瓶颈，AI从工具升级为研究伙伴。"
   },
   {
     "id": "gh-johunsang-semble-rs",
@@ -6220,7 +6220,7 @@
     "aiSelected": true,
     "origin": "github",
     "firstSeen": "2026-05-12T13:07:42Z",
-    "aiNote": null
+    "aiNote": "Rust实现的AI原生代码搜索工具，结合BM25与语义搜索，性能远超传统grep。"
   },
   {
     "id": "rss:msr-a65f2331c0",
@@ -6235,7 +6235,7 @@
     "origin": "rss:msr",
     "heat": 0,
     "firstSeen": "2026-05-12T13:00:00.000Z",
-    "aiNote": null
+    "aiNote": "MatterSim从模拟到实验合成全覆盖，多任务模型突破材料研发瓶颈。"
   },
   {
     "id": "gh-azmxai-azmx",
@@ -6256,7 +6256,7 @@
     "aiSelected": true,
     "origin": "github",
     "firstSeen": "2026-05-12T04:14:20Z",
-    "aiNote": null
+    "aiNote": "主权级AI代理平台，开创去中心化智能体新范式。"
   },
   {
     "id": "rss:hf-blog-ce49fe8e0c",
@@ -6271,7 +6271,7 @@
     "origin": "rss:hf-blog",
     "heat": 0,
     "firstSeen": "2026-05-11T23:18:26.000Z",
-    "aiNote": null
+    "aiNote": "AWS推出基础模型训练推理框架，降低AI开发门槛。"
   },
   {
     "id": "gh-sparkplug604-praxis",
@@ -6292,7 +6292,7 @@
     "aiSelected": true,
     "origin": "github",
     "firstSeen": "2026-05-11T21:18:54Z",
-    "aiNote": null
+    "aiNote": "用本地优先的RAG框架实现代理记忆可溯源，为可信AI应用开发提供新路径。"
   },
   {
     "id": "gh-thiago-code-lab-aws-certified-ai-practitioner-brasil",
@@ -6313,7 +6313,7 @@
     "aiSelected": true,
     "origin": "github",
     "firstSeen": "2026-05-11T17:30:31Z",
-    "aiNote": null
+    "aiNote": "首个巴西葡语AWS AI认证备考资源库，填补了非英语学习者的关键空白。"
   },
   {
     "id": "rss:msr-e8ecefbe8c",
@@ -6328,7 +6328,7 @@
     "origin": "rss:msr",
     "heat": 0,
     "firstSeen": "2026-05-11T17:19:28.000Z",
-    "aiNote": null
+    "aiNote": "AI代理执行任务高效却忽视用户利益，暴露其社会推理能力的核心短板。"
   },
   {
     "id": "gh-juanjuandog-finsight-ai",
@@ -6349,7 +6349,7 @@
     "aiSelected": true,
     "origin": "github",
     "firstSeen": "2026-05-11T11:19:40Z",
-    "aiNote": null
+    "aiNote": "融合弹性工作流与向量检索，实现金融研究全流程可追溯，技术架构值得借鉴。"
   },
   {
     "id": "gh-nexu-io-html-anything",
@@ -6366,11 +6366,11 @@
       "ai-design",
       "HTML"
     ],
-    "heat": 5341,
+    "heat": 5343,
     "aiSelected": true,
     "origin": "github",
     "firstSeen": "2026-05-11T09:40:38Z",
-    "aiNote": null
+    "aiNote": "AI本地生成HTML，覆盖75种技能9种场景，将编辑效率推向新高度。"
   },
   {
     "id": "gh-inv-wzq-reactivegwm",
@@ -6389,7 +6389,7 @@
     "aiSelected": true,
     "origin": "github",
     "firstSeen": "2026-05-11T06:07:08Z",
-    "aiNote": null
+    "aiNote": "用强化学习驱动游戏NPC，探索世界模型在交互式环境中的自适应决策能力。"
   },
   {
     "id": "rss:google-ai-519f0d44ef",
@@ -6404,7 +6404,7 @@
     "origin": "rss:google-ai",
     "heat": 0,
     "firstSeen": "2026-05-11T06:00:00.000Z",
-    "aiNote": null
+    "aiNote": "谷歌AI赋能金融工具进军欧洲，本地化语言支持是亮点。"
   },
   {
     "id": "gh-kaelio-ktx-ai-data-agents-mcp-context-skills",
@@ -6421,7 +6421,7 @@
       "ai-agent",
       "TypeScript"
     ],
-    "heat": 430,
+    "heat": 432,
     "aiSelected": true,
     "origin": "github",
     "firstSeen": "2026-05-29T09:10:35.232Z",
@@ -6499,7 +6499,7 @@
       "ai-security-testing",
       "aisecurity"
     ],
-    "heat": 398,
+    "heat": 399,
     "aiSelected": true,
     "origin": "github",
     "firstSeen": "2026-05-09T06:16:58Z",
@@ -7190,7 +7190,7 @@
       "from-scratch",
       "Jupyter Notebook"
     ],
-    "heat": 2143,
+    "heat": 2144,
     "aiSelected": true,
     "origin": "github",
     "firstSeen": "2026-05-03T21:41:33Z",
@@ -7421,7 +7421,7 @@
       "tracing",
       "TypeScript"
     ],
-    "heat": 811,
+    "heat": 813,
     "aiSelected": true,
     "origin": "github",
     "firstSeen": "2026-05-01T00:10:08Z",
@@ -7518,5 +7518,71 @@
     "heat": 0,
     "firstSeen": "2026-05-29T09:35:36.909Z",
     "aiNote": "用AI降低创意门槛，腾讯Miora让个人也能高效产出专业设计内容。"
+  },
+  {
+    "id": "rss:theverge-ai-875677d6fc",
+    "title": "Adobe’s conversational AI agent is a mediocre design intern",
+    "summary": "AI image tools rarely make me feel like I'm part of the creative process. They are, afterall, mostly designed so that people with no design experience can type in a few words and g…",
+    "source": "The Verge",
+    "sourceUrl": "https://www.theverge.com/tech/939686/adobes-conversational-ai-agent-is-a-mediocre-design-intern",
+    "category": "industry",
+    "publishedAt": "2026-05-29T10:00:00.000Z",
+    "image": null,
+    "aiSelected": true,
+    "origin": "rss:theverge-ai",
+    "heat": 0,
+    "firstSeen": "2026-05-29T10:04:23.935Z",
+    "aiNote": "评测揭示AI工具在创意协作中的局限，提醒行业需更关注人机共创体验而非替代。"
+  },
+  {
+    "id": "rss:36kr-2c3ac50895",
+    "title": "氪星晚报 ｜联想创投等入股诺仕机器人；苹果据悉将在WWDC重点展示端侧AI能力；国家外汇管理局：4月中国外汇市场总计成交25.3万亿元",
+    "summary": "大公司： 上汽通用五菱全球车EKSION在印尼雅加达向首批用户交付 36氪获悉，5月28日，上汽集团迎来全球第一亿辆整车交付，成为我国首家累计产销量突破一亿辆的汽车集团。其中，上汽通用五菱累计贡献超3200万辆。当日，上汽通用五菱全球车EKSION在印尼雅加达向首批用户交付。 特斯拉Optimus专属机器人工厂动工，规划年产能最高可达1000万台 据报道，特…",
+    "source": "36氪",
+    "sourceUrl": "https://36kr.com/p/3830194503526277?f=rss",
+    "category": "industry",
+    "publishedAt": "2026-05-29T09:57:52.000Z",
+    "image": null,
+    "aiSelected": true,
+    "origin": "rss:36kr",
+    "heat": 0,
+    "firstSeen": "2026-05-29T10:04:23.935Z",
+    "aiNote": "三线并进：机器人投资、端侧AI战略与外汇市场数据，揭示科技与资本的新动向。"
+  },
+  {
+    "id": "hf-2605.30060",
+    "title": "Towards Consistent Video Geometry Estimation",
+    "summary": "This work presents ViGeo, a feed-forward foundation model for recovering spatially dense and temporally consistent geometry from video sequences. Built upon a plain transformer architecture without ta…",
+    "source": "HuggingFace Papers",
+    "sourceUrl": "https://huggingface.co/papers/2605.30060",
+    "category": "paper",
+    "publishedAt": "2026-05-27T20:00:00.000Z",
+    "tags": [
+      "论文",
+      "arXiv"
+    ],
+    "heat": 0,
+    "aiSelected": true,
+    "origin": "hf-papers",
+    "firstSeen": "2026-05-29T10:04:23.935Z",
+    "aiNote": "视频几何重建新范式，突破时空一致性难题，推动3D视觉基础模型发展。"
+  },
+  {
+    "id": "hf-2605.26730",
+    "title": "PRISM: A Multi-Dimensional Benchmark for Evaluating LLM Peer Reviewers",
+    "summary": "The rapid growth in submissions to machine learning venues has strained the scientific peer-review system and intensified interest in LLM-based automated peer reviewers. However, how good these system…",
+    "source": "HuggingFace Papers",
+    "sourceUrl": "https://huggingface.co/papers/2605.26730",
+    "category": "paper",
+    "publishedAt": "2026-05-26T20:00:00.000Z",
+    "tags": [
+      "论文",
+      "arXiv"
+    ],
+    "heat": 2,
+    "aiSelected": true,
+    "origin": "hf-papers",
+    "firstSeen": "2026-05-29T10:04:23.935Z",
+    "aiNote": "首个多维度评测框架，专门衡量大模型审稿能力，直接关系科研评审自动化进程。"
   }
 ]
