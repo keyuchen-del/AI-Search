@@ -145,7 +145,7 @@
     "tags": [
       "Hacker News"
     ],
-    "heat": 149,
+    "heat": 155,
     "aiSelected": true,
     "origin": "hackernews",
     "firstSeen": "2026-05-29T05:45:36Z",
@@ -162,7 +162,7 @@
     "tags": [
       "Hacker News"
     ],
-    "heat": 320,
+    "heat": 325,
     "aiSelected": true,
     "origin": "hackernews",
     "firstSeen": "2026-05-29T03:01:00Z",
@@ -209,7 +209,7 @@
     "tags": [
       "Hacker News"
     ],
-    "heat": 57,
+    "heat": 58,
     "aiSelected": true,
     "origin": "hackernews",
     "firstSeen": "2026-05-29T00:49:05Z",
@@ -333,7 +333,7 @@
     "tags": [
       "Hacker News"
     ],
-    "heat": 206,
+    "heat": 208,
     "aiSelected": true,
     "origin": "hackernews",
     "firstSeen": "2026-05-28T23:42:47Z",
@@ -519,7 +519,7 @@
     "tags": [
       "Hacker News"
     ],
-    "heat": 211,
+    "heat": 212,
     "aiSelected": true,
     "origin": "hackernews",
     "firstSeen": "2026-05-28T19:43:14Z",
@@ -536,7 +536,7 @@
     "tags": [
       "Hacker News"
     ],
-    "heat": 305,
+    "heat": 307,
     "aiSelected": true,
     "origin": "hackernews",
     "firstSeen": "2026-05-28T19:02:18Z",
@@ -1116,7 +1116,7 @@
     "tags": [
       "Hacker News"
     ],
-    "heat": 1520,
+    "heat": 1525,
     "aiSelected": true,
     "origin": "hackernews",
     "firstSeen": "2026-05-28T16:49:14Z",
@@ -1148,7 +1148,7 @@
     "tags": [
       "Hacker News"
     ],
-    "heat": 88,
+    "heat": 89,
     "aiSelected": true,
     "origin": "hackernews",
     "firstSeen": "2026-05-28T16:40:33Z",
@@ -1300,7 +1300,7 @@
     "tags": [
       "Hacker News"
     ],
-    "heat": 73,
+    "heat": 75,
     "aiSelected": true,
     "origin": "hackernews",
     "firstSeen": "2026-05-29T09:10:35.232Z",
@@ -1591,7 +1591,7 @@
     "tags": [
       "Hacker News"
     ],
-    "heat": 321,
+    "heat": 322,
     "aiSelected": true,
     "origin": "hackernews",
     "firstSeen": "2026-05-28T13:02:00Z",
@@ -1968,7 +1968,7 @@
       "codex-skill",
       "handdrawn"
     ],
-    "heat": 441,
+    "heat": 447,
     "aiSelected": true,
     "origin": "github",
     "firstSeen": "2026-05-27T22:47:56Z",
@@ -2079,7 +2079,7 @@
     "tags": [
       "Hacker News"
     ],
-    "heat": 1286,
+    "heat": 1287,
     "aiSelected": true,
     "origin": "hackernews",
     "firstSeen": "2026-05-27T20:00:51Z",
@@ -2169,7 +2169,7 @@
       "论文",
       "arXiv"
     ],
-    "heat": 16,
+    "heat": 17,
     "aiSelected": true,
     "origin": "hf-papers",
     "firstSeen": "2026-05-27T20:00:00.000Z",
@@ -2778,7 +2778,7 @@
     "tags": [
       "Hacker News"
     ],
-    "heat": 608,
+    "heat": 609,
     "aiSelected": true,
     "origin": "hackernews",
     "firstSeen": "2026-05-27T16:53:25Z",
@@ -2978,7 +2978,7 @@
       "claude-code",
       "HTML"
     ],
-    "heat": 1039,
+    "heat": 1043,
     "aiSelected": true,
     "origin": "github",
     "firstSeen": "2026-05-27T12:05:05Z",
@@ -3110,7 +3110,7 @@
       "ai-development",
       "JavaScript"
     ],
-    "heat": 434,
+    "heat": 435,
     "aiSelected": true,
     "origin": "github",
     "firstSeen": "2026-05-27T05:46:25Z",
@@ -5458,7 +5458,7 @@
     "origin": "rss:deepmind",
     "heat": 0,
     "firstSeen": "2026-05-17T13:43:50.000Z",
-    "aiNote": null
+    "aiNote": "提升创作透明度，帮助用户辨别AI生成与编辑内容，增强数字信任。"
   },
   {
     "id": "gh-sam-siavoshian-agent-notch",
@@ -5479,7 +5479,7 @@
     "aiSelected": true,
     "origin": "github",
     "firstSeen": "2026-05-16T17:44:48Z",
-    "aiNote": null
+    "aiNote": "将AI代理嵌入Mac刘海区域，长按语音操控，让Claude直接控制鼠标，交互方式极具创新性。"
   },
   {
     "id": "hn-2159857cc3",
@@ -5496,7 +5496,7 @@
     "aiSelected": true,
     "origin": "hackernews",
     "firstSeen": "2026-05-16T12:06:21Z",
-    "aiNote": null
+    "aiNote": "开源2.6B参数模型实现1分钟720p视频生成，降低世界模型应用门槛。"
   },
   {
     "id": "hn-64f79bcde8",
@@ -5513,7 +5513,7 @@
     "aiSelected": true,
     "origin": "hackernews",
     "firstSeen": "2026-05-16T11:34:04Z",
-    "aiNote": null
+    "aiNote": "高昂投入验证AI模型商业化的成本门槛，揭示算力竞赛背后的真实代价。"
   },
   {
     "id": "rss:raschka-ad1a0b6f01",
@@ -5528,7 +5528,7 @@
     "origin": "rss:raschka",
     "heat": 0,
     "firstSeen": "2026-05-16T11:33:51.000Z",
-    "aiNote": null
+    "aiNote": "多款开源大模型通过共享键值、混合缓存和压缩注意力机制，大幅降低长文本处理成本。"
   },
   {
     "id": "rss:deepmind-143dff8f75",
@@ -5543,7 +5543,7 @@
     "origin": "rss:deepmind",
     "heat": 0,
     "firstSeen": "2026-05-16T09:13:34.000Z",
-    "aiNote": null
+    "aiNote": "全球顶级AI实验室与新加坡合作，聚焦医疗教育等民生领域，展现AI落地新方向。"
   },
   {
     "id": "rss:deepmind-dc51e9439f",
@@ -5558,7 +5558,7 @@
     "origin": "rss:deepmind",
     "heat": 0,
     "firstSeen": "2026-05-16T08:16:06.000Z",
-    "aiNote": null
+    "aiNote": "利用AI精准定位病原体基因开关，为防控新兴传染病提供全新工具。"
   },
   {
     "id": "rss:deepmind-35b663b238",
@@ -5573,7 +5573,7 @@
     "origin": "rss:deepmind",
     "heat": 0,
     "firstSeen": "2026-05-16T08:08:44.000Z",
-    "aiNote": null
+    "aiNote": "利用AI整合碎片化衰老研究，突破传统方法瓶颈，开辟抗衰老新路径。"
   },
   {
     "id": "rss:deepmind-ec8cac2807",
@@ -5588,7 +5588,7 @@
     "origin": "rss:deepmind",
     "heat": 0,
     "firstSeen": "2026-05-16T08:00:15.000Z",
-    "aiNote": null
+    "aiNote": "AI协同科学家加速肝病机制发现，揭示药物疗效差异，精准医疗迈出关键一步。"
   },
   {
     "id": "rss:deepmind-d737530901",
@@ -5603,7 +5603,7 @@
     "origin": "rss:deepmind",
     "heat": 0,
     "firstSeen": "2026-05-16T07:53:11.000Z",
-    "aiNote": null
+    "aiNote": "跨机构合作将生物工具整合，为渐冻症RNA疗法开辟新路径，值得关注。"
   },
   {
     "id": "rss:deepmind-d152d91fcc",
@@ -5618,7 +5618,7 @@
     "origin": "rss:deepmind",
     "heat": 0,
     "firstSeen": "2026-05-16T07:40:27.000Z",
-    "aiNote": null
+    "aiNote": "利用AI发现肝病老药新用，加速药物研发，为患者带来新希望。"
   },
   {
     "id": "rss:deepmind-68b912792f",
@@ -5633,7 +5633,7 @@
     "origin": "rss:deepmind",
     "heat": 0,
     "firstSeen": "2026-05-16T03:14:17.000Z",
-    "aiNote": null
+    "aiNote": "AI预测飓风路径，为牙买加争取到前所未有的准备时间，展现气象防灾新突破。"
   },
   {
     "id": "gh-shootthesound-comfyui-mesh",
@@ -5654,7 +5654,7 @@
     "aiSelected": true,
     "origin": "github",
     "firstSeen": "2026-05-16T01:48:45Z",
-    "aiNote": null
+    "aiNote": "双GPU分割运行模型，实时压缩激活值传输，极大降低大模型部署的显存瓶颈。"
   },
   {
     "id": "rss:openai-f0106247de",
@@ -5669,7 +5669,7 @@
     "origin": "rss:openai",
     "heat": 0,
     "firstSeen": "2026-05-16T00:00:00.000Z",
-    "aiNote": null
+    "aiNote": "国家层面推广AI工具，提升全民数字素养，开创政府与AI公司合作新范本。"
   },
   {
     "id": "gh-denissergeevitch-agents-best-practices",
@@ -5689,7 +5689,7 @@
     "aiSelected": true,
     "origin": "github",
     "firstSeen": "2026-05-15T21:32:21Z",
-    "aiNote": null
+    "aiNote": "统一多平台智能体技能标准，降低开发门槛，推动AI代理工具生态互通。"
   },
   {
     "id": "rss:msr-c3be214c47",
@@ -5699,12 +5699,12 @@
     "sourceUrl": "https://www.microsoft.com/en-us/research/blog/further-notes-on-our-recent-research-on-ai-delegation-and-long-horizon-reliability/",
     "category": "paper",
     "publishedAt": "2026-05-15T18:06:57.000Z",
-    "image": "https://www.microsoft.com/en-us/research/wp-content/uploads/2026/01/MFST_feature_SecondThought_1400x788.jpg",
+    "image": "https://www.microsoft.com/en-us/research/wp-content/uploads/2025/06/Episode7-PeterBillSebastien-AIRevolution_Hero_Feature_River_No_Text_1400x788.jpg",
     "aiSelected": true,
     "origin": "rss:msr",
     "heat": 0,
     "firstSeen": "2026-05-15T18:06:57.000Z",
-    "aiNote": null
+    "aiNote": "揭示AI委托任务中隐藏的文件损坏风险，直击大模型实际应用的关键可靠性短板。"
   },
   {
     "id": "hn-a1ebfb8fe7",
@@ -5721,7 +5721,7 @@
     "aiSelected": true,
     "origin": "hackernews",
     "firstSeen": "2026-05-15T16:38:50Z",
-    "aiNote": null
+    "aiNote": "ChatGPT接入银行账户，AI与金融数据融合迈出关键一步。"
   },
   {
     "id": "hn-a9e0341aee",
@@ -5738,7 +5738,7 @@
     "aiSelected": true,
     "origin": "hackernews",
     "firstSeen": "2026-05-15T12:49:27Z",
-    "aiNote": null
+    "aiNote": "成本与风险博弈，揭示AI技术商业化关键瓶颈。"
   },
   {
     "id": "gh-fangwendongcs-auto-agent-factory",
@@ -5759,7 +5759,7 @@
     "aiSelected": true,
     "origin": "github",
     "firstSeen": "2026-05-15T08:50:51Z",
-    "aiNote": null
+    "aiNote": "一站式AI Agent开发工具，降低企业自动化部署门槛，加速行业落地。"
   },
   {
     "id": "hn-09398c1aa8",
@@ -5776,7 +5776,7 @@
     "aiSelected": true,
     "origin": "hackernews",
     "firstSeen": "2026-05-15T08:16:39Z",
-    "aiNote": null
+    "aiNote": "透露估值数字差异，揭示AI公司隐秘融资策略与市场信任度问题。"
   },
   {
     "id": "gh-agentic-in-elephant-agent",
@@ -5797,7 +5797,7 @@
     "aiSelected": true,
     "origin": "github",
     "firstSeen": "2026-05-15T07:08:17Z",
-    "aiNote": null
+    "aiNote": "个人模型驱动的自进化AI代理，开创了代理自主迭代的新范式。"
   },
   {
     "id": "hn-efa349832a",
@@ -5814,7 +5814,7 @@
     "aiSelected": true,
     "origin": "hackernews",
     "firstSeen": "2026-05-15T06:20:19Z",
-    "aiNote": null
+    "aiNote": "开源模型突破，让前沿实验室忌惮，意味着AI竞争格局或将改写。"
   },
   {
     "id": "hn-08dbb227f2",
@@ -5831,7 +5831,7 @@
     "aiSelected": true,
     "origin": "hackernews",
     "firstSeen": "2026-05-15T04:48:23Z",
-    "aiNote": null
+    "aiNote": "开源AI工具填补糖尿病患者数据监控空白，解决就医间隙的管理痛点。"
   },
   {
     "id": "rss:openai-ada6c14251",
@@ -5846,7 +5846,7 @@
     "origin": "rss:openai",
     "heat": 0,
     "firstSeen": "2026-05-15T00:00:00.000Z",
-    "aiNote": null
+    "aiNote": "ChatGPT进军个人理财，AI金融助手走向实用化，贴近用户财务场景。"
   },
   {
     "id": "rss:openai-248b5ff069",
@@ -5878,7 +5878,7 @@
     "aiSelected": true,
     "origin": "hackernews",
     "firstSeen": "2026-05-14T21:05:05Z",
-    "aiNote": null
+    "aiNote": "法律行业首个专业AI助手，精准解析条款，提升文书效率。"
   },
   {
     "id": "rss:mit-news-ai-a8440b716d",
@@ -5893,7 +5893,7 @@
     "origin": "rss:mit-news-ai",
     "heat": 0,
     "firstSeen": "2026-05-14T20:55:00.000Z",
-    "aiNote": null
+    "aiNote": "麻省理工两名学子获斯坦福奖学金，展现跨校顶尖人才流动趋势。"
   },
   {
     "id": "hn-55f24e6536",
@@ -5910,7 +5910,7 @@
     "aiSelected": true,
     "origin": "hackernews",
     "firstSeen": "2026-05-14T20:06:14Z",
-    "aiNote": null
+    "aiNote": "ChatGPT集成Codex，移动端编程能力落地，降低AI使用门槛。"
   },
   {
     "id": "rss:hf-blog-469a04ba28",
@@ -5925,7 +5925,7 @@
     "origin": "rss:hf-blog",
     "heat": 0,
     "firstSeen": "2026-05-14T18:55:01.000Z",
-    "aiNote": null
+    "aiNote": "IBM开源多语言嵌入模型，32K上下文长度，百毫秒级检索质量最优。"
   },
   {
     "id": "hn-914307c2dd",
@@ -5942,7 +5942,7 @@
     "aiSelected": true,
     "origin": "hackernews",
     "firstSeen": "2026-05-14T16:57:12Z",
-    "aiNote": null
+    "aiNote": "苹果与OpenAI关系紧张，可能引发法律纠纷，影响AI行业合作模式。"
   },
   {
     "id": "hn-e302f49558",
@@ -6421,7 +6421,7 @@
       "ai-agent",
       "TypeScript"
     ],
-    "heat": 428,
+    "heat": 430,
     "aiSelected": true,
     "origin": "github",
     "firstSeen": "2026-05-29T09:10:35.232Z",
@@ -6499,7 +6499,7 @@
       "ai-security-testing",
       "aisecurity"
     ],
-    "heat": 397,
+    "heat": 398,
     "aiSelected": true,
     "origin": "github",
     "firstSeen": "2026-05-09T06:16:58Z",
@@ -7457,7 +7457,7 @@
     "origin": "rss:openai",
     "heat": 0,
     "firstSeen": "2026-05-29T09:25:31.625Z",
-    "aiNote": null
+    "aiNote": "展示AI如何将日常工作输入转化为战略文档，显著提升运营团队效率与决策质量。"
   },
   {
     "id": "rss:qbitai-ee54a631b3",
