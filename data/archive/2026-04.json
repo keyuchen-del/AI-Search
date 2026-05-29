@@ -161,7 +161,7 @@
   {
     "id": "hn-16e23f8b7b",
     "title": "Granite 4.1: IBM's 8B Model Matching 32B MoE",
-    "summary": "<a href=\"https:&#x2F;&#x2F;research.ibm.com&#x2F;blog&#x2F;granite-4-1-ai-foundation-models\" rel=\"nofollow\">https:&#x2F;&#x2F;research.ibm.com&#x2F;blog&#x2F;granite-4-1-ai-foundat…",
+    "summary": "https://research.ibm.com/blog/granite-4-1-ai-foundation-mode...",
     "source": "Hacker News",
     "sourceUrl": "https://firethering.com/granite-4-1-ibm-open-source-model-family/",
     "category": "industry",
@@ -247,7 +247,7 @@
       "claude",
       "Python"
     ],
-    "heat": 676,
+    "heat": 677,
     "aiSelected": true,
     "origin": "github",
     "firstSeen": "2026-04-30T03:13:10Z",
@@ -378,7 +378,7 @@
   {
     "id": "hn-dde1825ec1",
     "title": "Show HN: Rocky – Rust SQL engine with branches, replay, column lineage",
-    "summary": "Hi HN, I&#x27;m Hugo. I&#x27;ve been building Rocky over the past month, shipping fast in the open. The binary is on GitHub Releases, `dagster-rocky` on PyPI, and the VS Code exten…",
+    "summary": "Hi HN, I'm Hugo. I've been building Rocky over the past month, shipping fast in the open. The binary is on GitHub Releases, `dagster-rocky` on PyPI, and the VS Code extension on th…",
     "source": "Hacker News",
     "sourceUrl": "https://github.com/rocky-data/rocky",
     "category": "ai-products",
@@ -410,7 +410,7 @@
   {
     "id": "hn-bec35e0325",
     "title": "Show HN: OSS Agent I built topped the TerminalBench on Gemini-3-flash-preview",
-    "summary": "Scored 65.2% vs google&#x27;s official 47.8%, and the existing top closed source model Junie CLI&#x27;s 64.3%.<p>Since there are a lot of reports of deliberate cheating on Terminal…",
+    "summary": "Scored 65.2% vs google's official 47.8%, and the existing top closed source model Junie CLI's 64.3%. Since there are a lot of reports of deliberate cheating on TerminalBench 2.0 la…",
     "source": "Hacker News",
     "sourceUrl": "https://github.com/dirac-run/dirac",
     "category": "industry",
@@ -532,7 +532,7 @@
   {
     "id": "hn-2eee69de88",
     "title": "Show HN: Agent Vault – Open-source credential proxy and vault for agents",
-    "summary": "Hey HN! Today we&#x27;re launching Agent Vault - an open source HTTP credential proxy and vault for AI agents. Repo is at <a href=\"https:&#x2F;&#x2F;github.com&#x2F;Infisical&#x2F;…",
+    "summary": "Hey HN! Today we're launching Agent Vault - an open source HTTP credential proxy and vault for AI agents. Repo is at https://github.com/Infisical/agent-vault , and there's an in-de…",
     "source": "Hacker News",
     "sourceUrl": "https://github.com/Infisical/agent-vault",
     "category": "ai-products",
@@ -564,7 +564,7 @@
   {
     "id": "hn-5b77d88b0a",
     "title": "Show HN: GoModel – an open-source AI gateway in Go",
-    "summary": "Hi, I’m Jakub, a solo founder based in Warsaw.<p>I’ve been building GoModel since December with a couple of contributors. It&#x27;s an open-source AI gateway that sits between your…",
+    "summary": "Hi, I’m Jakub, a solo founder based in Warsaw. I’ve been building GoModel since December with a couple of contributors. It's an open-source AI gateway that sits between your app an…",
     "source": "Hacker News",
     "sourceUrl": "https://github.com/ENTERPILOT/GOModel/",
     "category": "industry",
@@ -581,7 +581,7 @@
   {
     "id": "hn-46440090f2",
     "title": "Show HN: Alien – Self-hosting with remote management (written in Rust)",
-    "summary": "Hi HN, I&#x27;m Alon, and I&#x27;m building Alien, an open-source platform for deploying your software into your customer&#x27;s environment and keeping it fully managed.<p>In my p…",
+    "summary": "Hi HN, I'm Alon, and I'm building Alien, an open-source platform for deploying your software into your customer's environment and keeping it fully managed. In my previous startup,…",
     "source": "Hacker News",
     "sourceUrl": "https://news.ycombinator.com/item?id=47835599",
     "category": "industry",

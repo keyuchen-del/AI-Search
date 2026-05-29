@@ -145,7 +145,7 @@
     "tags": [
       "Hacker News"
     ],
-    "heat": 132,
+    "heat": 140,
     "aiSelected": true,
     "origin": "hackernews",
     "firstSeen": "2026-05-29T05:45:36Z",
@@ -162,7 +162,7 @@
     "tags": [
       "Hacker News"
     ],
-    "heat": 316,
+    "heat": 317,
     "aiSelected": true,
     "origin": "hackernews",
     "firstSeen": "2026-05-29T03:01:00Z",
@@ -209,7 +209,7 @@
     "tags": [
       "Hacker News"
     ],
-    "heat": 55,
+    "heat": 56,
     "aiSelected": true,
     "origin": "hackernews",
     "firstSeen": "2026-05-29T00:49:05Z",
@@ -271,7 +271,7 @@
     "tags": [
       "Hacker News"
     ],
-    "heat": 74,
+    "heat": 76,
     "aiSelected": true,
     "origin": "hackernews",
     "firstSeen": "2026-05-29T00:09:35Z",
@@ -333,7 +333,7 @@
     "tags": [
       "Hacker News"
     ],
-    "heat": 205,
+    "heat": 206,
     "aiSelected": true,
     "origin": "hackernews",
     "firstSeen": "2026-05-28T23:42:47Z",
@@ -365,7 +365,7 @@
     "tags": [
       "Hacker News"
     ],
-    "heat": 380,
+    "heat": 386,
     "aiSelected": true,
     "origin": "hackernews",
     "firstSeen": "2026-05-28T21:45:54Z",
@@ -412,7 +412,7 @@
     "tags": [
       "Hacker News"
     ],
-    "heat": 59,
+    "heat": 61,
     "aiSelected": true,
     "origin": "hackernews",
     "firstSeen": "2026-05-28T21:14:22Z",
@@ -511,7 +511,7 @@
   {
     "id": "hn-5e8eae382f",
     "title": "Sam Altman and Dario Amodei are both walking back AI jobs apocalypse predictions",
-    "summary": "<a href=\"https:&#x2F;&#x2F;archive.ph&#x2F;50zy3\" rel=\"nofollow\">https:&#x2F;&#x2F;archive.ph&#x2F;50zy3</a>",
+    "summary": "https://archive.ph/50zy3",
     "source": "Hacker News",
     "sourceUrl": "https://fortune.com/2026/05/26/sam-altman-dario-amodei-walking-back-ai-jobs-apocalypse-prophecies-ipo/",
     "category": "industry",
@@ -519,7 +519,7 @@
     "tags": [
       "Hacker News"
     ],
-    "heat": 210,
+    "heat": 211,
     "aiSelected": true,
     "origin": "hackernews",
     "firstSeen": "2026-05-28T19:43:14Z",
@@ -536,7 +536,7 @@
     "tags": [
       "Hacker News"
     ],
-    "heat": 301,
+    "heat": 303,
     "aiSelected": true,
     "origin": "hackernews",
     "firstSeen": "2026-05-28T19:02:18Z",
@@ -647,7 +647,7 @@
     "tags": [
       "Hacker News"
     ],
-    "heat": 339,
+    "heat": 340,
     "aiSelected": true,
     "origin": "hackernews",
     "firstSeen": "2026-05-28T18:09:44Z",
@@ -1116,7 +1116,7 @@
     "tags": [
       "Hacker News"
     ],
-    "heat": 1500,
+    "heat": 1514,
     "aiSelected": true,
     "origin": "hackernews",
     "firstSeen": "2026-05-28T16:49:14Z",
@@ -1148,7 +1148,7 @@
     "tags": [
       "Hacker News"
     ],
-    "heat": 87,
+    "heat": 88,
     "aiSelected": true,
     "origin": "hackernews",
     "firstSeen": "2026-05-28T16:40:33Z",
@@ -1292,7 +1292,7 @@
   {
     "id": "hn-4b73690ad6",
     "title": "Show HN: Ktx – Open-source executable context layer for data agents",
-    "summary": "Hi HN, we’re open-sourcing ktx. It’s an executable context layer that makes agents reliable on your data stack.<p>We built it after going through the experience of building product…",
+    "summary": "Hi HN, we’re open-sourcing ktx. It’s an executable context layer that makes agents reliable on your data stack. We built it after going through the experience of building productio…",
     "source": "Hacker News",
     "sourceUrl": "https://github.com/Kaelio/ktx",
     "category": "industry",
@@ -1591,7 +1591,7 @@
     "tags": [
       "Hacker News"
     ],
-    "heat": 317,
+    "heat": 319,
     "aiSelected": true,
     "origin": "hackernews",
     "firstSeen": "2026-05-28T13:02:00Z",
@@ -1638,7 +1638,7 @@
     "tags": [
       "Hacker News"
     ],
-    "heat": 487,
+    "heat": 488,
     "aiSelected": true,
     "origin": "hackernews",
     "firstSeen": "2026-05-28T12:20:19Z",
@@ -1846,7 +1846,7 @@
   {
     "id": "hn-83722f25bb",
     "title": "Show HN: Hallucinate – Massively Multiplayer Online Rave",
-    "summary": "<a href=\"https:&#x2F;&#x2F;github.com&#x2F;stagas&#x2F;hallucinate\" rel=\"nofollow\">https:&#x2F;&#x2F;github.com&#x2F;stagas&#x2F;hallucinate</a>",
+    "summary": "https://github.com/stagas/hallucinate",
     "source": "Hacker News",
     "sourceUrl": "https://hallucinate.site",
     "category": "industry",
@@ -1854,7 +1854,7 @@
     "tags": [
       "Hacker News"
     ],
-    "heat": 422,
+    "heat": 423,
     "aiSelected": true,
     "origin": "hackernews",
     "firstSeen": "2026-05-28T03:50:01Z",
@@ -1968,7 +1968,7 @@
       "codex-skill",
       "handdrawn"
     ],
-    "heat": 421,
+    "heat": 431,
     "aiSelected": true,
     "origin": "github",
     "firstSeen": "2026-05-27T22:47:56Z",
@@ -2009,7 +2009,7 @@
   {
     "id": "hn-4cf49beb32",
     "title": "Show HN: Open-Source AI Racing Harness",
-    "summary": "Hi I&#x27;m Dan from Elodin, making an open source real-time capable flight software simulation.<p>For AI Grand Prix contestants, the wait for the Round 1 virtual qualifier simulat…",
+    "summary": "Hi I'm Dan from Elodin, making an open source real-time capable flight software simulation. For AI Grand Prix contestants, the wait for the Round 1 virtual qualifier simulation has…",
     "source": "Hacker News",
     "sourceUrl": "https://www.elodin.systems/post/elodin-ai-grand-prix-race-sim-harness",
     "category": "industry",
@@ -2071,7 +2071,7 @@
   {
     "id": "hn-ee4c3022ee",
     "title": "YouTube to automatically label AI-generated videos",
-    "summary": "<a href=\"https:&#x2F;&#x2F;variety.com&#x2F;2026&#x2F;digital&#x2F;news&#x2F;youtube-ai-video-labels-automatic-detection-1236758865&#x2F;\" rel=\"nofollow\">https:&#x2F;&#x2F;variety.…",
+    "summary": "https://variety.com/2026/digital/news/youtube-ai-video-label...",
     "source": "Hacker News",
     "sourceUrl": "https://blog.youtube/news-and-events/improving-ai-labels-viewers-creators/",
     "category": "industry",
@@ -2313,7 +2313,7 @@
       "论文",
       "arXiv"
     ],
-    "heat": 21,
+    "heat": 22,
     "aiSelected": true,
     "origin": "hf-papers",
     "firstSeen": "2026-05-27T20:00:00.000Z",
@@ -2385,7 +2385,7 @@
       "论文",
       "arXiv"
     ],
-    "heat": 15,
+    "heat": 16,
     "aiSelected": true,
     "origin": "hf-papers",
     "firstSeen": "2026-05-27T20:00:00.000Z",
@@ -2421,7 +2421,7 @@
       "论文",
       "arXiv"
     ],
-    "heat": 28,
+    "heat": 29,
     "aiSelected": true,
     "origin": "hf-papers",
     "firstSeen": "2026-05-27T20:00:00.000Z",
@@ -2547,7 +2547,7 @@
       "论文",
       "arXiv"
     ],
-    "heat": 21,
+    "heat": 22,
     "aiSelected": true,
     "origin": "hf-papers",
     "firstSeen": "2026-05-27T20:00:00.000Z",
@@ -2583,7 +2583,7 @@
       "论文",
       "arXiv"
     ],
-    "heat": 5,
+    "heat": 6,
     "aiSelected": true,
     "origin": "hf-papers",
     "firstSeen": "2026-05-27T20:00:00.000Z",
@@ -2669,7 +2669,7 @@
     "tags": [
       "Hacker News"
     ],
-    "heat": 358,
+    "heat": 359,
     "aiSelected": true,
     "origin": "hackernews",
     "firstSeen": "2026-05-27T19:52:49Z",
@@ -2898,7 +2898,7 @@
   {
     "id": "hn-d331120ce1",
     "title": "Show HN: I made an emergency page for my family",
-    "summary": "I have a bad memory and can&#x27;t memorize some important numbers, so I created this project.<p>I&#x27;ve always been concerned about being without my phone (getting robbed - whic…",
+    "summary": "I have a bad memory and can't memorize some important numbers, so I created this project. I've always been concerned about being without my phone (getting robbed - which is common…",
     "source": "Hacker News",
     "sourceUrl": "https://help.delduca.org",
     "category": "industry",
@@ -2978,7 +2978,7 @@
       "claude-code",
       "HTML"
     ],
-    "heat": 1030,
+    "heat": 1037,
     "aiSelected": true,
     "origin": "github",
     "firstSeen": "2026-05-27T12:05:05Z",
@@ -3110,7 +3110,7 @@
       "ai-development",
       "JavaScript"
     ],
-    "heat": 431,
+    "heat": 433,
     "aiSelected": true,
     "origin": "github",
     "firstSeen": "2026-05-27T05:46:25Z",
@@ -3498,7 +3498,7 @@
   {
     "id": "hn-944b60766b",
     "title": "Show HN: A website that tracks every stock trade Congress makes",
-    "summary": "Congressional trading data is relatively commoditized, but I couldn&#x27;t find any open-source version with the features I wanted.<p>The data is lagged (median 28 days from trade…",
+    "summary": "Congressional trading data is relatively commoditized, but I couldn't find any open-source version with the features I wanted. The data is lagged (median 28 days from trade to disc…",
     "source": "Hacker News",
     "sourceUrl": "https://congress.kadoa.com/",
     "category": "industry",
@@ -3607,7 +3607,7 @@
   {
     "id": "hn-8e844dac75",
     "title": "Launch HN: Minicor (YC P26) – Windows desktop automations at scale",
-    "summary": "Hey we’re Faiz and Saheed and we built Minicor so AI companies who need to integrate to desktop systems with no API can quickly build scalable desktop RPAs. Demo: <a href=\"https:&#…",
+    "summary": "Hey we’re Faiz and Saheed and we built Minicor so AI companies who need to integrate to desktop systems with no API can quickly build scalable desktop RPAs. Demo: https://www.youtu…",
     "source": "Hacker News",
     "sourceUrl": "https://www.minicor.com/",
     "category": "ai-products",
@@ -3624,7 +3624,7 @@
   {
     "id": "rss:techreview-ai-4c65180bb2",
     "title": "Rethinking organizational design in the age of agentic AI",
-    "summary": "Amid rapidly growing adoption of enterprise-level AI agents, there’s a disconnect emerging between ambition and execution.&#160; Although 85% of organizations say they want to be a…",
+    "summary": "Amid rapidly growing adoption of enterprise-level AI agents, there’s a disconnect emerging between ambition and execution. Although 85% of organizations say they want to be agentic…",
     "source": "MIT Tech Review",
     "sourceUrl": "https://www.technologyreview.com/2026/05/26/1137584/rethinking-organizational-design-in-the-age-of-agentic-ai/",
     "category": "industry",
@@ -4080,7 +4080,7 @@
     "origin": "rss:simonwillison",
     "heat": 0,
     "firstSeen": "2026-05-24T18:46:53.000Z",
-    "aiNote": null
+    "aiNote": "用AI生成问题反馈，掩盖了真实痛点，让开发者难以有效排查。"
   },
   {
     "id": "hn-c15ee001cf",
@@ -4097,7 +4097,7 @@
     "aiSelected": true,
     "origin": "hackernews",
     "firstSeen": "2026-05-24T12:55:53Z",
-    "aiNote": null
+    "aiNote": "大模型后端代码生成能力脆弱，揭示智能体在复杂约束下的稳定性短板。"
   },
   {
     "id": "hn-63250e7a6e",
@@ -4114,7 +4114,7 @@
     "aiSelected": true,
     "origin": "hackernews",
     "firstSeen": "2026-05-23T01:37:02Z",
-    "aiNote": null
+    "aiNote": "2006年研究揭示古老乐器可改善睡眠呼吸暂停，开创非药物疗法新思路。"
   },
   {
     "id": "rss:hf-blog-e7490cde6e",
@@ -4129,7 +4129,7 @@
     "origin": "rss:hf-blog",
     "heat": 0,
     "firstSeen": "2026-05-23T00:02:03.000Z",
-    "aiNote": null
+    "aiNote": "突破文本生成速度极限，扩散模型或将颠覆传统自回归方法。"
   },
   {
     "id": "hn-103dc92afc",
@@ -4146,7 +4146,7 @@
     "aiSelected": true,
     "origin": "hackernews",
     "firstSeen": "2026-05-22T20:26:07Z",
-    "aiNote": null
+    "aiNote": "开源AI模型数据库填补了行业信息分散的空白，便于开发者对比选型。"
   },
   {
     "id": "rss:arstechnica-ai-88d8778ef3",
@@ -4161,7 +4161,7 @@
     "origin": "rss:arstechnica-ai",
     "heat": 0,
     "firstSeen": "2026-05-22T19:39:04.000Z",
-    "aiNote": null
+    "aiNote": "美国立法漏洞暴露AI声音复刻失控风险，监管滞后引发伦理争议。"
   },
   {
     "id": "hn-9b499105b2",
@@ -4178,7 +4178,7 @@
     "aiSelected": true,
     "origin": "hackernews",
     "firstSeen": "2026-05-22T19:31:45Z",
-    "aiNote": null
+    "aiNote": "谷歌Project Glasswing项目更新，预示AR眼镜技术可能迎来关键突破。"
   },
   {
     "id": "rss:google-ai-3405d5d583",
@@ -4193,7 +4193,7 @@
     "origin": "rss:google-ai",
     "heat": 0,
     "firstSeen": "2026-05-22T18:00:00.000Z",
-    "aiNote": null
+    "aiNote": "科技巨头齐聚探讨AI、量子计算与机器人未来，前沿观点碰撞，指明行业发展方向。"
   },
   {
     "id": "hn-faea6306a0",
@@ -4210,7 +4210,7 @@
     "aiSelected": true,
     "origin": "hackernews",
     "firstSeen": "2026-05-22T17:24:12Z",
-    "aiNote": null
+    "aiNote": "技术风向突变，Bun支持受限提示开发者需警惕依赖风险。"
   },
   {
     "id": "rss:arstechnica-ai-6b67406759",
@@ -4225,7 +4225,7 @@
     "origin": "rss:arstechnica-ai",
     "heat": 0,
     "firstSeen": "2026-05-22T16:51:40.000Z",
-    "aiNote": null
+    "aiNote": "特朗普与AI巨头分歧公开化，凸显政策与产业创新的深层矛盾。"
   },
   {
     "id": "rss:hf-blog-eb5012be09",
@@ -4240,7 +4240,7 @@
     "origin": "rss:hf-blog",
     "heat": 0,
     "firstSeen": "2026-05-22T15:25:59.000Z",
-    "aiNote": null
+    "aiNote": "专业化胜过规模，AI采购决策中常被忽视的战略变量，揭示降本增效新思路。"
   },
   {
     "id": "hn-b35e755250",
@@ -4257,7 +4257,7 @@
     "aiSelected": true,
     "origin": "hackernews",
     "firstSeen": "2026-05-22T15:10:22Z",
-    "aiNote": null
+    "aiNote": "用成熟语言降低大模型开发风险，工程稳定性比炫技更重要。"
   },
   {
     "id": "rss:arstechnica-ai-a40dc458fc",
@@ -4272,7 +4272,7 @@
     "origin": "rss:arstechnica-ai",
     "heat": 0,
     "firstSeen": "2026-05-22T14:05:56.000Z",
-    "aiNote": null
+    "aiNote": "利用AI生成内容的风险凸显，作者坚持使用AI的争议值得关注。"
   },
   {
     "id": "rss:techreview-ai-55fe3e510e",
@@ -4287,7 +4287,7 @@
     "origin": "rss:techreview-ai",
     "heat": 0,
     "firstSeen": "2026-05-22T10:00:00.000Z",
-    "aiNote": null
+    "aiNote": "谷歌DeepMind高管宣称AI正站在奇点山麓，预示AI驱动科学进入转折点。"
   },
   {
     "id": "gh-ayushh0110-screenmind",
@@ -4308,7 +4308,7 @@
     "aiSelected": true,
     "origin": "github",
     "firstSeen": "2026-05-22T09:33:20Z",
-    "aiNote": null
+    "aiNote": "本地化隐私保护与AI搜索结合，让屏幕历史真正成为可交互的私人记忆库。"
   },
   {
     "id": "gh-leestott-foundry-cicd",
@@ -4328,7 +4328,7 @@
     "aiSelected": true,
     "origin": "github",
     "firstSeen": "2026-05-22T08:31:36Z",
-    "aiNote": null
+    "aiNote": "企业级AI代理CI/CD参考实现，提升部署效率与质量管控。"
   },
   {
     "id": "rss:openai-ef1db9edff",
@@ -4343,7 +4343,7 @@
     "origin": "rss:openai",
     "heat": 0,
     "firstSeen": "2026-05-22T00:00:00.000Z",
-    "aiNote": null
+    "aiNote": "Gartner权威认证，OpenAI在AI编程代理领域的技术领先性获行业标杆认可。"
   },
   {
     "id": "rss:openai-4ce39150a4",
@@ -4358,7 +4358,7 @@
     "origin": "rss:openai",
     "heat": 0,
     "firstSeen": "2026-05-22T00:00:00.000Z",
-    "aiNote": null
+    "aiNote": "维珍大西洋利用AI编程工具，在紧迫假日季实现零重大缺陷和全量测试覆盖，展现AI赋能传统行业敏捷开发潜"
   },
   {
     "id": "hn-35e6c287c0",
@@ -4375,7 +4375,7 @@
     "aiSelected": true,
     "origin": "hackernews",
     "firstSeen": "2026-05-21T23:21:48Z",
-    "aiNote": null
+    "aiNote": "揭露AI公司盈利模式泡沫，警惕行业虚假繁荣风险。"
   },
   {
     "id": "rss:aws-ml-49546fca15",
@@ -4390,7 +4390,7 @@
     "origin": "rss:aws-ml",
     "heat": 0,
     "firstSeen": "2026-05-21T22:22:28.000Z",
-    "aiNote": null
+    "aiNote": "亚马逊Nova Act获HIPAA认证，医疗AI代理合规门槛突破，商业化落地提速。"
   },
   {
     "id": "rss:arstechnica-ai-866e4cbcfd",
@@ -4405,7 +4405,7 @@
     "origin": "rss:arstechnica-ai",
     "heat": 0,
     "firstSeen": "2026-05-21T21:51:26.000Z",
-    "aiNote": null
+    "aiNote": "SpaceX借轨道数据中心切入AI赛道，或颠覆传统算力格局。"
   },
   {
     "id": "rss:techreview-ai-961d585b3c",
@@ -4420,7 +4420,7 @@
     "origin": "rss:techreview-ai",
     "heat": 0,
     "firstSeen": "2026-05-21T20:41:05.000Z",
-    "aiNote": null
+    "aiNote": "AI突破语言瓶颈，迈向真正的世界理解，预示技术新拐点。"
   },
   {
     "id": "rss:deepmind-cf9e5a542f",
@@ -4435,12 +4435,12 @@
     "origin": "rss:deepmind",
     "heat": 0,
     "firstSeen": "2026-05-21T19:46:42.000Z",
-    "aiNote": null
+    "aiNote": "谷歌在亚太启动DeepMind加速器，用AI应对环境风险，展现技术赋能可持续发展的新路径。"
   },
   {
     "id": "rss:techreview-ai-c69e9ad058",
     "title": "Scaling creativity in the age of AI",
-    "summary": "Storytelling is core to humanity&#8217;s DNA, stemming from our impulse to express ideals, warnings, hopes, and experiences. Technology has always been woven through the medium and…",
+    "summary": "Storytelling is core to humanity’s DNA, stemming from our impulse to express ideals, warnings, hopes, and experiences. Technology has always been woven through the medium and the d…",
     "source": "MIT Tech Review",
     "sourceUrl": "https://www.technologyreview.com/2026/05/21/1137613/scaling-creativity-in-the-age-of-ai/",
     "category": "industry",
@@ -4450,7 +4450,7 @@
     "origin": "rss:techreview-ai",
     "heat": 0,
     "firstSeen": "2026-05-21T19:16:43.000Z",
-    "aiNote": null
+    "aiNote": "AI让创意表达规模化，但人性叙事才是技术变革中不可替代的核心价值。"
   },
   {
     "id": "rss:msr-4a19e1bab7",
@@ -4465,7 +4465,7 @@
     "origin": "rss:msr",
     "heat": 0,
     "firstSeen": "2026-05-21T17:00:00.000Z",
-    "aiNote": null
+    "aiNote": "轻量级智能体系统专为小模型优化，降低门槛，让更多开发者体验自动化流程。"
   },
   {
     "id": "rss:techreview-ai-f6318cb77e",
@@ -4480,7 +4480,7 @@
     "origin": "rss:techreview-ai",
     "heat": 0,
     "firstSeen": "2026-05-21T14:30:45.000Z",
-    "aiNote": null
+    "aiNote": "AI编程工具已从辅助进化为主角，开发者生态正被悄然重塑。"
   },
   {
     "id": "rss:msr-77da74a954",
@@ -4495,7 +4495,7 @@
     "origin": "rss:msr",
     "heat": 0,
     "firstSeen": "2026-05-21T13:48:40.000Z",
-    "aiNote": null
+    "aiNote": "用零知识证明实现最小化数据披露，兼顾隐私保护与实时性能，为AI时代的数字身份验证提供可行方案。"
   },
   {
     "id": "rss:openai-85a3fdb43c",
@@ -4510,7 +4510,7 @@
     "origin": "rss:openai",
     "heat": 0,
     "firstSeen": "2026-05-21T12:00:00.000Z",
-    "aiNote": null
+    "aiNote": "医疗巨头用大模型减轻行政负担，将时间还给患者，展示AI在提升护理质量上的实际价值。"
   },
   {
     "id": "gh-wangchuxiaoji-oss-doubao2api",
@@ -4531,7 +4531,7 @@
     "aiSelected": true,
     "origin": "github",
     "firstSeen": "2026-05-21T11:14:50Z",
-    "aiNote": null
+    "aiNote": "逆向工程豆包API，提供免费多模态服务，极大降低AI应用开发门槛。"
   },
   {
     "id": "rss:mit-news-ai-8d09d65ff8",
@@ -4589,7 +4589,7 @@
   {
     "id": "hn-f5dfc42378",
     "title": "Anthropic is expanding to Colossus2. Will use GB200",
-    "summary": "<a href=\"https:&#x2F;&#x2F;xcancel.com&#x2F;nottombrown&#x2F;status&#x2F;2057194829986300375\" rel=\"nofollow\">https:&#x2F;&#x2F;xcancel.com&#x2F;nottombrown&#x2F;status&#x2F;2057194…",
+    "summary": "https://xcancel.com/nottombrown/status/2057194829986300375",
     "source": "Hacker News",
     "sourceUrl": "https://twitter.com/nottombrown/status/2057194829986300375",
     "category": "industry",
@@ -4675,7 +4675,7 @@
   {
     "id": "hn-30f9614788",
     "title": "An OpenAI model has disproved a central conjecture in discrete geometry",
-    "summary": "<a href=\"https:&#x2F;&#x2F;x.com&#x2F;wtgowers&#x2F;status&#x2F;2057175727271800912\" rel=\"nofollow\">https:&#x2F;&#x2F;x.com&#x2F;wtgowers&#x2F;status&#x2F;2057175727271800912</a>,…",
+    "summary": "https://x.com/wtgowers/status/2057175727271800912 , https://xcancel.com/wtgowers/status/2057175727271800912",
     "source": "Hacker News",
     "sourceUrl": "https://openai.com/index/model-disproves-discrete-geometry-conjecture/",
     "category": "industry",
@@ -4764,7 +4764,7 @@
   {
     "id": "hn-761315c79f",
     "title": "OpenAI Is Preparing to File for an IPO Soon",
-    "summary": "<a href=\"https:&#x2F;&#x2F;archive.md&#x2F;0Ez3C\" rel=\"nofollow\">https:&#x2F;&#x2F;archive.md&#x2F;0Ez3C</a>",
+    "summary": "https://archive.md/0Ez3C",
     "source": "Hacker News",
     "sourceUrl": "https://www.wsj.com/tech/ai/openai-is-preparing-to-file-for-an-ipo-very-soon-0ec95af5",
     "category": "industry",
@@ -5066,7 +5066,7 @@
   {
     "id": "hn-fbe0c03f3e",
     "title": "I’ve joined Anthropic",
-    "summary": "<a href=\"https:&#x2F;&#x2F;xcancel.com&#x2F;karpathy&#x2F;status&#x2F;2056753169888334312\" rel=\"nofollow\">https:&#x2F;&#x2F;xcancel.com&#x2F;karpathy&#x2F;status&#x2F;2056753169888…",
+    "summary": "https://xcancel.com/karpathy/status/2056753169888334312 https://www.axios.com/2026/05/19/anthropic-openai-karpathy-a... , https://archive.ph/h6T3X",
     "source": "Hacker News",
     "sourceUrl": "https://twitter.com/karpathy/status/2056753169888334312",
     "category": "industry",
@@ -5115,7 +5115,7 @@
   {
     "id": "hn-c0dc5793c6",
     "title": "Show HN: Forge – Guardrails take an 8B model from 53% to 99% on agentic tasks",
-    "summary": "Hi HN, I&#x27;m Antoine Zambelli, AI Director at Texas Instruments.<p>I built Forge, an open-source reliability layer for self-hosted LLM tool-calling.<p>What it does:<p>- Adds dom…",
+    "summary": "Hi HN, I'm Antoine Zambelli, AI Director at Texas Instruments. I built Forge, an open-source reliability layer for self-hosted LLM tool-calling. What it does: - Adds domain-and-too…",
     "source": "Hacker News",
     "sourceUrl": "https://github.com/antoinezambelli/forge",
     "category": "industry",
@@ -5303,7 +5303,7 @@
   {
     "id": "hn-079b836455",
     "title": "Show HN: InsForge – Open-source Heroku for coding agents",
-    "summary": "Hi HN, I&#x27;m Hang, cofounder of InsForge (YC P26). InsForge is an open-source Heroku for AI coding agents: a backend platform designed for coding agents to deploy, operate, and…",
+    "summary": "Hi HN, I'm Hang, cofounder of InsForge (YC P26). InsForge is an open-source Heroku for AI coding agents: a backend platform designed for coding agents to deploy, operate, and debug…",
     "source": "Hacker News",
     "sourceUrl": "https://github.com/InsForge/InsForge",
     "category": "industry",
@@ -5699,7 +5699,7 @@
     "sourceUrl": "https://www.microsoft.com/en-us/research/blog/further-notes-on-our-recent-research-on-ai-delegation-and-long-horizon-reliability/",
     "category": "paper",
     "publishedAt": "2026-05-15T18:06:57.000Z",
-    "image": "https://www.microsoft.com/en-us/research/wp-content/uploads/2025/06/Azure-AI-Foundry_1600x900.jpg",
+    "image": "https://www.microsoft.com/en-us/research/wp-content/uploads/2026/01/MFST_feature_SecondThought_1400x788.jpg",
     "aiSelected": true,
     "origin": "rss:msr",
     "heat": 0,
@@ -5819,7 +5819,7 @@
   {
     "id": "hn-08dbb227f2",
     "title": "Show HN: GlycemicGPT – Open-source AI-powered diabetes management",
-    "summary": "I&#x27;m a Type 1 diabetic and software engineer. Last year I went months between endocrinologists with no clinician reviewing my data. I&#x27;m an engineer, so I built the tool I…",
+    "summary": "I'm a Type 1 diabetic and software engineer. Last year I went months between endocrinologists with no clinician reviewing my data. I'm an engineer, so I built the tool I needed — a…",
     "source": "Hacker News",
     "sourceUrl": "https://github.com/GlycemicGPT/GlycemicGPT",
     "category": "industry",
@@ -6010,7 +6010,7 @@
       "android",
       "TypeScript"
     ],
-    "heat": 145,
+    "heat": 149,
     "aiSelected": true,
     "origin": "github",
     "firstSeen": "2026-05-14T11:09:52Z",
@@ -6036,7 +6036,7 @@
   {
     "id": "hn-8f63f4eada",
     "title": "Arena AI Model ELO History",
-    "summary": "Hi HN,<p>I built a live tracker to visualize the lifecycle and performance changes of flagship AI models.<p>We&#x27;ve all experienced the phenomenon where a flagship model feels a…",
+    "summary": "Hi HN, I built a live tracker to visualize the lifecycle and performance changes of flagship AI models. We've all experienced the phenomenon where a flagship model feels amazing at…",
     "source": "Hacker News",
     "sourceUrl": "https://mayerwin.github.io/AI-Arena-History/",
     "category": "industry",
@@ -6142,7 +6142,7 @@
   {
     "id": "hn-6602178427",
     "title": "Launch HN: Voker (YC S24) – Analytics for AI Agents",
-    "summary": "Hey HN, we&#x27;re Alex and Tyler, co-founders of Voker.ai (<a href=\"https:&#x2F;&#x2F;voker.ai&#x2F;\">https:&#x2F;&#x2F;voker.ai&#x2F;</a>), an agent analytics platform for AI pro…",
+    "summary": "Hey HN, we're Alex and Tyler, co-founders of Voker.ai ( https://voker.ai/ ), an agent analytics platform for AI product teams. Voker gives full visibility into what users are askin…",
     "source": "Hacker News",
     "sourceUrl": "https://voker.ai",
     "category": "industry",
@@ -6366,7 +6366,7 @@
       "ai-design",
       "HTML"
     ],
-    "heat": 5339,
+    "heat": 5340,
     "aiSelected": true,
     "origin": "github",
     "firstSeen": "2026-05-11T09:40:38Z",
@@ -6471,7 +6471,7 @@
   {
     "id": "hn-cea9791b13",
     "title": "Show HN: Mochi.js: bun-native high-fidelity browser automation library",
-    "summary": "Hi HN,<p>I’m sharing mochi.js (<a href=\"https:&#x2F;&#x2F;github.com&#x2F;0xchasercat&#x2F;mochi\" rel=\"nofollow\">https:&#x2F;&#x2F;github.com&#x2F;0xchasercat&#x2F;mochi</a>), a Bu…",
+    "summary": "Hi HN, I’m sharing mochi.js ( https://github.com/0xchasercat/mochi ), a Bun-native, raw-CDP browser automation framework. It's designed to make programmatic browser use more effect…",
     "source": "Hacker News",
     "sourceUrl": "https://mochijs.com/",
     "category": "industry",
@@ -6499,7 +6499,7 @@
       "ai-security-testing",
       "aisecurity"
     ],
-    "heat": 396,
+    "heat": 397,
     "aiSelected": true,
     "origin": "github",
     "firstSeen": "2026-05-09T06:16:58Z",
@@ -6932,7 +6932,7 @@
       "kimi",
       "Python"
     ],
-    "heat": 1286,
+    "heat": 1287,
     "aiSelected": true,
     "origin": "github",
     "firstSeen": "2026-05-06T13:13:21Z",
@@ -6953,7 +6953,7 @@
       "cli",
       "Python"
     ],
-    "heat": 209,
+    "heat": 210,
     "aiSelected": true,
     "origin": "github",
     "firstSeen": "2026-05-06T11:12:42Z",
@@ -7325,7 +7325,7 @@
   {
     "id": "hn-a990ae02bd",
     "title": "Show HN: Browser-based light pollution simulator using real photometric data",
-    "summary": "Hi HN — author here. iesna.eu is a browser-based ecosystem for working with photometric data: parsing standard luminaire files (LDT&#x2F;EULUMDAT, IES LM-63, Oxytech, ATLA-S001), r…",
+    "summary": "Hi HN — author here. iesna.eu is a browser-based ecosystem for working with photometric data: parsing standard luminaire files (LDT/EULUMDAT, IES LM-63, Oxytech, ATLA-S001), runnin…",
     "source": "Hacker News",
     "sourceUrl": "https://iesna.eu/?wasm=skyglow_demo",
     "category": "industry",
@@ -7342,7 +7342,7 @@
   {
     "id": "hn-2e40539dfb",
     "title": "Show HN: Filling PDF forms with AI using client-side tool calling",
-    "summary": "Hey HN!<p>I built SimplePDF Copilot: an AI assistant that can interact with the PDF editor. It fills fields, answers questions, focuses on a specific field, adds fields, deletes pa…",
+    "summary": "Hey HN! I built SimplePDF Copilot: an AI assistant that can interact with the PDF editor. It fills fields, answers questions, focuses on a specific field, adds fields, deletes page…",
     "source": "Hacker News",
     "sourceUrl": "https://copilot.simplepdf.com/?share=a7d00ad073c75a75d493228e6ff7b11eb3f2d945b6175913e87898ec96ca8076&form=w9&lang=en",
     "category": "industry",
@@ -7425,6 +7425,38 @@
     "aiSelected": true,
     "origin": "github",
     "firstSeen": "2026-05-01T00:10:08Z",
+    "aiNote": null
+  },
+  {
+    "id": "hn-a5fb0493da",
+    "title": "The Best Engineers Write Less Code",
+    "summary": null,
+    "source": "Hacker News",
+    "sourceUrl": "https://shvetsm.github.io/posts/the-best-engineers-write-less-code/",
+    "category": "industry",
+    "publishedAt": "2026-05-27T00:33:31Z",
+    "tags": [
+      "Hacker News"
+    ],
+    "heat": 65,
+    "aiSelected": true,
+    "origin": "hackernews",
+    "firstSeen": "2026-05-29T09:25:31.625Z",
+    "aiNote": "优秀工程师的核心是精简代码，而非堆砌功能。"
+  },
+  {
+    "id": "rss:openai-b5b1610b25",
+    "title": "How business operations teams use Codex",
+    "summary": "See how business operations teams can use Codex to create initiative briefs, strategy updates, leadership decision packets, progress updates, and more from real work inputs.",
+    "source": "OpenAI",
+    "sourceUrl": "https://openai.com/academy/codex-for-work/how-business-operations-teams-use-codex",
+    "category": "ai-models",
+    "publishedAt": "2026-05-15T00:00:00.000Z",
+    "image": null,
+    "aiSelected": true,
+    "origin": "rss:openai",
+    "heat": 0,
+    "firstSeen": "2026-05-29T09:25:31.625Z",
     "aiNote": null
   }
 ]
