@@ -1,27 +1,68 @@
-# AI Search
+<div align="center">
 
-> AI 行业资讯聚合站 —— 一站式追踪大模型发布、AI 产品、行业动态、论文研究与技巧观点。
+# 🔍 AI Search
 
-**🌐 在线访问（无需安装，打开即用）：https://keyuchen-del.github.io/AI-Search/**
+**每天自动聚合 20+ 个来源的 AI 行业资讯 —— 纯静态、零成本、Fork 一份就有你自己的同款站。**
 
-数据由 GitHub Actions 每天自动从 20+ 个公开来源抓取、分类、并重新构建发布到 GitHub Pages。
-整站是**纯静态站点**：没有后端服务器、没有数据库、不需要任何 API Key，任何人 Fork 后开启 Pages 即可拥有自己的同款站点。
+简体中文 ・ [English](README.en.md)
+
+[![在线访问](https://img.shields.io/badge/🌐_在线访问-Live_Demo-2ea44f?style=for-the-badge)](https://keyuchen-del.github.io/AI-Search/)
+
+[![Stars](https://img.shields.io/github/stars/keyuchen-del/AI-Search?style=flat&logo=github)](https://github.com/keyuchen-del/AI-Search/stargazers)
+[![Forks](https://img.shields.io/github/forks/keyuchen-del/AI-Search?style=flat&logo=github)](https://github.com/keyuchen-del/AI-Search/network/members)
+[![Deploy](https://img.shields.io/github/actions/workflow/status/keyuchen-del/AI-Search/deploy.yml?logo=githubactions&logoColor=white&label=daily%20deploy)](https://github.com/keyuchen-del/AI-Search/actions)
+[![Last Commit](https://img.shields.io/github/last-commit/keyuchen-del/AI-Search?logo=git&logoColor=white)](https://github.com/keyuchen-del/AI-Search/commits)
+[![License](https://img.shields.io/github/license/keyuchen-del/AI-Search)](LICENSE)
+[![Next.js](https://img.shields.io/badge/Next.js-14-black?logo=next.js)](https://nextjs.org/)
+
+<br/>
+
+<!-- 👉 把首页截图放到 docs/images/screenshot-home.png（建议宽 1280px）后取消下一行注释 -->
+<!-- ![AI Search 首页](docs/images/screenshot-home.png) -->
+
+> ⚠️ **README 顶部还缺一张首页截图 / 操作 GIF** —— 这是涨 star 的头号转化点。
+> 录制方法见 [`docs/images/README.md`](docs/images/README.md)，拖进去后取消上面那行注释即可。
+
+</div>
 
 ---
 
-## 一键拥有你自己的站点
+## ✨ 这是什么
+
+每天 22:17 (UTC)，GitHub Actions 自动从 **20+ 个公开来源**（OpenAI / DeepMind / HuggingFace / arXiv / Hacker News / 量子位 / 36氪 …）抓取最新 AI 资讯，自动去重、分类，重新构建并发布到 GitHub Pages。
+
+整站是**纯静态站点**：
+
+- 🆓 **零成本** —— 没有后端、没有数据库、不需要任何 API Key，全部跑在 GitHub Pages 免费额度内
+- 🔄 **永远新鲜** —— 每天自动抓取 + 重新部署，无需人工维护
+- ⚡ **零延迟** —— 筛选 / 搜索 / 分页全在浏览器本地完成，数据内嵌进页面
+- 🍴 **可复制** —— Fork 一份，开启 Pages，5 分钟拥有你自己的同款 AI 资讯站
+
+## 🍴 一键拥有你自己的站点
+
+> GitHub 用户最爱"Fork 即用"的模板 —— 这是本项目的核心卖点。
 
 1. 点击右上角 **Fork** 本仓库
 2. 打开你 Fork 仓库的 **Settings → Pages**，将 **Source** 选为 **GitHub Actions**
-   （首次推送时工作流也会尝试自动开启）
 3. 打开 **Actions** 标签页，运行一次 **Build & Deploy to GitHub Pages**（或随意推送一次代码）
 4. 等待绿色对勾，访问 `https://<你的用户名>.github.io/AI-Search/`
 
 之后每天 22:17 (UTC) 工作流会自动重新抓取数据并发布，站点始终保持新鲜。
 
----
+想加自己关注的来源？只需在 `scripts/sources/rss.ts` 的 `FEEDS` 数组里加一行 —— 详见 [CONTRIBUTING](CONTRIBUTING.md)。
 
-## 功能一览
+## 📸 界面预览
+
+<!-- 把以下截图放进 docs/images/ 后取消注释。说明见 docs/images/README.md -->
+<!--
+| 首页（分类 + 搜索） | AI 日报 |
+| :---: | :---: |
+| ![首页](docs/images/screenshot-home.png) | ![日报](docs/images/screenshot-daily.png) |
+-->
+
+_截图占位中 —— 见 [`docs/images/README.md`](docs/images/README.md)。_
+
+## 🚀 功能一览
 
 | 功能 | 说明 |
 |------|------|
@@ -35,9 +76,7 @@
 | 自动刷新 | GitHub Actions 每日抓取 + 重新构建 + 部署 |
 | 响应式 | 适配桌面端与移动端 |
 
----
-
-## 数据来源（全部为公开 RSS / API）
+## 📡 数据来源（全部为公开 RSS / API）
 
 - **模型实验室 / 研究机构**：OpenAI、Google AI、Google DeepMind、HuggingFace（Blog + Daily Papers）、Berkeley AI Research、MIT News
 - **学术**：arXiv（cs.AI / cs.CL / cs.LG）、HuggingFace Daily Papers
@@ -46,11 +85,9 @@
 - **社区**：Hacker News（AI 相关高热故事）、Simon Willison
 - **中文**：量子位、36氪、InfoQ
 
-每条内容均保留原始来源链接，点击可追溯到源站。新增来源只需在 `scripts/sources/rss.ts` 的 `FEEDS` 数组里加一行。
+每条内容均保留原始来源链接，点击可追溯到源站。
 
----
-
-## 技术栈
+## 🛠 技术栈
 
 - **框架**：Next.js 14（App Router，`output: 'export'` 全静态导出）+ TypeScript
 - **样式**：Tailwind CSS 3.4
@@ -59,9 +96,7 @@
 - **分类**：`lib/classify.ts` 纯函数，把异构来源统一归入 5 个分类（含模型发布识别）
 - **部署**：GitHub Actions → GitHub Pages（零服务器、零成本）
 
----
-
-## 架构
+## 🏗 架构
 
 ```
 GitHub Actions（每日 cron / push / 手动）
@@ -78,9 +113,7 @@ GitHub Actions（每日 cron / push / 手动）
 
 浏览器加载页面后，全部 Query（分类 / 时间窗 / 关键词 / 分页 / 排序）在本地对内嵌数据集即时计算，因此交互零延迟、不依赖任何运行时服务。
 
----
-
-## 本地开发
+## 💻 本地开发
 
 ```bash
 git clone https://github.com/keyuchen-del/AI-Search.git
@@ -99,9 +132,10 @@ DATA_SOURCE=local npm run build
 
 > 注意：`npm run dev` 下 `basePath` 为空（根路径）；只有 CI 构建会注入 `NEXT_PUBLIC_BASE_PATH=/AI-Search` 以适配 Pages 子路径。
 
----
+<details>
+<summary>📖 环境变量 / 分类体系 / 脚本 / 项目结构（点击展开）</summary>
 
-## 环境变量
+### 环境变量
 
 | 变量 | 默认 | 说明 |
 |------|------|------|
@@ -115,9 +149,7 @@ DATA_SOURCE=local npm run build
 | `HN_MIN_POINTS` | `40` | Hacker News 收录的最低点数 |
 | `CRAWL_ARXIV` | 关 | 置 `1` 抓取 arXiv（CI 默认开启） |
 
----
-
-## 分类体系
+### 分类体系
 
 | Key | 标签 | 说明 |
 |-----|------|------|
@@ -127,9 +159,7 @@ DATA_SOURCE=local npm run build
 | `paper` | 论文研究 | 论文、技术报告与研究进展 |
 | `tip` | 技巧与观点 | 实用技巧与深度观点 |
 
----
-
-## 脚本
+### 脚本
 
 | 命令 | 说明 |
 |------|------|
@@ -139,9 +169,7 @@ DATA_SOURCE=local npm run build
 | `npm run crawl -- --only=hf,github` | 仅抓取指定来源 |
 | `npm run lint` | ESLint 检查 |
 
----
-
-## 项目结构
+### 项目结构
 
 ```
 AI-Search/
@@ -177,8 +205,18 @@ AI-Search/
 └── .github/workflows/deploy.yml # 抓取 + 构建 + 部署
 ```
 
----
+</details>
 
-## License
+## 🤝 贡献
 
-[MIT](LICENSE)
+欢迎 PR！最常见的贡献是**新增一个数据源**（在 `FEEDS` 加一行即可）。详见 [CONTRIBUTING.md](CONTRIBUTING.md)。
+
+## ⭐ Star History
+
+如果这个项目对你有用，点个 Star 支持一下 —— 这是对开源最好的鼓励。
+
+[![Star History Chart](https://api.star-history.com/svg?repos=keyuchen-del/AI-Search&type=Date)](https://star-history.com/#keyuchen-del/AI-Search&Date)
+
+## 📄 License
+
+[MIT](LICENSE) © [keyuchen-del](https://github.com/keyuchen-del)

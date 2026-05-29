@@ -1,0 +1,37 @@
+name: "📡 推荐新数据源 / Suggest a data source"
+description: "推荐一个值得收录的 AI 资讯来源 / Suggest an AI news source to add"
+title: "[Source] "
+labels: ["new-source"]
+body:
+  - type: input
+    id: name
+    attributes:
+      label: 来源名称 / Source name
+      placeholder: "e.g. Anthropic News, 机器之心"
+    validations:
+      required: true
+  - type: input
+    id: url
+    attributes:
+      label: RSS / Atom feed 地址 / Feed URL
+      description: "如果你知道 feed 地址请填;不知道也没关系,留主页地址即可 / Feed URL if you know it; otherwise the homepage is fine"
+      placeholder: "https://example.com/feed.xml"
+    validations:
+      required: true
+  - type: dropdown
+    id: category
+    attributes:
+      label: 主要分类 / Primary category
+      options:
+        - ai-models (模型发布/更新)
+        - ai-products (产品发布/更新)
+        - industry (行业动态)
+        - paper (论文研究)
+        - tip (技巧与观点)
+    validations:
+      required: true
+  - type: textarea
+    id: why
+    attributes:
+      label: 为什么值得收录 / Why is it worth adding
+      placeholder: "一句话说明这个源的价值 / One line on why this source is valuable"

@@ -1,0 +1,36 @@
+name: "🐛 Bug 报告 / Bug report"
+description: "页面错误、抓取失败、部署问题等 / Page errors, crawl failures, deploy issues, etc."
+title: "[Bug] "
+labels: ["bug"]
+body:
+  - type: textarea
+    id: what
+    attributes:
+      label: 问题描述 / What happened
+      placeholder: "发生了什么?预期是什么? / What went wrong, and what did you expect?"
+    validations:
+      required: true
+  - type: textarea
+    id: steps
+    attributes:
+      label: 复现步骤 / Steps to reproduce
+      placeholder: |
+        1. 打开 ...
+        2. 点击 ...
+        3. 看到 ...
+  - type: dropdown
+    id: where
+    attributes:
+      label: 发生在哪 / Where
+      options:
+        - 线上站点 / Live site
+        - 本地开发 / Local dev
+        - GitHub Actions 部署 / Deploy
+        - 我自己 Fork 的站 / My fork
+    validations:
+      required: true
+  - type: input
+    id: env
+    attributes:
+      label: 环境 / Environment
+      placeholder: "浏览器 / OS / Node 版本(如适用) / Browser / OS / Node version (if relevant)"
