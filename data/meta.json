@@ -1,12 +1,12 @@
 {
-  "fetchedAt": "2026-05-29T08:54:14.842Z",
-  "count": 529,
+  "fetchedAt": "2026-05-29T08:59:50.954Z",
+  "count": 528,
   "sources": {
     "hf-papers": 50,
     "github": 80,
     "hackernews": 106,
     "rss:qbitai": 10,
-    "rss:36kr": 7,
+    "rss:36kr": 6,
     "rss:infoq": 15,
     "rss:openai": 20,
     "rss:google-ai": 20,
@@ -28,6 +28,6 @@
     "arxiv": 0
   },
   "errors": {
-    "arxiv": "This operation was aborted"
+    "arxiv": "HTTP 429 Unknown Error <- https://export.arxiv.org/api/query?search_query=cat:cs.AI+OR+cat:cs.CL+OR+cat:cs.LG&sortBy=submittedDate&sortOrder=descending&max_results=20"
   }
 }
