@@ -1,12 +1,12 @@
 {
-  "fetchedAt": "2026-05-29T04:43:33.680Z",
-  "count": 454,
+  "fetchedAt": "2026-05-29T06:47:36.899Z",
+  "count": 472,
   "sources": {
     "hf-papers": 50,
     "github": 80,
-    "hackernews": 106,
+    "hackernews": 108,
     "rss:qbitai": 10,
-    "rss:36kr": 8,
+    "rss:36kr": 6,
     "rss:infoq": 16,
     "rss:openai": 20,
     "rss:google-ai": 20,
@@ -19,7 +19,7 @@
     "rss:venturebeat-ai": 7,
     "rss:arstechnica-ai": 20,
     "rss:techreview-ai": 10,
-    "rss:simonwillison": 14,
-    "arxiv": 0
+    "rss:simonwillison": 13,
+    "arxiv": 20
   }
 }
