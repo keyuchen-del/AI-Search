@@ -93,6 +93,59 @@ function cleanSummary(raw: string): string | null {
   return truncate(s, 180);
 }
 
+function normUrl(u: string | null): string | null {
+  if (!u) return null;
+  const s = u.trim();
+  if (s.startsWith("//")) return "https:" + s;
+  return /^https?:\/\//i.test(s) ? s : null;
+}
+
+function pickUrl(v: unknown): string | null {
+  if (!v) return null;
+  if (Array.isArray(v)) {
+    for (const x of v) {
+      const u = pickUrl(x);
+      if (u) return u;
+    }
+    return null;
+  }
+  if (typeof v === "string") return normUrl(v);
+  if (typeof v === "object") {
+    const o = v as Record<string, unknown>;
+    return normUrl((o["@_url"] as string) || (o["@_href"] as string) || (o["url"] as string) || "");
+  }
+  return null;
+}
+
+function imgFromHtml(html: unknown): string | null {
+  if (!html) return null;
+  const m = String(html).match(/<img[^>]+src=["']([^"']+)["']/i);
+  return m ? normUrl(m[1]) : null;
+}
+
+/** Best-effort cover image from common RSS/Atom media fields (no extra requests). */
+function extractImage(it: Record<string, unknown>): string | null {
+  const enc = it.enclosure as Record<string, unknown> | undefined;
+  if (enc) {
+    const type = String((enc["@_type"] as string) || "");
+    if (!type || type.startsWith("image")) {
+      const u = pickUrl(enc);
+      if (u) return u;
+    }
+  }
+  const group = it["media:group"] as Record<string, unknown> | undefined;
+  return (
+    pickUrl(it["media:content"]) ||
+    pickUrl(it["media:thumbnail"]) ||
+    pickUrl(group?.["media:content"]) ||
+    pickUrl(it.image) ||
+    imgFromHtml(it["content:encoded"]) ||
+    imgFromHtml(it.description) ||
+    imgFromHtml(it.content) ||
+    null
+  );
+}
+
 async function fetchFeed(feed: FeedDef): Promise<AIItem[]> {
   const xml = await getText(feed.url, { Accept: "application/rss+xml, application/atom+xml, application/xml, text/xml" });
   const doc = parser.parse(xml);
@@ -120,6 +173,7 @@ async function fetchFeed(feed: FeedDef): Promise<AIItem[]> {
       sourceUrl: link,
       category: feed.category,
       publishedAt: toIso(text(it.pubDate) || text(it.published) || text(it.updated) || text(it["dc:date"])),
+      image: extractImage(it),
       aiSelected: true,
       origin: feed.id,
     });

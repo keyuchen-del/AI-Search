@@ -8,6 +8,7 @@ import Sidebar from "./Sidebar";
 import SortTabs from "./SortTabs";
 import FeedSection from "./FeedSection";
 import TopReads from "./TopReads";
+import Hero from "./Hero";
 import CommandPalette from "./CommandPalette";
 import { filterItems } from "@/lib/filter";
 import { sourceCounts } from "@/lib/personalize";
@@ -49,8 +50,18 @@ function HomeLayout({
 }) {
   const { category, keyword, mode, since, source } = state;
   const trending = filterItems(items, { mode: "selected", since: "7d", sort: "heat" }).slice(0, 8);
-  // 每日必读 only on the default landing view (no active filter/search).
+  // 每日必读 / 头条 only on the default landing view (no active filter/search).
   const showDigest = !keyword && category === "all" && !source;
+  const heroItem =
+    (showDigest
+      ? [...items]
+          .filter((i) => i.image && i.aiSelected !== false)
+          .sort(
+            (a, b) =>
+              (b.heat ?? 0) - (a.heat ?? 0) ||
+              (b.publishedAt ?? b.firstSeen ?? "").localeCompare(a.publishedAt ?? a.firstSeen ?? ""),
+          )[0]
+      : null) ?? null;
 
   return (
     <>
@@ -59,6 +70,7 @@ function HomeLayout({
 
       <main className="max-w-7xl mx-auto px-4 py-6 grid grid-cols-1 lg:grid-cols-[1fr_300px] gap-6">
         <section>
+          {heroItem && <Hero item={heroItem} />}
           {showDigest && <TopReads digest={digest} />}
           {keyword && (
             <div className="mb-4 text-sm text-gray-600">

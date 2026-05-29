@@ -31,6 +31,17 @@ export default function ItemCard({
 
   return (
     <article className={"card p-4 flex flex-col gap-3" + (read ? " opacity-60" : "")}>
+      {item.image && (
+        <img
+          src={item.image}
+          alt=""
+          loading="lazy"
+          onError={(e) => {
+            e.currentTarget.style.display = "none";
+          }}
+          className="w-full h-40 object-cover rounded-lg bg-gray-100"
+        />
+      )}
       <div className="flex items-center justify-between text-xs gap-2">
         <div className="flex items-center gap-1.5 min-w-0">
           {cat ? (

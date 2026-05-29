@@ -37,6 +37,8 @@ export interface AIItem {
   firstSeen?: string | null;
   /** One-sentence AI take, generated at build time (cached). Null when unavailable. */
   aiNote?: string | null;
+  /** Cover image URL (extracted from the feed item, if any). */
+  image?: string | null;
 }
 
 export interface ItemsQuery {
