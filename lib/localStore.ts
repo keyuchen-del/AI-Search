@@ -6,6 +6,7 @@ export interface StoreMeta {
   fetchedAt: string | null;
   count: number;
   sources: Record<string, number>;
+  errors: Record<string, string>;
 }
 
 interface ItemsCache {
@@ -50,11 +51,12 @@ export function readStoreMeta(): StoreMeta | null {
       fetchedAt: m.fetchedAt ?? null,
       count: Number(m.count ?? 0),
       sources: m.sources ?? {},
+      errors: m.errors ?? {},
     };
   } catch {
     const items = readLocalItems();
     if (items.length === 0) return null;
-    return { fetchedAt: null, count: items.length, sources: {} };
+    return { fetchedAt: null, count: items.length, sources: {}, errors: {} };
   }
 }
 

@@ -41,6 +41,7 @@ jobs:
         env:
           GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }} # raises GitHub API rate limit
           CRAWL_ARXIV: "1"
+          DEEPSEEK_API_KEY: ${{ secrets.DEEPSEEK_API_KEY }} # one-line AI notes (optional; skipped if unset)
         run: npm run crawl || echo "crawl reported issues; building with the last good snapshot"
 
       - name: Commit refreshed snapshot (best-effort)

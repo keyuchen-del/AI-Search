@@ -7,6 +7,8 @@ export default function ItemList({
   items,
   bookmarks,
   readSet,
+  now,
+  keyword,
   onToggleBookmark,
   onOpen,
   emptyHint = "没有匹配的内容，换个关键词或分类试试。",
@@ -14,6 +16,8 @@ export default function ItemList({
   items: AIItem[];
   bookmarks?: Set<string>;
   readSet?: Set<string>;
+  now?: number;
+  keyword?: string;
   onToggleBookmark?: (id: string) => void;
   onOpen?: (id: string) => void;
   emptyHint?: string;
@@ -29,6 +33,8 @@ export default function ItemList({
           item={it}
           bookmarked={bookmarks?.has(it.id)}
           read={readSet?.has(it.id)}
+          now={now}
+          keyword={keyword}
           onToggleBookmark={onToggleBookmark}
           onOpen={onOpen}
         />

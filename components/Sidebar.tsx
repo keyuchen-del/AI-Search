@@ -1,9 +1,14 @@
 import Link from "next/link";
 import type { AIItem } from "@/lib/types";
-import { formatRelative } from "@/lib/timeFormat";
+import type { StoreMeta } from "@/lib/localStore";
+import { formatBJDate, formatRelative } from "@/lib/timeFormat";
 
-export default function Sidebar({ trending }: { trending: AIItem[] }) {
+export default function Sidebar({ trending, meta }: { trending: AIItem[]; meta?: StoreMeta | null }) {
   const top = trending.slice(0, 8);
+  const sources = meta
+    ? Object.entries(meta.sources).filter(([, n]) => n > 0).sort((a, b) => b[1] - a[1])
+    : [];
+  const failed = meta ? Object.keys(meta.errors ?? {}).length : 0;
 
   return (
     <aside className="space-y-4">
@@ -21,9 +26,7 @@ export default function Sidebar({ trending }: { trending: AIItem[] }) {
                 <span
                   className={
                     "shrink-0 w-5 text-center font-mono text-xs leading-5 rounded " +
-                    (idx < 3
-                      ? "bg-brand-500 text-white"
-                      : "bg-gray-100 text-gray-500")
+                    (idx < 3 ? "bg-brand-500 text-white" : "bg-gray-100 text-gray-500")
                   }
                 >
                   {idx + 1}
@@ -48,6 +51,28 @@ export default function Sidebar({ trending }: { trending: AIItem[] }) {
         )}
       </div>
 
+      {meta && sources.length > 0 && (
+        <div className="card p-4">
+          <h3 className="text-sm font-semibold mb-3 flex items-center gap-2">
+            <span className="w-1 h-4 bg-brand-500 rounded-sm" />
+            数据来源
+          </h3>
+          <div className="text-[11px] text-gray-400 mb-2">
+            {meta.fetchedAt && <>更新于 {formatBJDate(meta.fetchedAt)} · </>}
+            {sources.length} 个来源
+            {failed > 0 && <span className="text-amber-500"> · {failed} 个未更新</span>}
+          </div>
+          <ul className="space-y-1 text-xs max-h-56 overflow-y-auto scroll-hide">
+            {sources.map(([id, n]) => (
+              <li key={id} className="flex items-center justify-between gap-2 text-gray-600">
+                <span className="truncate">{id}</span>
+                <span className="shrink-0 text-gray-400">{n}</span>
+              </li>
+            ))}
+          </ul>
+        </div>
+      )}
+
       <div className="card p-4">
         <h3 className="text-sm font-semibold mb-3 flex items-center gap-2">
           <span className="w-1 h-4 bg-brand-500 rounded-sm" />
@@ -60,47 +85,26 @@ export default function Sidebar({ trending }: { trending: AIItem[] }) {
             </Link>
           </li>
           <li>
-            <Link
-              href="/?category=ai-models&since=7d"
-              className="text-gray-700 hover:text-brand-600"
-            >
+            <Link href="/?category=ai-models&since=7d" className="text-gray-700 hover:text-brand-600">
               · 最近一周模型发布
             </Link>
           </li>
           <li>
-            <Link
-              href="/?category=paper&since=7d"
-              className="text-gray-700 hover:text-brand-600"
-            >
+            <Link href="/?category=paper&since=7d" className="text-gray-700 hover:text-brand-600">
               · 最近一周 AI 论文
             </Link>
           </li>
           <li>
-            <Link
-              href="/?keyword=OpenAI"
-              className="text-gray-700 hover:text-brand-600"
-            >
+            <Link href="/?keyword=OpenAI" className="text-gray-700 hover:text-brand-600">
               · OpenAI 相关
             </Link>
           </li>
           <li>
-            <Link
-              href="/?keyword=Anthropic"
-              className="text-gray-700 hover:text-brand-600"
-            >
+            <Link href="/?keyword=Anthropic" className="text-gray-700 hover:text-brand-600">
               · Anthropic 相关
             </Link>
           </li>
         </ul>
-      </div>
-
-      <div className="card p-4 text-xs text-gray-500 leading-relaxed">
-        <p className="font-medium text-gray-700 mb-1">关于本站</p>
-        <p>
-          AI Search 聚合 AI 行业公开资讯，每日由 GitHub Actions 自动抓取并重新构建。
-          数据来自 OpenAI、Google DeepMind、HuggingFace、arXiv、GitHub、Hacker News、
-          量子位、36氪、The Verge、TechCrunch 等公开来源，每条均保留原文链接。
-        </p>
       </div>
     </aside>
   );

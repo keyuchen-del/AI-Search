@@ -9,6 +9,9 @@ export default function Home() {
   const raw = readLocalItems();
   const items = normalizeItems(raw.length > 0 ? raw : MOCK_ITEMS);
   const meta = readStoreMeta();
+  // Computed once at build and serialized into props (stable across SSR + client,
+  // so NEW/今日新增 windows don't cause hydration mismatch).
+  const now = meta?.fetchedAt ? new Date(meta.fetchedAt).getTime() : Date.now();
 
-  return <HomeClient items={items} updatedAt={meta?.fetchedAt ?? null} />;
+  return <HomeClient items={items} meta={meta} now={now} />;
 }

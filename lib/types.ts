@@ -33,6 +33,10 @@ export interface AIItem {
   origin?: string;
   /** When the crawler fetched this item (ISO). */
   fetchedAt?: string | null;
+  /** First time this system saw the item (ISO) — from snapshot diff, drives NEW/freshness. */
+  firstSeen?: string | null;
+  /** One-sentence AI take, generated at build time (cached). Null when unavailable. */
+  aiNote?: string | null;
 }
 
 export interface ItemsQuery {

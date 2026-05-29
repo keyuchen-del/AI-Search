@@ -9,7 +9,8 @@ import { hasPersonalization, useUserStore } from "@/lib/userStore";
 import type { AIItem, CategoryKey, Mode } from "@/lib/types";
 
 const PAGE_SIZE = 12;
-type ViewKey = "all" | "bookmarks" | "unread";
+const TODAY_WINDOW_MS = 24 * 60 * 60 * 1000;
+type ViewKey = "all" | "today" | "bookmarks" | "unread";
 
 export interface FeedQuery {
   mode: Mode;
@@ -18,7 +19,15 @@ export interface FeedQuery {
   keyword: string;
 }
 
-export default function FeedSection({ items, query }: { items: AIItem[]; query: FeedQuery }) {
+export default function FeedSection({
+  items,
+  query,
+  now,
+}: {
+  items: AIItem[];
+  query: FeedQuery;
+  now: number;
+}) {
   const { state, hydrated, toggleBookmark, markRead, toggleFollowSource, toggleMuteSource, toggleTopic, clearAll } =
     useUserStore();
   const [view, setView] = useState<ViewKey>("all");
@@ -29,10 +38,7 @@ export default function FeedSection({ items, query }: { items: AIItem[]; query: 
     setPage(1);
   }, [query.mode, query.category, query.since, query.keyword, view]);
 
-  const base = useMemo(
-    () => filterItems(items, { ...query, sort: "latest" }),
-    [items, query],
-  );
+  const base = useMemo(() => filterItems(items, { ...query, sort: "latest" }), [items, query]);
   const personalized = useMemo(
     () => (hydrated ? personalize(base, state) : base),
     [base, hydrated, state],
@@ -40,11 +46,18 @@ export default function FeedSection({ items, query }: { items: AIItem[]; query: 
   const bookmarks = useMemo(() => new Set(state.bookmarks), [state.bookmarks]);
   const readSet = useMemo(() => new Set(state.read), [state.read]);
 
+  const todayCount = useMemo(
+    () => base.filter((i) => i.firstSeen && now - new Date(i.firstSeen).getTime() < TODAY_WINDOW_MS).length,
+    [base, now],
+  );
+
   const viewed = useMemo(() => {
+    if (view === "today")
+      return personalized.filter((i) => i.firstSeen && now - new Date(i.firstSeen).getTime() < TODAY_WINDOW_MS);
     if (view === "bookmarks") return personalized.filter((i) => bookmarks.has(i.id));
     if (view === "unread") return personalized.filter((i) => !readSet.has(i.id));
     return personalized;
-  }, [personalized, view, bookmarks, readSet]);
+  }, [personalized, view, bookmarks, readSet, now]);
 
   const sources = useMemo(() => sourcesFromItems(items), [items]);
 
@@ -54,6 +67,7 @@ export default function FeedSection({ items, query }: { items: AIItem[]; query: 
 
   const views: { key: ViewKey; label: string }[] = [
     { key: "all", label: "全部" },
+    { key: "today", label: todayCount ? `今日新增 ${todayCount}` : "今日新增" },
     { key: "bookmarks", label: hydrated && state.bookmarks.length ? `收藏 ${state.bookmarks.length}` : "收藏" },
     { key: "unread", label: "未读" },
   ];
@@ -69,7 +83,7 @@ export default function FeedSection({ items, query }: { items: AIItem[]; query: 
           显示 <span className="text-gray-800 font-medium">{viewed.length}</span> 条
         </div>
         <div className="flex items-center gap-2 flex-wrap">
-          <div className="flex items-center gap-1">
+          <div className="flex items-center gap-1 flex-wrap">
             {views.map((v) => (
               <button key={v.key} onClick={() => setView(v.key)} className={tab(view === v.key)}>
                 {v.label}
@@ -94,14 +108,18 @@ export default function FeedSection({ items, query }: { items: AIItem[]; query: 
         items={pageItems}
         bookmarks={bookmarks}
         readSet={readSet}
+        now={now}
+        keyword={query.keyword}
         onToggleBookmark={toggleBookmark}
         onOpen={markRead}
         emptyHint={
           view === "bookmarks"
             ? "还没有收藏。点卡片右上角的 ★ 收藏感兴趣的内容。"
-            : view === "unread"
-              ? "没有未读内容了。"
-              : "没有匹配的内容，换个关键词或分类试试。"
+            : view === "today"
+              ? "今天还没有新增内容。"
+              : view === "unread"
+                ? "没有未读内容了。"
+                : "没有匹配的内容，换个关键词或分类试试。"
         }
       />
 

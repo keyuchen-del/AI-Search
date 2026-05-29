@@ -46,7 +46,10 @@ export function filterItems(pool: AIItem[], q: ItemsQuery): AIItem[] {
   }
   return [...out].sort((a, b) => {
     if (sort === "heat") return (b.heat ?? 0) - (a.heat ?? 0);
-    return (b.publishedAt ?? "").localeCompare(a.publishedAt ?? "");
+    // Many RSS items lack publishedAt — fall back to firstSeen so "latest" stays sane.
+    const da = a.publishedAt ?? a.firstSeen ?? "";
+    const db = b.publishedAt ?? b.firstSeen ?? "";
+    return db.localeCompare(da);
   });
 }
 

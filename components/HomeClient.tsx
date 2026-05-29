@@ -10,6 +10,7 @@ import FeedSection from "./FeedSection";
 import { filterItems } from "@/lib/filter";
 import { isCategoryKey } from "@/lib/categories";
 import { formatBJDate } from "@/lib/timeFormat";
+import type { StoreMeta } from "@/lib/localStore";
 import type { AIItem, CategoryKey, Mode } from "@/lib/types";
 
 const ALLOWED_SINCE = ["24h", "3d", "7d", "30d"] as const;
@@ -28,14 +29,15 @@ const DEFAULT_STATE: ViewState = {
   since: "7d",
 };
 
-/** Pure layout — renders identically on server (static fallback) and client. */
 function HomeLayout({
   items,
-  updatedAt,
+  meta,
+  now,
   state,
 }: {
   items: AIItem[];
-  updatedAt: string | null;
+  meta: StoreMeta | null;
+  now: number;
   state: ViewState;
 }) {
   const { category, keyword, mode, since } = state;
@@ -54,17 +56,17 @@ function HomeLayout({
             </div>
           )}
           <SortTabs mode={mode} since={since} category={category} keyword={keyword} />
-          <FeedSection items={items} query={{ mode, category, since, keyword }} />
+          <FeedSection items={items} query={{ mode, category, since, keyword }} now={now} />
         </section>
 
-        <Sidebar trending={trending} />
+        <Sidebar trending={trending} meta={meta} />
       </main>
 
       <footer className="border-t border-gray-200 bg-white mt-10">
         <div className="max-w-7xl mx-auto px-4 py-6 text-xs text-gray-500 flex flex-wrap items-center justify-between gap-2">
           <span>
             © {new Date().getFullYear()} AI Search · 共 {items.length} 条
-            {updatedAt && <> · 数据更新于 {formatBJDate(updatedAt)}</>}
+            {meta?.fetchedAt && <> · 数据更新于 {formatBJDate(meta.fetchedAt)}</>}
           </span>
           <a
             href="https://github.com/keyuchen-del/AI-Search"
@@ -80,7 +82,7 @@ function HomeLayout({
   );
 }
 
-function HomeInner({ items, updatedAt }: { items: AIItem[]; updatedAt: string | null }) {
+function HomeInner({ items, meta, now }: { items: AIItem[]; meta: StoreMeta | null; now: number }) {
   const params = useSearchParams();
   const state: ViewState = {
     category: isCategoryKey(params.get("category") || undefined)
@@ -92,13 +94,21 @@ function HomeInner({ items, updatedAt }: { items: AIItem[]; updatedAt: string | 
       ? (params.get("since") as string)
       : "7d",
   };
-  return <HomeLayout items={items} updatedAt={updatedAt} state={state} />;
+  return <HomeLayout items={items} meta={meta} now={now} state={state} />;
 }
 
-export default function HomeClient({ items, updatedAt }: { items: AIItem[]; updatedAt: string | null }) {
+export default function HomeClient({
+  items,
+  meta,
+  now,
+}: {
+  items: AIItem[];
+  meta: StoreMeta | null;
+  now: number;
+}) {
   return (
-    <Suspense fallback={<HomeLayout items={items} updatedAt={updatedAt} state={DEFAULT_STATE} />}>
-      <HomeInner items={items} updatedAt={updatedAt} />
+    <Suspense fallback={<HomeLayout items={items} meta={meta} now={now} state={DEFAULT_STATE} />}>
+      <HomeInner items={items} meta={meta} now={now} />
     </Suspense>
   );
 }

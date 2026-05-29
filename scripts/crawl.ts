@@ -12,7 +12,8 @@
 import path from "node:path";
 import type { AIItem } from "../lib/types";
 import { normalizeItems } from "../lib/classify";
-import { dedupeAndSort, writeSnapshot } from "./lib/persist";
+import { addAiNotes } from "./lib/aiNote";
+import { applyHistory, dedupeAndSort, loadPrevious, writeSnapshot } from "./lib/persist";
 import { arxiv } from "./sources/arxiv";
 import { github } from "./sources/github";
 import { hackernews } from "./sources/hackernews";
@@ -57,8 +58,11 @@ export async function runCrawl(only: string[] = []): Promise<CrawlResult> {
     }
   });
 
-  const merged = normalizeItems(dedupeAndSort(all));
-  const { count, path: outPath } = writeSnapshot(merged, sources);
+  const prev = loadPrevious();
+  let merged = normalizeItems(dedupeAndSort(all));
+  merged = applyHistory(merged, prev, new Date().toISOString());
+  merged = await addAiNotes(merged); // new items only; no-op without DEEPSEEK_API_KEY
+  const { count, path: outPath } = writeSnapshot(merged, sources, errors);
   return { total: all.length, written: count, sources, errors, path: outPath };
 }
 
