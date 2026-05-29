@@ -1,6 +1,6 @@
 {
-  "fetchedAt": "2026-05-29T08:39:40.075Z",
-  "count": 549,
+  "fetchedAt": "2026-05-29T08:54:14.842Z",
+  "count": 529,
   "sources": {
     "hf-papers": 50,
     "github": 80,
@@ -25,7 +25,9 @@
     "rss:lilianweng": 20,
     "rss:raschka": 20,
     "rss:thegradient": 14,
-    "arxiv": 20
+    "arxiv": 0
   },
-  "errors": {}
+  "errors": {
+    "arxiv": "This operation was aborted"
+  }
 }
