@@ -1,9 +1,11 @@
 "use client";
 
 import { useEffect, useMemo, useState } from "react";
+import Link from "next/link";
 import ItemList from "./ItemList";
 import PersonalizeModal from "./PersonalizeModal";
 import { filterItems } from "@/lib/filter";
+import { buildHref } from "@/lib/href";
 import { personalize, sourcesFromItems } from "@/lib/personalize";
 import { hasPersonalization, useUserStore } from "@/lib/userStore";
 import type { AIItem, CategoryKey, Mode } from "@/lib/types";
@@ -17,6 +19,7 @@ export interface FeedQuery {
   category: CategoryKey | "all";
   since: string;
   keyword: string;
+  source: string;
 }
 
 export default function FeedSection({
@@ -31,6 +34,7 @@ export default function FeedSection({
   const { state, hydrated, toggleBookmark, markRead, toggleFollowSource, toggleMuteSource, toggleTopic, clearAll } =
     useUserStore();
   const [view, setView] = useState<ViewKey>("all");
+  const [sort, setSort] = useState<"latest" | "heat">("latest");
   const [page, setPage] = useState(1);
   const [settingsOpen, setSettingsOpen] = useState(false);
   const [copied, setCopied] = useState(false);
@@ -49,9 +53,9 @@ export default function FeedSection({
 
   useEffect(() => {
     setPage(1);
-  }, [query.mode, query.category, query.since, query.keyword, view]);
+  }, [query.mode, query.category, query.since, query.keyword, query.source, view, sort]);
 
-  const base = useMemo(() => filterItems(items, { ...query, sort: "latest" }), [items, query]);
+  const base = useMemo(() => filterItems(items, { ...query, sort }), [items, query, sort]);
   const personalized = useMemo(
     () => (hydrated ? personalize(base, state) : base),
     [base, hydrated, state],
@@ -92,10 +96,28 @@ export default function FeedSection({
   return (
     <>
       <div className="flex items-center justify-between gap-3 flex-wrap mb-4">
-        <div className="text-sm text-gray-500">
-          显示 <span className="text-gray-800 font-medium">{viewed.length}</span> 条
+        <div className="flex items-center gap-2 text-sm text-gray-500 flex-wrap">
+          <span>
+            显示 <span className="text-gray-800 font-medium">{viewed.length}</span> 条
+          </span>
+          {query.source && (
+            <Link
+              href={buildHref({ category: query.category, mode: query.mode, since: query.since, keyword: query.keyword })}
+              className="inline-flex items-center gap-1 px-2 py-0.5 rounded-full bg-brand-50 text-brand-700 border border-brand-100 hover:bg-brand-100"
+            >
+              来源：{query.source} <span className="text-brand-400">✕</span>
+            </Link>
+          )}
         </div>
         <div className="flex items-center gap-2 flex-wrap">
+          <div className="flex items-center gap-1">
+            {(["latest", "heat"] as const).map((k) => (
+              <button key={k} onClick={() => setSort(k)} className={tab(sort === k)}>
+                {k === "latest" ? "最新" : "最热"}
+              </button>
+            ))}
+          </div>
+          <span className="w-px h-5 bg-gray-200" />
           <div className="flex items-center gap-1 flex-wrap">
             {views.map((v) => (
               <button key={v.key} onClick={() => setView(v.key)} className={tab(view === v.key)}>

@@ -28,9 +28,14 @@ export function personalize(items: AIItem[], user: UserState): AIItem[] {
   return [...preferred, ...rest];
 }
 
-/** Distinct sources present in the dataset, sorted by frequency (for the settings UI). */
-export function sourcesFromItems(items: AIItem[]): string[] {
+/** Distinct source names + counts, sorted by frequency. */
+export function sourceCounts(items: AIItem[]): [string, number][] {
   const count = new Map<string, number>();
   for (const it of items) count.set(it.source, (count.get(it.source) ?? 0) + 1);
-  return [...count.entries()].sort((a, b) => b[1] - a[1]).map(([s]) => s);
+  return [...count.entries()].sort((a, b) => b[1] - a[1]);
+}
+
+/** Distinct sources present in the dataset, sorted by frequency (for the settings UI). */
+export function sourcesFromItems(items: AIItem[]): string[] {
+  return sourceCounts(items).map(([s]) => s);
 }

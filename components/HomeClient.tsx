@@ -9,6 +9,7 @@ import SortTabs from "./SortTabs";
 import FeedSection from "./FeedSection";
 import TopReads from "./TopReads";
 import { filterItems } from "@/lib/filter";
+import { sourceCounts } from "@/lib/personalize";
 import { isCategoryKey } from "@/lib/categories";
 import { formatBJDate } from "@/lib/timeFormat";
 import type { StoreMeta } from "@/lib/localStore";
@@ -16,11 +17,12 @@ import type { AIItem, CategoryKey, Digest, Mode } from "@/lib/types";
 
 const ALLOWED_SINCE = ["24h", "3d", "7d", "30d"] as const;
 
-interface ViewState {
+export interface ViewState {
   category: CategoryKey | "all";
   keyword: string;
   mode: Mode;
   since: string;
+  source: string;
 }
 
 const DEFAULT_STATE: ViewState = {
@@ -28,6 +30,7 @@ const DEFAULT_STATE: ViewState = {
   keyword: "",
   mode: "selected",
   since: "7d",
+  source: "",
 };
 
 function HomeLayout({
@@ -43,10 +46,10 @@ function HomeLayout({
   digest: Digest | null;
   state: ViewState;
 }) {
-  const { category, keyword, mode, since } = state;
+  const { category, keyword, mode, since, source } = state;
   const trending = filterItems(items, { mode: "selected", since: "7d", sort: "heat" }).slice(0, 8);
   // 每日必读 only on the default landing view (no active filter/search).
-  const showDigest = !keyword && category === "all";
+  const showDigest = !keyword && category === "all" && !source;
 
   return (
     <>
@@ -62,10 +65,10 @@ function HomeLayout({
             </div>
           )}
           <SortTabs mode={mode} since={since} category={category} keyword={keyword} />
-          <FeedSection items={items} query={{ mode, category, since, keyword }} now={now} />
+          <FeedSection items={items} query={{ mode, category, since, keyword, source }} now={now} />
         </section>
 
-        <Sidebar trending={trending} meta={meta} />
+        <Sidebar trending={trending} meta={meta} state={state} sources={sourceCounts(items)} />
       </main>
 
       <footer className="border-t border-gray-200 bg-white mt-10">
@@ -109,6 +112,7 @@ function HomeInner({
     since: (ALLOWED_SINCE as readonly string[]).includes(params.get("since") || "")
       ? (params.get("since") as string)
       : "7d",
+    source: (params.get("source") || "").trim(),
   };
   return <HomeLayout items={items} meta={meta} now={now} digest={digest} state={state} />;
 }

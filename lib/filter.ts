@@ -25,10 +25,11 @@ export function paginate<T>(arr: T[], page: number, pageSize: number) {
 
 /** Filter + sort an in-memory item pool (pure; shared by server build and client). */
 export function filterItems(pool: AIItem[], q: ItemsQuery): AIItem[] {
-  const { mode = "selected", category = "all", keyword = "", since, sort = "latest" } = q;
+  const { mode = "selected", category = "all", source = "", keyword = "", since, sort = "latest" } = q;
   let out = pool;
   if (mode === "selected") out = out.filter((i) => i.aiSelected !== false);
   if (category !== "all") out = out.filter((i) => i.category === category);
+  if (source) out = out.filter((i) => i.source === source);
   if (keyword.trim()) {
     const k = keyword.trim().toLowerCase();
     out = out.filter(

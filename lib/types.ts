@@ -42,6 +42,7 @@ export interface AIItem {
 export interface ItemsQuery {
   mode?: Mode;
   category?: CategoryKey | "all";
+  source?: string;
   page?: number;
   pageSize?: number;
   keyword?: string;
