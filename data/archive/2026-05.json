@@ -145,7 +145,7 @@
     "tags": [
       "Hacker News"
     ],
-    "heat": 144,
+    "heat": 149,
     "aiSelected": true,
     "origin": "hackernews",
     "firstSeen": "2026-05-29T05:45:36Z",
@@ -162,7 +162,7 @@
     "tags": [
       "Hacker News"
     ],
-    "heat": 318,
+    "heat": 320,
     "aiSelected": true,
     "origin": "hackernews",
     "firstSeen": "2026-05-29T03:01:00Z",
@@ -209,7 +209,7 @@
     "tags": [
       "Hacker News"
     ],
-    "heat": 56,
+    "heat": 57,
     "aiSelected": true,
     "origin": "hackernews",
     "firstSeen": "2026-05-29T00:49:05Z",
@@ -365,7 +365,7 @@
     "tags": [
       "Hacker News"
     ],
-    "heat": 390,
+    "heat": 391,
     "aiSelected": true,
     "origin": "hackernews",
     "firstSeen": "2026-05-28T21:45:54Z",
@@ -536,7 +536,7 @@
     "tags": [
       "Hacker News"
     ],
-    "heat": 304,
+    "heat": 305,
     "aiSelected": true,
     "origin": "hackernews",
     "firstSeen": "2026-05-28T19:02:18Z",
@@ -1116,7 +1116,7 @@
     "tags": [
       "Hacker News"
     ],
-    "heat": 1519,
+    "heat": 1520,
     "aiSelected": true,
     "origin": "hackernews",
     "firstSeen": "2026-05-28T16:49:14Z",
@@ -1591,7 +1591,7 @@
     "tags": [
       "Hacker News"
     ],
-    "heat": 320,
+    "heat": 321,
     "aiSelected": true,
     "origin": "hackernews",
     "firstSeen": "2026-05-28T13:02:00Z",
@@ -1968,7 +1968,7 @@
       "codex-skill",
       "handdrawn"
     ],
-    "heat": 438,
+    "heat": 441,
     "aiSelected": true,
     "origin": "github",
     "firstSeen": "2026-05-27T22:47:56Z",
@@ -2259,7 +2259,7 @@
       "论文",
       "arXiv"
     ],
-    "heat": 8,
+    "heat": 9,
     "aiSelected": true,
     "origin": "hf-papers",
     "firstSeen": "2026-05-27T20:00:00.000Z",
@@ -2403,7 +2403,7 @@
       "论文",
       "arXiv"
     ],
-    "heat": 21,
+    "heat": 22,
     "aiSelected": true,
     "origin": "hf-papers",
     "firstSeen": "2026-05-27T20:00:00.000Z",
@@ -2421,7 +2421,7 @@
       "论文",
       "arXiv"
     ],
-    "heat": 29,
+    "heat": 30,
     "aiSelected": true,
     "origin": "hf-papers",
     "firstSeen": "2026-05-27T20:00:00.000Z",
@@ -2547,7 +2547,7 @@
       "论文",
       "arXiv"
     ],
-    "heat": 22,
+    "heat": 23,
     "aiSelected": true,
     "origin": "hf-papers",
     "firstSeen": "2026-05-27T20:00:00.000Z",
@@ -2978,7 +2978,7 @@
       "claude-code",
       "HTML"
     ],
-    "heat": 1038,
+    "heat": 1039,
     "aiSelected": true,
     "origin": "github",
     "firstSeen": "2026-05-27T12:05:05Z",
@@ -5031,7 +5031,7 @@
     "origin": "rss:google-ai",
     "heat": 0,
     "firstSeen": "2026-05-19T17:45:00.000Z",
-    "aiNote": null
+    "aiNote": "AI搜索引擎开启全新阶段，融合模式将重塑信息获取方式。"
   },
   {
     "id": "rss:google-ai-5af6fbd7f1",
@@ -5046,7 +5046,7 @@
     "origin": "rss:google-ai",
     "heat": 0,
     "firstSeen": "2026-05-19T17:45:00.000Z",
-    "aiNote": null
+    "aiNote": "谷歌AI订阅分层定价，Ultra计划达百美元，标志AI服务高端化趋势。"
   },
   {
     "id": "rss:venturebeat-ai-3d6d30af34",
@@ -5061,7 +5061,7 @@
     "origin": "rss:venturebeat-ai",
     "heat": 0,
     "firstSeen": "2026-05-19T17:45:00.000Z",
-    "aiNote": null
+    "aiNote": "谷歌搜索框25年来首次改版，标志AI搜索从后台走向前台，彻底改变用户获取信息的方式。"
   },
   {
     "id": "hn-fbe0c03f3e",
@@ -5078,7 +5078,7 @@
     "aiSelected": true,
     "origin": "hackernews",
     "firstSeen": "2026-05-19T15:07:45Z",
-    "aiNote": null
+    "aiNote": "AI大神Karpathy转投Anthropic，行业人才流向揭示AI竞争格局新变化。"
   },
   {
     "id": "rss:arstechnica-ai-4aeb6e461e",
@@ -5093,7 +5093,7 @@
     "origin": "rss:arstechnica-ai",
     "heat": 0,
     "firstSeen": "2026-05-19T13:45:31.000Z",
-    "aiNote": null
+    "aiNote": "数据中心需求驱动电力巨头合并，消费者或将面临更高电费，揭示AI扩张的隐性成本。"
   },
   {
     "id": "hn-825f504bc3",
@@ -5110,7 +5110,7 @@
     "aiSelected": true,
     "origin": "hackernews",
     "firstSeen": "2026-05-19T13:30:58Z",
-    "aiNote": null
+    "aiNote": "AI独角兽上市在即，需警惕其对行业竞争格局与监管带来的潜在冲击。"
   },
   {
     "id": "hn-c0dc5793c6",
@@ -5127,7 +5127,7 @@
     "aiSelected": true,
     "origin": "hackernews",
     "firstSeen": "2026-05-19T12:23:07Z",
-    "aiNote": null
+    "aiNote": "开源方案将8B模型代理任务准确率从53%提升至99%，展示了轻量级防护机制的高效性。"
   },
   {
     "id": "gh-ather-techie-rag-interview-questions",
@@ -5147,7 +5147,7 @@
     "aiSelected": true,
     "origin": "github",
     "firstSeen": "2026-05-19T11:59:17Z",
-    "aiNote": null
+    "aiNote": "面试RAG架构必读，50题覆盖10种类型，系统掌握检索增强生成核心技术。"
   },
   {
     "id": "rss:openai-4f14311644",
@@ -5162,7 +5162,7 @@
     "origin": "rss:openai",
     "heat": 0,
     "firstSeen": "2026-05-19T10:45:00.000Z",
-    "aiNote": null
+    "aiNote": "OpenAI推出内容溯源工具，提升AI生成内容的可信度与透明度，这是行业规范化的关键一步。"
   },
   {
     "id": "gh-fudan-generative-vision-promptreinjection",
@@ -5183,7 +5183,7 @@
     "aiSelected": true,
     "origin": "github",
     "firstSeen": "2026-05-19T03:58:17Z",
-    "aiNote": null
+    "aiNote": "多模态扩散模型的提示遗忘问题首次被系统性解决，为AI图像生成领域带来突破性进展。"
   },
   {
     "id": "rss:techreview-ai-639c0b2cef",
@@ -5198,7 +5198,7 @@
     "origin": "rss:techreview-ai",
     "heat": 0,
     "firstSeen": "2026-05-19T00:53:10.000Z",
-    "aiNote": null
+    "aiNote": "诉讼时效抗辩胜诉，揭示AI法律纠纷中时间节点对维权成败的关键影响。"
   },
   {
     "id": "rss:hf-blog-1bd4f1ecf0",
@@ -5213,7 +5213,7 @@
     "origin": "rss:hf-blog",
     "heat": 0,
     "firstSeen": "2026-05-19T00:00:00.000Z",
-    "aiNote": null
+    "aiNote": "多模型协同优化，Ettin重排序家族提升搜索精准度。"
   },
   {
     "id": "gh-jsingletonai-dejavu",
@@ -5234,7 +5234,7 @@
     "aiSelected": true,
     "origin": "github",
     "firstSeen": "2026-05-18T23:04:01Z",
-    "aiNote": null
+    "aiNote": "打破AI工具记忆孤岛，无需云存储和账户，一次设置即可跨平台复用记忆。"
   },
   {
     "id": "rss:deepmind-2758b59a9d",
@@ -5249,7 +5249,7 @@
     "origin": "rss:deepmind",
     "heat": 0,
     "firstSeen": "2026-05-18T18:21:39.000Z",
-    "aiNote": null
+    "aiNote": "AI自主发现细胞衰老逆转因子，加速抗衰老科研进程，展现智能驱动生物创新的巨大潜力。"
   },
   {
     "id": "hn-dc5c872ccb",
@@ -5266,7 +5266,7 @@
     "aiSelected": true,
     "origin": "hackernews",
     "firstSeen": "2026-05-18T17:38:22Z",
-    "aiNote": null
+    "aiNote": "马斯克起诉OpenAI案败诉，或将影响AI行业竞争格局与监管方向。"
   },
   {
     "id": "hn-45248458ed",
@@ -5283,7 +5283,7 @@
     "aiSelected": true,
     "origin": "hackernews",
     "firstSeen": "2026-05-18T17:01:21Z",
-    "aiNote": null
+    "aiNote": "Anthropic收购Stainless，加速企业级API开发布局。"
   },
   {
     "id": "rss:infoq-aa68a6d774",
@@ -5298,7 +5298,7 @@
     "origin": "rss:infoq",
     "heat": 0,
     "firstSeen": "2026-05-18T16:39:32.000Z",
-    "aiNote": null
+    "aiNote": "AI落地实战提问，直达国际技术峰会，机会难得。"
   },
   {
     "id": "hn-079b836455",
@@ -5315,7 +5315,7 @@
     "aiSelected": true,
     "origin": "hackernews",
     "firstSeen": "2026-05-18T15:40:42Z",
-    "aiNote": null
+    "aiNote": "开源AI部署平台填补市场空白，让编码代理拥有类似Heroku的自动化运维能力，降低开发门槛。"
   },
   {
     "id": "rss:hf-blog-905a332eca",
@@ -5330,7 +5330,7 @@
     "origin": "rss:hf-blog",
     "heat": 0,
     "firstSeen": "2026-05-18T15:12:46.000Z",
-    "aiNote": null
+    "aiNote": "OCR与文档解析任务首次接入Transformer后端，显著提升模型灵活性与性能。"
   },
   {
     "id": "rss:openai-210c7a7c78",
@@ -5345,7 +5345,7 @@
     "origin": "rss:openai",
     "heat": 0,
     "firstSeen": "2026-05-18T10:00:00.000Z",
-    "aiNote": null
+    "aiNote": "OpenAI与戴尔联手，让企业本地部署AI编程助手，兼顾数据安全与效率提升。"
   },
   {
     "id": "gh-emmimal-control-layer",
@@ -5366,7 +5366,7 @@
     "aiSelected": true,
     "origin": "github",
     "firstSeen": "2026-05-18T04:38:38Z",
-    "aiNote": null
+    "aiNote": "生产级LLM控制层，提升应用安全与稳定性，填补了关键中间件空白。"
   },
   {
     "id": "rss:deepmind-c120575d79",
@@ -5381,7 +5381,7 @@
     "origin": "rss:deepmind",
     "heat": 0,
     "firstSeen": "2026-05-17T19:53:18.000Z",
-    "aiNote": null
+    "aiNote": "谷歌将街景与AI结合，让用户模拟真实场景，技术落地应用值得关注。"
   },
   {
     "id": "rss:deepmind-6ff85c3103",
@@ -5396,7 +5396,7 @@
     "origin": "rss:deepmind",
     "heat": 0,
     "firstSeen": "2026-05-17T19:50:57.000Z",
-    "aiNote": null
+    "aiNote": "谷歌多模态模型全面升级，能力融合重塑AI交互体验。"
   },
   {
     "id": "rss:deepmind-c24549cf81",
@@ -5411,7 +5411,7 @@
     "origin": "rss:deepmind",
     "heat": 0,
     "firstSeen": "2026-05-17T19:43:45.000Z",
-    "aiNote": null
+    "aiNote": "反重力技术突破，或颠覆未来交通与能源格局。"
   },
   {
     "id": "hn-e38e04f720",
@@ -5428,7 +5428,7 @@
     "aiSelected": true,
     "origin": "hackernews",
     "firstSeen": "2026-05-17T16:15:01Z",
-    "aiNote": null
+    "aiNote": "加拿大拟立法削弱私密信息保护，引发隐私安全担忧。"
   },
   {
     "id": "rss:deepmind-548bdf100a",
@@ -5443,7 +5443,7 @@
     "origin": "rss:deepmind",
     "heat": 0,
     "firstSeen": "2026-05-17T13:50:34.000Z",
-    "aiNote": null
+    "aiNote": "谷歌推出专为科学设计的AI工具包，有望加速科研发现与实验精度。"
   },
   {
     "id": "rss:deepmind-ce11f0ad14",
@@ -6421,7 +6421,7 @@
       "ai-agent",
       "TypeScript"
     ],
-    "heat": 427,
+    "heat": 428,
     "aiSelected": true,
     "origin": "github",
     "firstSeen": "2026-05-29T09:10:35.232Z",
@@ -7458,5 +7458,65 @@
     "heat": 0,
     "firstSeen": "2026-05-29T09:25:31.625Z",
     "aiNote": null
+  },
+  {
+    "id": "rss:qbitai-ee54a631b3",
+    "title": "面壁智能「开源周」：一场定义端侧 AI 终局的系统性「亮剑」",
+    "summary": "端侧 AI 是一个系统性工程",
+    "source": "量子位",
+    "sourceUrl": "https://www.qbitai.com/2026/05/426542.html",
+    "category": "ai-products",
+    "publishedAt": "2026-05-29T09:13:24.000Z",
+    "image": null,
+    "aiSelected": true,
+    "origin": "rss:qbitai",
+    "heat": 0,
+    "firstSeen": "2026-05-29T09:35:36.909Z",
+    "aiNote": "端侧AI系统性挑战，面壁开源展示完整技术栈与落地路径。"
+  },
+  {
+    "id": "rss:qbitai-ed78872ff2",
+    "title": "5亿Tokens白送！全球首个商用AI主机发布，终于能放开烧Token了",
+    "summary": "这是这个时代的印刷机",
+    "source": "量子位",
+    "sourceUrl": "https://www.qbitai.com/2026/05/426479.html",
+    "category": "ai-products",
+    "publishedAt": "2026-05-29T09:05:30.000Z",
+    "image": null,
+    "aiSelected": true,
+    "origin": "rss:qbitai",
+    "heat": 0,
+    "firstSeen": "2026-05-29T09:35:36.909Z",
+    "aiNote": "免费赠送5亿Token，大幅降低AI应用门槛，推动行业普及。"
+  },
+  {
+    "id": "rss:qbitai-a62d1af09f",
+    "title": "下限零基础，上限肝大作！腾讯这个AI游戏创作平台，太野了",
+    "summary": "下一波AI创作浪潮正在游戏领域发生",
+    "source": "量子位",
+    "sourceUrl": "https://www.qbitai.com/2026/05/426447.html",
+    "category": "ai-products",
+    "publishedAt": "2026-05-29T08:50:10.000Z",
+    "image": null,
+    "aiSelected": true,
+    "origin": "rss:qbitai",
+    "heat": 0,
+    "firstSeen": "2026-05-29T09:35:36.909Z",
+    "aiNote": "AI降低创作门槛，让普通玩家也能产出专业级游戏，颠覆传统开发模式。"
+  },
+  {
+    "id": "rss:qbitai-e87cd8b0c5",
+    "title": "创意设计版WorkBuddy来了！腾讯发布智能体创意工作室Miora",
+    "summary": "一个人拥有整个创意工作室",
+    "source": "量子位",
+    "sourceUrl": "https://www.qbitai.com/2026/05/426400.html",
+    "category": "ai-products",
+    "publishedAt": "2026-05-29T08:32:52.000Z",
+    "image": null,
+    "aiSelected": true,
+    "origin": "rss:qbitai",
+    "heat": 0,
+    "firstSeen": "2026-05-29T09:35:36.909Z",
+    "aiNote": "用AI降低创意门槛，腾讯Miora让个人也能高效产出专业设计内容。"
   }
 ]

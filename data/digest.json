@@ -1,36 +1,37 @@
 {
   "date": "2026-05-29",
-  "generatedAt": "2026-05-29T07:37:32.725Z",
+  "generatedAt": "2026-05-29T09:35:49.218Z",
   "picks": [
     {
       "title": "Anthropic raises $65B in Series H funding at $965B post-money valuation",
       "sourceUrl": "https://www.anthropic.com/news/series-h",
       "source": "Hacker News",
-      "reason": "Anthropic巨额融资，估值近万亿，行业风向标"
-    },
-    {
-      "title": "Claude Opus 4.8",
-      "sourceUrl": "https://www.anthropic.com/news/claude-opus-4-8",
-      "source": "Hacker News",
-      "reason": "Claude Opus 4.8发布，模型能力重大更新"
-    },
-    {
-      "title": "I'm Tired of Talking to AI",
-      "sourceUrl": "https://orchidfiles.com/im-tired-of-ai-generated-answers/",
-      "source": "Hacker News",
-      "reason": "AI疲劳话题引发共鸣，反思技术与人关系"
+      "reason": "Anthropic 巨额融资，估值近万亿，AI 资本格局剧变"
     },
     {
       "title": "Tech CEOs are apparently suffering from AI psychosis",
       "sourceUrl": "https://techcrunch.com/2026/05/27/tech-ceos-are-apparently-suffering-from-ai-psychosis/",
       "source": "Hacker News",
-      "reason": "科技CEO被指AI幻觉，讽刺行业狂热现状"
+      "reason": "科技CEO集体AI精神错乱？行业反思与警示"
+    },
+    {
+      "title": "YouTube to automatically label AI-generated videos",
+      "sourceUrl": "https://blog.youtube/news-and-events/improving-ai-labels-viewers-creators/",
+      "source": "Hacker News",
+      "reason": "YouTube强制标注AI视频，内容透明度新规"
     },
     {
       "title": "Disagreement among frontier LLMs on real-world fact-checks",
       "sourceUrl": "https://lenz.io/research/llm-disagreement",
       "source": "Hacker News",
-      "reason": "前沿模型事实核查分歧，揭示AI可信度问题"
+      "reason": "前沿大模型事实核查分歧，暴露AI可靠性短板"
+    },
+    {
+      "title": "Claude Code as a Daily Driver: Claude.md, Skills, Subagents, Plugins, and MCPs",
+      "sourceUrl": "https://arps18.github.io/posts/claude-code-mastery/",
+      "source": "Hacker News",
+      "reason": "Claude Code实战指南，开发者效率工具深度解析"
     }
-  ]
+  ],
+  "trendSummary": "本周AI圈焦点从模型竞赛转向实用落地，开源训练工具与Agent实践指南走红，同时Claude新版本和AI数学突破引发热议，YouTube强制标注AI内容也折射出行业对透明度的迫切需求。"
 }
