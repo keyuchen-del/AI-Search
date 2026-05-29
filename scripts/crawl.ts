@@ -13,6 +13,7 @@ import path from "node:path";
 import type { AIItem } from "../lib/types";
 import { normalizeItems } from "../lib/classify";
 import { addAiNotes } from "./lib/aiNote";
+import { updateArchive } from "./lib/archive";
 import { buildDigest } from "./lib/digest";
 import { applyHistory, dedupeAndSort, loadPrevious, writeSnapshot } from "./lib/persist";
 import { arxiv } from "./sources/arxiv";
@@ -64,6 +65,8 @@ export async function runCrawl(only: string[] = []): Promise<CrawlResult> {
   merged = applyHistory(merged, prev, new Date().toISOString());
   merged = await addAiNotes(merged); // new items only; no-op without DEEPSEEK_API_KEY
   const { count, path: outPath } = writeSnapshot(merged, sources, errors);
+  const arch = updateArchive(merged); // append-only history (monthly shards)
+  console.log(`[archive] ${arch.total} items across ${Object.keys(arch.months).length} month(s)`);
   await buildDigest(merged); // "AI 每日必读" — once/day, no-op without DEEPSEEK_API_KEY
   return { total: all.length, written: count, sources, errors, path: outPath };
 }

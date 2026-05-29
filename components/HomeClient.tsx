@@ -12,6 +12,7 @@ import Hero from "./Hero";
 import CommandPalette from "./CommandPalette";
 import { filterItems } from "@/lib/filter";
 import { sourceCounts } from "@/lib/personalize";
+import { ENTITY_MAP, entityCounts } from "@/lib/entities";
 import { isCategoryKey } from "@/lib/categories";
 import { formatBJDate } from "@/lib/timeFormat";
 import type { StoreMeta } from "@/lib/localStore";
@@ -50,6 +51,12 @@ function HomeLayout({
 }) {
   const { category, keyword, mode, since, source } = state;
   const trending = filterItems(items, { mode: "selected", since: "7d", sort: "heat" }).slice(0, 8);
+  // ≥5 in current items ⇒ ≥5 in archive ⇒ a /topic page exists (no dead links).
+  const topics = Object.entries(entityCounts(items))
+    .filter(([, n]) => n >= 5)
+    .sort((a, b) => b[1] - a[1])
+    .slice(0, 12)
+    .map(([slug, count]) => ({ slug, name: ENTITY_MAP[slug]?.name ?? slug, count }));
   // 每日必读 / 头条 only on the default landing view (no active filter/search).
   const showDigest = !keyword && category === "all" && !source;
   const heroItem =
@@ -81,7 +88,7 @@ function HomeLayout({
           <FeedSection items={items} query={{ mode, category, since, keyword, source }} now={now} />
         </section>
 
-        <Sidebar trending={trending} meta={meta} state={state} sources={sourceCounts(items)} />
+        <Sidebar trending={trending} meta={meta} state={state} sources={sourceCounts(items)} topics={topics} />
       </main>
 
       <footer className="border-t border-gray-200 bg-white mt-10">

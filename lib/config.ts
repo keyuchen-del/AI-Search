@@ -20,6 +20,9 @@ export const META_PATH = path.join(DATA_DIR, "meta.json");
 /** "AI 每日必读" digest (built once per day). */
 export const DIGEST_PATH = path.join(DATA_DIR, "digest.json");
 
+/** Append-only historical archive (monthly shards: data/archive/YYYY-MM.json). */
+export const ARCHIVE_DIR = path.join(DATA_DIR, "archive");
+
 /**
  * In `auto` mode, a snapshot older than this is treated as stale and the
  * resolver falls through to aihot/mock. `0` disables the freshness check

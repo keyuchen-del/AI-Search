@@ -20,7 +20,34 @@ export default function CommandPalette({ items, sources }: { items: AIItem[]; so
   const [open, setOpen] = useState(false);
   const [query, setQuery] = useState("");
   const [active, setActive] = useState(0);
+  const [engine, setEngine] = useState<{ search: (q: string) => { id: string }[] } | null>(null);
   const inputRef = useRef<HTMLInputElement>(null);
+
+  const byId = useMemo(() => {
+    const m = new Map<string, AIItem>();
+    for (const it of items) m.set(it.id, it);
+    return m;
+  }, [items]);
+
+  // Lazy-load MiniSearch on first open; build a fuzzy full-text index over items.
+  useEffect(() => {
+    if (!open || engine) return;
+    let alive = true;
+    import("minisearch").then(({ default: MiniSearch }) => {
+      if (!alive) return;
+      const ms = new MiniSearch({
+        fields: ["title", "summary", "source"],
+        storeFields: ["id"],
+        idField: "id",
+        searchOptions: { prefix: true, fuzzy: 0.2, boost: { title: 2 } },
+      });
+      ms.addAll(items.map((it) => ({ id: it.id, title: it.title, summary: it.summary ?? "", source: it.source })));
+      setEngine(ms as unknown as { search: (q: string) => { id: string }[] });
+    });
+    return () => {
+      alive = false;
+    };
+  }, [open, engine, items]);
 
   useEffect(() => {
     const onKey = (e: KeyboardEvent) => {
@@ -74,19 +101,28 @@ export default function CommandPalette({ items, sources }: { items: AIItem[]; so
       out.push({ id: `src-${s}`, label: s, hint: "来源", run: () => go(buildHref({ source: s })) });
 
     if (q) {
-      const hits = items
-        .filter(
-          (i) =>
-            i.title.toLowerCase().includes(q) ||
-            (i.summary ?? "").toLowerCase().includes(q) ||
-            i.source.toLowerCase().includes(q),
-        )
-        .slice(0, 8);
+      let hits: AIItem[];
+      if (engine) {
+        hits = engine
+          .search(q)
+          .slice(0, 8)
+          .map((r) => byId.get(r.id))
+          .filter((x): x is AIItem => !!x);
+      } else {
+        hits = items
+          .filter(
+            (i) =>
+              i.title.toLowerCase().includes(q) ||
+              (i.summary ?? "").toLowerCase().includes(q) ||
+              i.source.toLowerCase().includes(q),
+          )
+          .slice(0, 8);
+      }
       for (const it of hits) out.push({ id: it.id, label: it.title, hint: it.source, run: () => openUrl(it.sourceUrl) });
     }
     return out.slice(0, 14);
     // eslint-disable-next-line react-hooks/exhaustive-deps
-  }, [query, items, sources]);
+  }, [query, items, sources, engine, byId]);
 
   useEffect(() => {
     setActive(0);

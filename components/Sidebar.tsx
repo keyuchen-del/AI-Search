@@ -18,11 +18,13 @@ export default function Sidebar({
   meta,
   state,
   sources,
+  topics,
 }: {
   trending: AIItem[];
   meta?: StoreMeta | null;
   state: ViewState;
   sources: [string, number][];
+  topics?: { slug: string; name: string; count: number }[];
 }) {
   const top = trending.slice(0, 8);
   const failed = meta ? Object.keys(meta.errors ?? {}).length : 0;
@@ -140,6 +142,28 @@ export default function Sidebar({
               ← 清除来源筛选
             </Link>
           )}
+        </div>
+      )}
+
+      {/* 热门话题 */}
+      {topics && topics.length > 0 && (
+        <div className="card p-4">
+          <h3 className="text-sm font-semibold mb-3 flex items-center gap-2">
+            <span className="w-1 h-4 bg-brand-500 rounded-sm" />
+            热门话题
+          </h3>
+          <div className="flex flex-wrap gap-2">
+            {topics.map((t) => (
+              <Link
+                key={t.slug}
+                href={`/topic/${t.slug}`}
+                className="px-2.5 py-1 rounded-full text-xs border border-gray-200 text-gray-600 hover:border-brand-500 hover:text-brand-600 transition"
+              >
+                {t.name}
+                <span className="ml-1 text-gray-400">{t.count}</span>
+              </Link>
+            ))}
+          </div>
         </div>
       )}
 
