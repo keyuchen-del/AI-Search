@@ -152,7 +152,7 @@ export default function Sidebar({
         <ul className="space-y-1.5 text-sm">
           <li>
             <Link href="/daily" className="text-gray-700 hover:text-brand-600">
-              · 今日 AI HOT 日报
+              · 今日 AI 资讯日报
             </Link>
           </li>
           <li>

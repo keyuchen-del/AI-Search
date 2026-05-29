@@ -7,19 +7,17 @@ import type { AIItem, DailyIndexItem, DailyReport, DataOrigin } from "./types";
 
 const ITEMS_PER_SECTION = 8;
 const FLASH_COUNT = 6;
-/** Each report is a rolling digest ending at the target day (sources have
- *  heterogeneous timestamps, so a strict single calendar day is too sparse). */
-const DAILY_WINDOW_HOURS = Number(process.env.DAILY_WINDOW_HOURS || 72);
 
 function dayOf(iso: string | null | undefined): string | null {
   if (!iso) return null;
   return iso.slice(0, 10);
 }
 
+/** Daily reports are keyed by the day WE collected items (firstSeen), not publish day. */
 function distinctDatesDesc(items: AIItem[]): string[] {
   const set = new Set<string>();
   for (const i of items) {
-    const d = dayOf(i.publishedAt);
+    const d = dayOf(i.firstSeen);
     if (d) set.add(d);
   }
   return [...set].sort((a, b) => b.localeCompare(a));
@@ -60,11 +58,15 @@ function buildLocalDaily(
     };
   });
 
-  const lead = pickLead(dayItems);
-  const leadParagraph = lead
-    ? lead.summary ||
-      `${date} 共收录 ${dayItems.length} 条 AI 资讯，涵盖模型、产品、行业、论文与观点等方向。`
-    : "";
+  // Data summary, not an editorial — makes clear the report is auto-compiled from
+  // what we collected today, not written by an AI.
+  const lead =
+    dayItems.length > 0
+      ? {
+          title: `${date} · AI 资讯日报`,
+          leadParagraph: `今日新收录 ${dayItems.length} 条公开资讯，按模型 / 产品 / 行业 / 论文 / 观点 自动归类汇编（非 AI 生成，点击可溯源原文）。`,
+        }
+      : null;
 
   const flashes = [...dayItems]
     .sort((a, b) => (b.publishedAt ?? "").localeCompare(a.publishedAt ?? ""))
@@ -81,7 +83,7 @@ function buildLocalDaily(
     generatedAt,
     windowStart,
     windowEnd,
-    lead: lead ? { title: lead.title, leadParagraph } : null,
+    lead,
     sections,
     flashes,
   };
@@ -91,20 +93,15 @@ function localDaily(date?: string): DailyReport | null {
   const items = readLocalItems();
   if (items.length === 0) return null;
   const target = date || new Date().toISOString().slice(0, 10);
-  const endMs = Date.parse(`${target}T23:59:59.999Z`);
-  const startMs = endMs - DAILY_WINDOW_HOURS * 60 * 60 * 1000;
-  const dayItems = items.filter((i) => {
-    if (!i.publishedAt) return false;
-    const t = Date.parse(i.publishedAt);
-    return Number.isFinite(t) && t >= startMs && t <= endMs;
-  });
+  // "今日新收录"：当天首次被本站收录的条目（firstSeen 落在该日）。
+  const dayItems = items.filter((i) => dayOf(i.firstSeen) === target);
   const generatedAt = readStoreMeta()?.fetchedAt || new Date().toISOString();
   return buildLocalDaily(
     target,
     dayItems,
     generatedAt,
-    new Date(startMs).toISOString(),
-    new Date(endMs).toISOString(),
+    `${target}T00:00:00.000Z`,
+    `${target}T23:59:59.999Z`,
   );
 }
 
@@ -121,7 +118,7 @@ function localDailies(take: number): { count: number; items: DailyIndexItem[] } 
   const out: DailyIndexItem[] = distinctDatesDesc(items)
     .slice(0, take)
     .map((date) => {
-      const lead = pickLead(items.filter((i) => dayOf(i.publishedAt) === date));
+      const lead = pickLead(items.filter((i) => dayOf(i.firstSeen) === date));
       return { date, generatedAt, leadTitle: lead?.title ?? null };
     });
   return { count: out.length, items: out };

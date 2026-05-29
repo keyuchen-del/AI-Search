@@ -43,17 +43,14 @@ export default function DailyView({
   return (
     <article className="space-y-6">
       <header className="card p-5">
-        <div className="text-xs text-gray-500 mb-2">
-          AI HOT 日报 · {daily.date} · 共 {total} 条
-        </div>
-        {daily.lead ? (
-          <>
-            <h1 className="text-xl font-semibold leading-snug mb-2">{daily.lead.title}</h1>
-            <p className="text-sm text-gray-600 leading-relaxed">{daily.lead.leadParagraph}</p>
-          </>
-        ) : (
-          <h1 className="text-xl font-semibold">AI HOT 日报 · {daily.date}</h1>
-        )}
+        <div className="text-xs text-gray-500 mb-2">AI 资讯日报 · {daily.date} · 今日新收录 {total} 条</div>
+        <h1 className="text-xl font-semibold leading-snug mb-2">{daily.date} · AI 资讯日报</h1>
+        <p className="text-sm text-gray-600 leading-relaxed">
+          {daily.lead?.leadParagraph ?? `今日新收录 ${total} 条公开资讯。`}
+        </p>
+        <p className="text-xs text-gray-400 mt-2">
+          本日报由系统根据当天新收录的公开资讯自动汇编、按方向归类，非 AI 生成；点击任意条目可溯源原文。
+        </p>
       </header>
 
       {daily.sections.map((sec) => {

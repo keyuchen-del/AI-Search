@@ -70,13 +70,17 @@ export function loadPrevious(): Map<string, PrevInfo> {
   return map;
 }
 
-/** Stamp firstSeen (snapshot diff) and carry forward cached aiNote. */
+/**
+ * Stamp firstSeen = the time WE first collected the item (carried forward from the
+ * previous snapshot; otherwise now). This is collection time, not publish time —
+ * it's what drives NEW / 今日新收录 / the daily digest.
+ */
 export function applyHistory(items: AIItem[], prev: Map<string, PrevInfo>, nowIso: string): AIItem[] {
   return items.map((it) => {
     const p = prev.get(it.id);
     return {
       ...it,
-      firstSeen: it.firstSeen ?? p?.firstSeen ?? it.publishedAt ?? nowIso,
+      firstSeen: it.firstSeen ?? p?.firstSeen ?? nowIso,
       aiNote: it.aiNote ?? p?.aiNote ?? null,
     };
   });
