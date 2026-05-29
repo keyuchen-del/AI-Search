@@ -6,7 +6,6 @@ interface Props {
   since: string;
   category: CategoryKey | "all";
   keyword?: string;
-  total: number;
 }
 
 function href(params: {
@@ -36,13 +35,9 @@ const SINCE_OPTS: { key: string; label: string }[] = [
   { key: "30d", label: "30 天" },
 ];
 
-export default function SortTabs({ mode, since, category, keyword, total }: Props) {
+export default function SortTabs({ mode, since, category, keyword }: Props) {
   return (
-    <div className="flex items-center justify-between mb-4 flex-wrap gap-3">
-      <div className="text-sm text-gray-500">
-        共 <span className="text-gray-800 font-medium">{total}</span> 条
-      </div>
-
+    <div className="flex items-center mb-3 flex-wrap gap-3">
       <div className="flex items-center gap-3 flex-wrap">
         <div className="flex items-center gap-1 text-sm">
           <span className="text-xs text-gray-400 mr-1">范围</span>
