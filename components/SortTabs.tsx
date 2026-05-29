@@ -33,6 +33,7 @@ const SINCE_OPTS: { key: string; label: string }[] = [
   { key: "24h", label: "24 小时" },
   { key: "3d", label: "3 天" },
   { key: "7d", label: "7 天" },
+  { key: "30d", label: "30 天" },
 ];
 
 export default function SortTabs({ mode, since, category, keyword, total }: Props) {

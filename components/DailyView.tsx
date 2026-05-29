@@ -6,7 +6,15 @@ function countItems(d: DailyReport): number {
   return d.sections.reduce((sum, s) => sum + s.items.length, 0);
 }
 
-export default function DailyView({ daily }: { daily: DailyReport }) {
+export default function DailyView({
+  daily,
+  prevDate,
+  nextDate,
+}: {
+  daily: DailyReport;
+  prevDate?: string | null;
+  nextDate?: string | null;
+}) {
   const total = countItems(daily);
   let counter = 0;
 
@@ -108,32 +116,31 @@ export default function DailyView({ daily }: { daily: DailyReport }) {
         日报生成时间：{formatBJDate(daily.generatedAt)}
       </div>
 
-      <DailyNav currentDate={daily.date} />
+      <DailyNav prevDate={prevDate} nextDate={nextDate} />
     </article>
   );
 }
 
-function DailyNav({ currentDate }: { currentDate: string }) {
-  const d = new Date(currentDate);
-  const prev = new Date(d.getTime() - 24 * 3600 * 1000).toISOString().slice(0, 10);
-  const next = new Date(d.getTime() + 24 * 3600 * 1000).toISOString().slice(0, 10);
+function DailyNav({ prevDate, nextDate }: { prevDate?: string | null; nextDate?: string | null }) {
   return (
     <div className="flex items-center justify-between text-sm">
-      <Link
-        href={`/daily/${prev}`}
-        className="text-gray-600 hover:text-brand-600"
-      >
-        ← {prev}
-      </Link>
+      {prevDate ? (
+        <Link href={`/daily/${prevDate}`} className="text-gray-600 hover:text-brand-600">
+          ← {prevDate}
+        </Link>
+      ) : (
+        <span className="text-gray-300">← 没有更早</span>
+      )}
       <Link href="/daily" className="text-gray-600 hover:text-brand-600">
         最新日报
       </Link>
-      <Link
-        href={`/daily/${next}`}
-        className="text-gray-600 hover:text-brand-600"
-      >
-        {next} →
-      </Link>
+      {nextDate ? (
+        <Link href={`/daily/${nextDate}`} className="text-gray-600 hover:text-brand-600">
+          {nextDate} →
+        </Link>
+      ) : (
+        <span className="text-gray-300">没有更新 →</span>
+      )}
     </div>
   );
 }

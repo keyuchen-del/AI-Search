@@ -97,8 +97,9 @@ export default function Sidebar({ trending }: { trending: AIItem[] }) {
       <div className="card p-4 text-xs text-gray-500 leading-relaxed">
         <p className="font-medium text-gray-700 mb-1">关于本站</p>
         <p>
-          AI Search 是 AI 行业资讯聚合站。默认展示精选条目（每日精挑细选），可切换查看全部。
-          数据来自 <a href="https://aihot.virxact.com" target="_blank" rel="noreferrer" className="text-brand-600">aihot.virxact.com</a>。
+          AI Search 聚合 AI 行业公开资讯，每日由 GitHub Actions 自动抓取并重新构建。
+          数据来自 OpenAI、Google DeepMind、HuggingFace、arXiv、GitHub、Hacker News、
+          量子位、36氪、The Verge、TechCrunch 等公开来源，每条均保留原文链接。
         </p>
       </div>
     </aside>

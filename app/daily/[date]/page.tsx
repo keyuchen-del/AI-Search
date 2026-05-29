@@ -1,35 +1,37 @@
 import Header from "@/components/Header";
 import DataSourceBanner from "@/components/DataSourceBanner";
 import DailyView from "@/components/DailyView";
-import { getDaily } from "@/lib/dailyData";
+import { getDaily, listDailyDates } from "@/lib/dailyData";
 import { notFound } from "next/navigation";
 
-export const dynamic = "force-dynamic";
+const DATE_RE = /^\d{4}-\d{2}-\d{2}$/;
+
+// Pre-render one page per date present in the crawled snapshot.
+export function generateStaticParams() {
+  return listDailyDates().map((date) => ({ date }));
+}
+export const dynamicParams = false;
 
 interface Props {
   params: { date: string };
 }
 
-const DATE_RE = /^\d{4}-\d{2}-\d{2}$/;
-
 export default async function DailyByDate({ params }: Props) {
   if (!DATE_RE.test(params.date)) notFound();
 
-  let res;
-  try {
-    res = await getDaily(params.date);
-  } catch {
-    notFound();
-  }
+  const dates = listDailyDates(); // newest-first
+  const i = dates.indexOf(params.date);
+  const newer = i > 0 ? dates[i - 1] : null; // a later date
+  const older = i >= 0 && i < dates.length - 1 ? dates[i + 1] : null; // an earlier date
 
-  if (!res) notFound();
+  const res = await getDaily(params.date);
 
   return (
     <>
       <Header />
       <DataSourceBanner source={res.source} reason={res.fallbackReason} />
       <main className="max-w-4xl mx-auto px-4 py-6">
-        <DailyView daily={res.daily} />
+        <DailyView daily={res.daily} prevDate={older} nextDate={newer} />
       </main>
     </>
   );

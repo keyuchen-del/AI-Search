@@ -1,24 +1,97 @@
 /**
- * Crawl entry point. Stub for now.
+ * Crawl orchestrator.
  *
- * Run with: npm run crawl
+ * Run with:  npm run crawl              (all default sources)
+ *            npm run crawl -- --only=hf,github
+ *            CRAWL_ARXIV=1 npm run crawl (include rate-limited arXiv)
  *
- * TODO:
- *   1. Define source adapters under scripts/sources/ (one file per site / RSS / API)
- *   2. Normalize results to AIItem
- *   3. Persist to a store (filesystem JSON, SQLite, or Postgres)
- *   4. Replace lib/mockData.ts read with the persistent store
- *   5. Handle anti-bot: rotate UA, respect robots.txt, backoff, headless-only fallback
+ * Fetches every source adapter in parallel (one failure never sinks the run),
+ * merges + dedupes + classifies the results, and writes data/items.json +
+ * data/meta.json. Runs locally (npm run crawl) and in CI before the static build.
  */
+import path from "node:path";
+import type { AIItem } from "../lib/types";
+import { normalizeItems } from "../lib/classify";
+import { dedupeAndSort, writeSnapshot } from "./lib/persist";
+import { arxiv } from "./sources/arxiv";
+import { github } from "./sources/github";
+import { hackernews } from "./sources/hackernews";
+import { hfPapers } from "./sources/hfPapers";
+import { rssAdapters } from "./sources/rss";
+import type { SourceAdapter } from "./sources/types";
 
-async function main() {
-  console.log("[crawl] starting...");
-  console.log("[crawl] no source adapters configured yet.");
-  console.log("[crawl] add adapters under scripts/sources/ and wire them here.");
-  console.log("[crawl] done.");
+export interface CrawlResult {
+  total: number;
+  written: number;
+  sources: Record<string, number>;
+  errors: Record<string, string>;
+  path: string;
 }
 
-main().catch((e) => {
-  console.error(e);
-  process.exit(1);
-});
+function selectAdapters(only: string[]): SourceAdapter[] {
+  const universe: SourceAdapter[] = [hfPapers, github, hackernews, ...rssAdapters, arxiv];
+  if (only.length > 0) {
+    return universe.filter((a) => only.some((o) => a.id === o || a.id.startsWith(o)));
+  }
+  // arXiv is opt-in (rate-limited); excluded from the default run.
+  return universe.filter((a) => a.id !== "arxiv" || process.env.CRAWL_ARXIV === "1");
+}
+
+export async function runCrawl(only: string[] = []): Promise<CrawlResult> {
+  const adapters = selectAdapters(only);
+  const sources: Record<string, number> = {};
+  const errors: Record<string, string> = {};
+  const all: AIItem[] = [];
+
+  const settled = await Promise.allSettled(
+    adapters.map(async (a) => ({ id: a.id, items: await a.fetch() })),
+  );
+  settled.forEach((r, i) => {
+    const a = adapters[i];
+    if (r.status === "fulfilled") {
+      sources[r.value.id] = r.value.items.length;
+      all.push(...r.value.items);
+    } else {
+      sources[a.id] = 0;
+      errors[a.id] = String(r.reason?.message ?? r.reason).slice(0, 200);
+    }
+  });
+
+  const merged = normalizeItems(dedupeAndSort(all));
+  const { count, path: outPath } = writeSnapshot(merged, sources);
+  return { total: all.length, written: count, sources, errors, path: outPath };
+}
+
+function parseOnly(argv: string[]): string[] {
+  const arg = argv.find((a) => a.startsWith("--only="));
+  if (!arg) return [];
+  return arg.slice("--only=".length).split(",").map((s) => s.trim()).filter(Boolean);
+}
+
+async function main() {
+  const only = parseOnly(process.argv.slice(2));
+  console.log(`[crawl] starting${only.length ? ` (only: ${only.join(", ")})` : ""} ...`);
+  const t0 = Date.now();
+  const res = await runCrawl(only);
+
+  console.log("[crawl] per-source:");
+  for (const [id, n] of Object.entries(res.sources)) {
+    const err = res.errors[id] ? `  ✗ ${res.errors[id]}` : "";
+    console.log(`  - ${id.padEnd(16)} ${String(n).padStart(3)}${err}`);
+  }
+  console.log(`[crawl] merged ${res.total} -> ${res.written} unique items`);
+  console.log(`[crawl] wrote ${res.path}`);
+  console.log(`[crawl] done in ${((Date.now() - t0) / 1000).toFixed(1)}s`);
+  if (res.written === 0) process.exitCode = 1;
+}
+
+// Run only when executed as the CLI entry (not when imported by the API route).
+const isCli = process.argv[1]
+  ? path.basename(process.argv[1]).replace(/\.(ts|js|mjs)$/, "") === "crawl"
+  : false;
+if (isCli) {
+  main().catch((e) => {
+    console.error(e);
+    process.exit(1);
+  });
+}

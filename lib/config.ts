@@ -1,0 +1,29 @@
+import path from "node:path";
+import type { DataSourceMode } from "./types";
+
+/** Resolve the configured data-source mode (env `DATA_SOURCE`, default `auto`). */
+export function getDataSourceMode(): DataSourceMode {
+  const v = (process.env.DATA_SOURCE || "auto").toLowerCase();
+  if (v === "local" || v === "aihot" || v === "mock") return v;
+  return "auto";
+}
+
+/** Directory holding the crawled snapshot. */
+export const DATA_DIR = path.join(process.cwd(), "data");
+
+/** Crawled items snapshot written by `npm run crawl`. */
+export const STORE_PATH = path.join(DATA_DIR, "items.json");
+
+/** Crawl run metadata (counts, timestamps, per-source results). */
+export const META_PATH = path.join(DATA_DIR, "meta.json");
+
+/**
+ * In `auto` mode, a snapshot older than this is treated as stale and the
+ * resolver falls through to aihot/mock. `0` disables the freshness check
+ * (always use the snapshot if it has items). Default: 7 days.
+ */
+export function storeMaxAgeMs(): number {
+  const hours = Number(process.env.STORE_MAX_AGE_HOURS ?? 168);
+  if (!Number.isFinite(hours) || hours <= 0) return 0;
+  return hours * 60 * 60 * 1000;
+}

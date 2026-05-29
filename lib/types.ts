@@ -7,6 +7,10 @@ export type CategoryKey =
 
 export type Mode = "selected" | "all";
 
+export type DataSourceMode = "auto" | "local" | "aihot" | "mock";
+
+export type DataOrigin = "local" | "aihot" | "mock";
+
 export interface Category {
   key: CategoryKey;
   label: string;
@@ -25,6 +29,10 @@ export interface AIItem {
   tags?: string[];
   heat?: number;
   aiSelected?: boolean;
+  /** Adapter that produced this item, e.g. "hf-papers" / "github" / "rss:36kr". */
+  origin?: string;
+  /** When the crawler fetched this item (ISO). */
+  fetchedAt?: string | null;
 }
 
 export interface ItemsQuery {
@@ -43,7 +51,7 @@ export interface PaginatedResult<T> {
   page: number;
   pageSize: number;
   totalPages: number;
-  source: "aihot" | "mock";
+  source: DataOrigin;
   fallbackReason?: string;
 }
 

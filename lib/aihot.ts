@@ -1,3 +1,7 @@
+// Legacy adapter for the aihot.virxact.com public API. The upstream now returns
+// 403 site-wide, so this is kept only as a fallback in the `auto` chain
+// (local snapshot -> aihot -> mock). Real data comes from the crawler; see
+// lib/localStore.ts and scripts/crawl.ts.
 import type {
   AIItem,
   CategoryKey,

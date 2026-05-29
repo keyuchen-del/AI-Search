@@ -1,8 +1,23 @@
 # AI Search
 
-> AI 行业资讯聚合站 —— 一站式追踪大模型、AI 产品、行业动态、论文研究与技巧观点。
+> AI 行业资讯聚合站 —— 一站式追踪大模型发布、AI 产品、行业动态、论文研究与技巧观点。
 
-默认对接 [aihot.virxact.com](https://aihot.virxact.com) 公开 REST API，按 AI HOT 的 5 类分类体系展示精选条目；API 不可达时自动回退到本地示例数据，确保站点始终可用。
+**🌐 在线访问（无需安装，打开即用）：https://keyuchen-del.github.io/AI-Search/**
+
+数据由 GitHub Actions 每天自动从 20+ 个公开来源抓取、分类、并重新构建发布到 GitHub Pages。
+整站是**纯静态站点**：没有后端服务器、没有数据库、不需要任何 API Key，任何人 Fork 后开启 Pages 即可拥有自己的同款站点。
+
+---
+
+## 一键拥有你自己的站点
+
+1. 点击右上角 **Fork** 本仓库
+2. 打开你 Fork 仓库的 **Settings → Pages**，将 **Source** 选为 **GitHub Actions**
+   （首次推送时工作流也会尝试自动开启）
+3. 打开 **Actions** 标签页，运行一次 **Build & Deploy to GitHub Pages**（或随意推送一次代码）
+4. 等待绿色对勾，访问 `https://<你的用户名>.github.io/AI-Search/`
+
+之后每天 22:17 (UTC) 工作流会自动重新抓取数据并发布，站点始终保持新鲜。
 
 ---
 
@@ -10,190 +25,95 @@
 
 | 功能 | 说明 |
 |------|------|
-| 分类浏览 | 模型发布/产品更新/行业动态/论文研究/技巧观点 五大分类 |
-| 精选/全部模式 | 默认展示 AI HOT 每日精挑细选，可切换查看全量条目 |
-| 时间窗筛选 | 24 小时 / 3 天 / 7 天 三档快速切换 |
-| 关键词搜索 | 服务端全文检索，支持标题+摘要+标签匹配 |
-| AI 日报 | 每日自动生成的 AI 行业日报，含主编点评、分类摘要、快讯 |
+| 分类浏览 | 模型发布 / 产品更新 / 行业动态 / 论文研究 / 技巧观点 五大分类 |
+| 精选 / 全部 | 默认精选条目，可切换查看全量 |
+| 时间窗筛选 | 24 小时 / 3 天 / 7 天 / 30 天 |
+| 关键词搜索 | 标题 + 摘要 + 来源 + 标签即时匹配（纯前端，零延迟） |
+| AI 日报 | 按天聚合的日报，含主编点评、分类摘要、快讯 |
 | 日报存档 | 按日期回溯历史日报 |
-| 热门榜单 | 侧边栏实时展示热度 Top 8 |
-| 分页 | 智能分页，支持省略号展示 |
-| 自动降级 | API 不可达时无感切换至 Mock 数据，顶部提示当前数据源 |
-| 响应式布局 | 适配桌面端与移动端 |
+| 热门榜单 | 侧边栏按热度（Star / 点赞 / HN points）排序 Top 8 |
+| 自动刷新 | GitHub Actions 每日抓取 + 重新构建 + 部署 |
+| 响应式 | 适配桌面端与移动端 |
+
+---
+
+## 数据来源（全部为公开 RSS / API）
+
+- **模型实验室 / 研究机构**：OpenAI、Google AI、Google DeepMind、HuggingFace（Blog + Daily Papers）、Berkeley AI Research、MIT News
+- **学术**：arXiv（cs.AI / cs.CL / cs.LG）、HuggingFace Daily Papers
+- **代码 / 工具**：GitHub（按 llm / ai-agent / rag / multimodal 等话题的新仓库）
+- **科技媒体**：The Verge、TechCrunch、VentureBeat、Ars Technica、MIT Technology Review
+- **社区**：Hacker News（AI 相关高热故事）、Simon Willison
+- **中文**：量子位、36氪、InfoQ
+
+每条内容均保留原始来源链接，点击可追溯到源站。新增来源只需在 `scripts/sources/rss.ts` 的 `FEEDS` 数组里加一行。
 
 ---
 
 ## 技术栈
 
-- **框架**: Next.js 14 (App Router) + TypeScript
-- **样式**: Tailwind CSS 3.4
-- **渲染**: React Server Components (RSC) 服务端渲染
-- **缓存**: 5 分钟内存缓存（减少上游 API 压力）
-- **数据源**: aihot.virxact.com 公开 API + 本地 Mock 兜底
+- **框架**：Next.js 14（App Router，`output: 'export'` 全静态导出）+ TypeScript
+- **样式**：Tailwind CSS 3.4
+- **交互**：首屏服务端预渲染默认视图，筛选 / 搜索 / 分页全部在浏览器内完成（数据内嵌，无需请求）
+- **抓取**：`scripts/crawl.ts`，各来源并行、互不影响（一个失败不影响整体）
+- **分类**：`lib/classify.ts` 纯函数，把异构来源统一归入 5 个分类（含模型发布识别）
+- **部署**：GitHub Actions → GitHub Pages（零服务器、零成本）
 
 ---
 
-## 项目结构
+## 架构
 
 ```
-AI-Search/
-├── app/
-│   ├── layout.tsx              # 根布局（meta、全局样式）
-│   ├── page.tsx                # 首页（分类+搜索+列表+分页）
-│   ├── globals.css             # 全局样式 + CSS 变量
-│   ├── daily/
-│   │   ├── page.tsx            # 最新日报页
-│   │   └── [date]/page.tsx     # 指定日期日报页
-│   └── api/
-│       ├── items/route.ts      # 资讯列表 REST API
-│       └── crawl/route.ts      # 爬虫触发桩（预留）
-├── components/
-│   ├── Header.tsx              # 顶部导航 + 搜索栏
-│   ├── SearchBar.tsx           # 搜索输入框（Client Component）
-│   ├── CategoryNav.tsx         # 分类标签导航
-│   ├── SortTabs.tsx            # 模式/时间窗筛选条
-│   ├── ItemList.tsx            # 资讯卡片网格
-│   ├── ItemCard.tsx            # 单条资讯卡片
-│   ├── Sidebar.tsx             # 侧边栏（热榜+快捷入口+关于）
-│   ├── Pagination.tsx          # 分页组件
-│   ├── DataSourceBanner.tsx    # 数据源状态提示
-│   └── DailyView.tsx           # 日报详情视图
-├── lib/
-│   ├── types.ts                # TypeScript 类型定义
-│   ├── categories.ts           # 分类常量与辅助函数
-│   ├── aihot.ts                # aihot API 适配层（请求/缓存/超时）
-│   ├── queryItems.ts           # 数据查询入口（auto 降级逻辑）
-│   ├── dailyData.ts            # 日报数据层
-│   ├── mockData.ts             # 本地示例数据生成器
-│   └── timeFormat.ts           # 北京时间格式化工具
-├── scripts/
-│   └── crawl.ts                # 爬虫脚本入口（预留）
-├── .env.example                # 环境变量模板
-├── tailwind.config.ts          # Tailwind 配置
-├── next.config.mjs             # Next.js 配置
-├── tsconfig.json               # TypeScript 配置
-└── package.json                # 依赖与脚本
+GitHub Actions（每日 cron / push / 手动）
+        │
+        ▼
+  npm run crawl ── 并行抓取 20+ 来源 ──▶ dedupe + classify ──▶ data/items.json
+        │
+        ▼
+  next build (output: export, DATA_SOURCE=local)
+        │  读取 data/items.json，内嵌进静态页面
+        ▼
+       out/  ──▶ upload-pages-artifact ──▶ deploy-pages ──▶ GitHub Pages
 ```
+
+浏览器加载页面后，全部 Query（分类 / 时间窗 / 关键词 / 分页 / 排序）在本地对内嵌数据集即时计算，因此交互零延迟、不依赖任何运行时服务。
 
 ---
 
-## 快速开始
-
-### 环境要求
-
-- Node.js >= 18
-- npm >= 9
-
-### 安装与运行
+## 本地开发
 
 ```bash
-# 克隆仓库
 git clone https://github.com/keyuchen-del/AI-Search.git
 cd AI-Search
-
-# 安装依赖
 npm install
 
-# 复制环境变量（可选）
-cp .env.example .env.local
+# 1) 抓取真实数据到 data/items.json（可选，仓库已自带一份快照）
+CRAWL_ARXIV=1 npm run crawl
 
-# 启动开发服务器
-npm run dev
+# 2) 开发服务器
+npm run dev            # http://localhost:3000
+
+# 3) 生产静态构建（产物在 out/）
+DATA_SOURCE=local npm run build
 ```
 
-浏览器打开 http://localhost:3000
-
-### 生产构建
-
-```bash
-npm run build
-npm start
-```
+> 注意：`npm run dev` 下 `basePath` 为空（根路径）；只有 CI 构建会注入 `NEXT_PUBLIC_BASE_PATH=/AI-Search` 以适配 Pages 子路径。
 
 ---
 
 ## 环境变量
 
-| 变量 | 默认值 | 说明 |
-|------|--------|------|
-| `DATA_SOURCE` | `auto` | 数据源模式：`auto` / `aihot` / `mock` |
-| `AIHOT_BASE_URL` | `https://aihot.virxact.com` | aihot API 基础地址 |
-| `AIHOT_TIMEOUT_MS` | `6000` | API 请求超时（毫秒） |
-
-**模式说明：**
-- `auto` — 优先调用 aihot API，失败时自动回退 Mock 数据并在页顶显示提示
-- `aihot` — 强制使用真实 API（适合生产环境）
-- `mock` — 强制使用本地示例数据（适合离线开发/演示）
-
----
-
-## 路由说明
-
-| 路由 | 类型 | 说明 |
+| 变量 | 默认 | 说明 |
 |------|------|------|
-| `/` | 页面 | 首页：分类浏览 + 精选/全部 + 时间窗 + 搜索 + 分页 |
-| `/daily` | 页面 | 最新 AI HOT 日报 + 存档列表 |
-| `/daily/[YYYY-MM-DD]` | 页面 | 指定日期的日报 |
-| `/api/items` | API | 资讯列表查询接口 |
-| `/api/crawl` | API | 爬虫任务触发（桩，预留后续扩展） |
-
-### 查询参数
-
-| 参数 | 可选值 | 默认 | 说明 |
-|------|--------|------|------|
-| `category` | `ai-models` `ai-products` `industry` `paper` `tip` | 全部 | 分类筛选 |
-| `mode` | `selected` `all` | `selected` | 精选模式 / 全部模式 |
-| `since` | `24h` `3d` `7d` | `7d` | 时间窗口 |
-| `keyword` | 任意文本 | — | 关键词搜索 |
-| `page` | 正整数 | `1` | 页码 |
-
-**示例 URL：**
-```
-http://localhost:3000/?category=ai-models&since=24h
-http://localhost:3000/?mode=all&since=7d
-http://localhost:3000/?keyword=OpenAI
-http://localhost:3000/daily
-http://localhost:3000/daily/2025-05-01
-```
-
----
-
-## 架构设计
-
-```
-┌────────────────────────────────────────────────────┐
-│                    Next.js App Router               │
-├────────────────────────────────────────────────────┤
-│  Server Components (RSC)    Client Components      │
-│  ┌──────────────────────┐  ┌────────────────────┐  │
-│  │ page.tsx / daily/    │  │ SearchBar.tsx       │  │
-│  │ ItemList / Sidebar   │  │ (useSearchParams)  │  │
-│  └──────────┬───────────┘  └────────────────────┘  │
-│             │                                       │
-│  ┌──────────▼───────────┐                          │
-│  │   lib/queryItems.ts  │ ← 统一数据查询入口       │
-│  │   lib/dailyData.ts   │                          │
-│  └──────────┬───────────┘                          │
-│             │                                       │
-│  ┌──────────▼───────────┐                          │
-│  │   lib/aihot.ts       │ ← API 适配层            │
-│  │   (缓存/超时/降级)    │                          │
-│  └──────────┬───────────┘                          │
-│             │                                       │
-├─────────────┼──────────────────────────────────────┤
-│             ▼                                       │
-│   aihot.virxact.com   ←→   lib/mockData.ts        │
-│   (真实数据)                 (兜底数据)              │
-└────────────────────────────────────────────────────┘
-```
-
-**核心设计原则：**
-
-1. **数据源透明切换** — `queryItems()` 封装了 auto/aihot/mock 三种模式，上层组件无需感知数据来源
-2. **服务端渲染优先** — 所有数据获取在 Server Component 完成，首屏即带完整内容
-3. **优雅降级** — API 异常时自动回退 Mock 数据，页面永不白屏
-4. **5 分钟缓存** — 内存级缓存减少对上游 API 的重复请求
-5. **时区统一** — 所有时间统一转为北京时间 + 相对时间展示
+| `NEXT_PUBLIC_BASE_PATH` | 空 | Pages 子路径前缀（CI 设为 `/AI-Search`） |
+| `DATA_SOURCE` | `auto` | `auto` / `local` / `mock`；构建静态站点用 `local` |
+| `STORE_MAX_AGE_HOURS` | `168` | `auto` 模式下快照过期阈值（小时），0 表示不过期 |
+| `GITHUB_TOKEN` | — | 抓取 GitHub 时提升限额（CI 自带） |
+| `GITHUB_TOPICS` | `llm,ai-agent,...` | GitHub 抓取的话题（逗号分隔） |
+| `CRAWL_DAYS` | `30` | GitHub 新仓库时间窗（天） |
+| `RSS_MAX_PER_FEED` | `20` | 每个 RSS 源最多抓取条数 |
+| `HN_MIN_POINTS` | `40` | Hacker News 收录的最低点数 |
+| `CRAWL_ARXIV` | 关 | 置 `1` 抓取 arXiv（CI 默认开启） |
 
 ---
 
@@ -202,56 +122,10 @@ http://localhost:3000/daily/2025-05-01
 | Key | 标签 | 说明 |
 |-----|------|------|
 | `ai-models` | 模型发布/更新 | 大模型与基础模型的发布与更新 |
-| `ai-products` | 产品发布/更新 | 新产品、新功能、新版本 |
-| `industry` | 行业动态 | AI 行业趋势与重大事件 |
+| `ai-products` | 产品发布/更新 | 新产品、新功能、开源项目 |
+| `industry` | 行业动态 | 融资、政策、商业与重大事件 |
 | `paper` | 论文研究 | 论文、技术报告与研究进展 |
 | `tip` | 技巧与观点 | 实用技巧与深度观点 |
-
----
-
-## 部署
-
-### Vercel（推荐）
-
-1. Fork 本仓库
-2. 在 [Vercel](https://vercel.com) 导入项目
-3. 无需额外配置，默认 `DATA_SOURCE=auto` 即可连接真实数据
-4. 部署完成后自动使用 aihot.virxact.com 真实数据
-
-### 其他平台
-
-支持任何 Node.js 18+ 环境：
-
-```bash
-npm run build
-npm start
-```
-
-确保服务器可访问 `aihot.virxact.com`。
-
----
-
-## 开发指南
-
-### 添加新分类
-
-1. 在 `lib/types.ts` 的 `CategoryKey` 联合类型中添加新值
-2. 在 `lib/categories.ts` 的 `CATEGORIES` 数组中添加对应配置
-3. 完成。分类导航、筛选逻辑自动适配
-
-### 自定义数据源
-
-1. 修改 `lib/aihot.ts` 中的 `BASE` 地址或实现新的 fetch 函数
-2. 确保返回数据符合 `AihotItemsResponse` 接口
-3. 在 `lib/queryItems.ts` 中注册新数据源
-
-### 爬虫扩展（预留）
-
-```bash
-npm run crawl
-```
-
-当前为空壳。后续可在 `scripts/` 下添加采集适配器，将结果写入本地存储替换 Mock 数据。
 
 ---
 
@@ -260,16 +134,50 @@ npm run crawl
 | 命令 | 说明 |
 |------|------|
 | `npm run dev` | 启动开发服务器（热重载） |
-| `npm run build` | 生产构建 |
-| `npm start` | 启动生产服务器 |
-| `npm run lint` | ESLint 代码检查 |
-| `npm run crawl` | 运行爬虫脚本（预留） |
+| `npm run build` | 生产静态构建（输出到 `out/`） |
+| `npm run crawl` | 抓取所有来源到 `data/items.json` |
+| `npm run crawl -- --only=hf,github` | 仅抓取指定来源 |
+| `npm run lint` | ESLint 检查 |
 
 ---
 
-## 数据归属
+## 项目结构
 
-所有资讯数据来自 [aihot.virxact.com](https://aihot.virxact.com)，每条内容均保留原始来源链接，点击可追溯到源站。
+```
+AI-Search/
+├── app/
+│   ├── layout.tsx              # 根布局
+│   ├── page.tsx                # 首页（读取快照 → 内嵌 → 客户端筛选）
+│   ├── globals.css
+│   └── daily/
+│       ├── page.tsx            # 最新日报
+│       └── [date]/page.tsx     # 指定日期日报（generateStaticParams 预渲染）
+├── components/
+│   ├── HomeClient.tsx          # 首页交互（筛选/搜索/分页，纯前端）
+│   ├── Header / CategoryNav / SortTabs / ItemList / ItemCard
+│   ├── Sidebar / Pagination / DailyView / DataSourceBanner
+├── lib/
+│   ├── types.ts                # 类型定义
+│   ├── classify.ts             # 纯分类器（含模型发布识别）
+│   ├── filter.ts               # 纯筛选/排序/分页（客户端复用）
+│   ├── categories.ts           # 分类常量
+│   ├── dailyData.ts            # 日报数据层
+│   ├── localStore.ts           # 读取本地快照
+│   ├── config.ts               # 数据源 / 路径配置
+│   ├── mockData.ts             # 离线兜底示例数据
+│   └── timeFormat.ts           # 北京时间格式化
+├── scripts/
+│   ├── crawl.ts                # 抓取编排（并行 + dedupe + classify）
+│   ├── lib/                    # fetch 工具 / 持久化
+│   └── sources/                # arxiv / github / hackernews / hfPapers / rss
+├── data/
+│   ├── items.json              # 抓取快照（CI 每日刷新）
+│   └── meta.json               # 抓取元数据
+├── public/.nojekyll            # 保证 _next 资源不被 Pages 过滤
+└── .github/workflows/deploy.yml # 抓取 + 构建 + 部署
+```
+
+---
 
 ## License
 

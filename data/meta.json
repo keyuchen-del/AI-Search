@@ -1,0 +1,25 @@
+{
+  "fetchedAt": "2026-05-29T04:40:50.136Z",
+  "count": 474,
+  "sources": {
+    "hf-papers": 50,
+    "github": 80,
+    "hackernews": 106,
+    "rss:qbitai": 10,
+    "rss:36kr": 8,
+    "rss:infoq": 16,
+    "rss:openai": 20,
+    "rss:google-ai": 20,
+    "rss:deepmind": 20,
+    "rss:hf-blog": 20,
+    "rss:bair": 10,
+    "rss:mit-news-ai": 20,
+    "rss:theverge-ai": 10,
+    "rss:techcrunch-ai": 20,
+    "rss:venturebeat-ai": 7,
+    "rss:arstechnica-ai": 20,
+    "rss:techreview-ai": 10,
+    "rss:simonwillison": 14,
+    "arxiv": 20
+  }
+}
