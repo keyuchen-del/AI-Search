@@ -11,12 +11,14 @@ export default function Sidebar({
   state,
   sources,
   topics,
+  trendSummary,
 }: {
   trending: AIItem[];
   meta?: StoreMeta | null;
   state: ViewState;
   sources: [string, number][];
   topics?: { slug: string; name: string; count: number }[];
+  trendSummary?: string | null;
 }) {
   const top = trending.slice(0, 8);
   const failed = meta ? Object.keys(meta.errors ?? {}).length : 0;
@@ -84,6 +86,12 @@ export default function Sidebar({
               </li>
             ))}
           </ol>
+        )}
+        {trendSummary && (
+          <div className="mt-3 pt-3 border-t border-gray-100 text-xs text-gray-500 leading-relaxed">
+            <span className="text-brand-600 font-medium">AI 总结 · </span>
+            {trendSummary}
+          </div>
         )}
       </div>
 

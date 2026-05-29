@@ -90,11 +90,46 @@ async function pickWithLLM(pool: AIItem[]): Promise<DigestPick[]> {
 }
 
 /** Build (or reuse) today's digest and write data/digest.json. */
+async function summarizeTrend(items: AIItem[]): Promise<string> {
+  const top = [...items].sort((a, b) => (b.heat ?? 0) - (a.heat ?? 0)).slice(0, 10);
+  if (top.length === 0) return "";
+  const listing = top.map((it, i) => `${i + 1}. ${it.title}`).join("\n");
+  const ctrl = new AbortController();
+  const timer = setTimeout(() => ctrl.abort(), 30000);
+  try {
+    const res = await fetch(API, {
+      method: "POST",
+      headers: { Authorization: `Bearer ${KEY}`, "Content-Type": "application/json" },
+      signal: ctrl.signal,
+      body: JSON.stringify({
+        model: MODEL,
+        temperature: 0.6,
+        max_tokens: 160,
+        messages: [
+          {
+            role: "system",
+            content:
+              "你是 AI 资讯主编。根据给定的本周最热条目，用 50 字以内中文概括本周 AI 圈的热点趋势，口吻自然连贯，不分点、不加引号、不复述标题。",
+          },
+          { role: "user", content: listing },
+        ],
+      }),
+    });
+    if (!res.ok) throw new Error(`HTTP ${res.status}`);
+    const data = (await res.json()) as { choices?: { message?: { content?: string } }[] };
+    return (data.choices?.[0]?.message?.content ?? "").replace(/\s+/g, " ").trim().slice(0, 100);
+  } catch {
+    return "";
+  } finally {
+    clearTimeout(timer);
+  }
+}
+
 export async function buildDigest(items: AIItem[]): Promise<void> {
   const today = bjDate();
   const prev = readPrev();
-  if (prev && prev.date === today && prev.picks.length > 0) {
-    console.log("[digest] today's digest already exists — skipping.");
+  if (prev && prev.date === today && prev.picks.length > 0 && prev.trendSummary) {
+    console.log("[digest] today's digest already complete — skipping.");
     return;
   }
   if (!KEY) {
@@ -109,8 +144,9 @@ export async function buildDigest(items: AIItem[]): Promise<void> {
       return;
     }
     const picks = await pickWithLLM(pool);
-    write({ date: today, generatedAt: new Date().toISOString(), picks });
-    console.log(`[digest] picked ${picks.length} must-reads for ${today}.`);
+    const trendSummary = await summarizeTrend(items);
+    write({ date: today, generatedAt: new Date().toISOString(), picks, trendSummary });
+    console.log(`[digest] ${picks.length} picks + trend summary for ${today}.`);
   } catch (e) {
     console.log(`[digest] failed: ${e instanceof Error ? e.message : e}`);
   }

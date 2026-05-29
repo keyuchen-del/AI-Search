@@ -88,7 +88,14 @@ function HomeLayout({
           <FeedSection items={items} query={{ mode, category, since, keyword, source }} now={now} />
         </section>
 
-        <Sidebar trending={trending} meta={meta} state={state} sources={sourceCounts(items)} topics={topics} />
+        <Sidebar
+          trending={trending}
+          meta={meta}
+          state={state}
+          sources={sourceCounts(items)}
+          topics={topics}
+          trendSummary={digest?.trendSummary ?? null}
+        />
       </main>
 
       <footer className="border-t border-gray-200 bg-white mt-10">

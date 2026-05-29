@@ -115,4 +115,6 @@ export interface Digest {
   date: string; // BJ date, e.g. 2026-05-29
   generatedAt: string;
   picks: DigestPick[];
+  /** Short AI summary of what's hot this week (shown under 本周最热). */
+  trendSummary?: string;
 }
