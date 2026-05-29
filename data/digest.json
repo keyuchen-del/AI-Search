@@ -1,37 +1,37 @@
 {
-  "date": "2026-05-29",
-  "generatedAt": "2026-05-29T09:35:49.218Z",
+  "date": "2026-05-30",
+  "generatedAt": "2026-05-29T23:42:53.793Z",
   "picks": [
     {
       "title": "Anthropic raises $65B in Series H funding at $965B post-money valuation",
       "sourceUrl": "https://www.anthropic.com/news/series-h",
       "source": "Hacker News",
-      "reason": "Anthropic 巨额融资，估值近万亿，AI 资本格局剧变"
+      "reason": "Anthropic融资650亿美元，估值近万亿，AI资本大事件"
     },
     {
-      "title": "Tech CEOs are apparently suffering from AI psychosis",
-      "sourceUrl": "https://techcrunch.com/2026/05/27/tech-ceos-are-apparently-suffering-from-ai-psychosis/",
+      "title": "Claude Opus 4.8",
+      "sourceUrl": "https://www.anthropic.com/news/claude-opus-4-8",
       "source": "Hacker News",
-      "reason": "科技CEO集体AI精神错乱？行业反思与警示"
+      "reason": "Claude Opus 4.8发布，前沿模型重大更新"
     },
     {
-      "title": "YouTube to automatically label AI-generated videos",
-      "sourceUrl": "https://blog.youtube/news-and-events/improving-ai-labels-viewers-creators/",
+      "title": "GitHub bans security researcher who posted zero-day Windows exploits",
+      "sourceUrl": "https://www.tomshardware.com/tech-industry/cyber-security/microsofts-github-bans-security-researcher-who-posted-zero-day-windows-exploits-because-company-ruined-their-life-expert-claims-action-is-vindictive-and-promises-further-retaliation",
       "source": "Hacker News",
-      "reason": "YouTube强制标注AI视频，内容透明度新规"
+      "reason": "GitHub封禁0day漏洞研究员，安全社区震动"
     },
     {
-      "title": "Disagreement among frontier LLMs on real-world fact-checks",
-      "sourceUrl": "https://lenz.io/research/llm-disagreement",
+      "title": "Cars collect a startling amount of data about you",
+      "sourceUrl": "https://www.bbc.com/future/article/20260513-your-car-is-spying-on-you-its-about-to-get-worse",
       "source": "Hacker News",
-      "reason": "前沿大模型事实核查分歧，暴露AI可靠性短板"
+      "reason": "汽车数据收集惊人，隐私风险引发关注"
     },
     {
-      "title": "Claude Code as a Daily Driver: Claude.md, Skills, Subagents, Plugins, and MCPs",
-      "sourceUrl": "https://arps18.github.io/posts/claude-code-mastery/",
+      "title": "Sam Altman and Dario Amodei are both walking back AI jobs apocalypse predictions",
+      "sourceUrl": "https://fortune.com/2026/05/26/sam-altman-dario-amodei-walking-back-ai-jobs-apocalypse-prophecies-ipo/",
       "source": "Hacker News",
-      "reason": "Claude Code实战指南，开发者效率工具深度解析"
+      "reason": "Altman和Amodei改口AI取代工作论，行业风向转变"
     }
   ],
-  "trendSummary": "本周AI圈焦点从模型竞赛转向实用落地，开源训练工具与Agent实践指南走红，同时Claude新版本和AI数学突破引发热议，YouTube强制标注AI内容也折射出行业对透明度的迫切需求。"
+  "trendSummary": "本周AI圈热点集中在模型突破与开源实践，包括Claude新版本发布、OpenAI模型推翻几何猜想，以及GPT训练、智能体优化等实用工具与案例的涌现。"
 }

@@ -76,7 +76,7 @@
       "spatial-reasoning",
       "Makefile"
     ],
-    "heat": 228,
+    "heat": 232,
     "aiSelected": true,
     "origin": "github",
     "firstSeen": "2026-04-30T13:15:36Z",
@@ -117,7 +117,7 @@
       "nano",
       "Python"
     ],
-    "heat": 551,
+    "heat": 553,
     "aiSelected": true,
     "origin": "github",
     "firstSeen": "2026-04-30T12:47:25Z",
@@ -152,7 +152,7 @@
       "llm",
       "TypeScript"
     ],
-    "heat": 498,
+    "heat": 499,
     "aiSelected": true,
     "origin": "github",
     "firstSeen": "2026-04-30T10:33:16Z",
@@ -190,7 +190,7 @@
       "devtools",
       "Go"
     ],
-    "heat": 638,
+    "heat": 639,
     "aiSelected": true,
     "origin": "github",
     "firstSeen": "2026-04-30T09:09:41Z",
@@ -247,7 +247,7 @@
       "claude",
       "Python"
     ],
-    "heat": 677,
+    "heat": 702,
     "aiSelected": true,
     "origin": "github",
     "firstSeen": "2026-04-30T03:13:10Z",
