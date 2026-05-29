@@ -1,5 +1,36 @@
 {
   "date": "2026-05-29",
-  "generatedAt": "2026-05-29T07:31:09.958Z",
-  "picks": []
+  "generatedAt": "2026-05-29T07:37:32.725Z",
+  "picks": [
+    {
+      "title": "Anthropic raises $65B in Series H funding at $965B post-money valuation",
+      "sourceUrl": "https://www.anthropic.com/news/series-h",
+      "source": "Hacker News",
+      "reason": "Anthropic巨额融资，估值近万亿，行业风向标"
+    },
+    {
+      "title": "Claude Opus 4.8",
+      "sourceUrl": "https://www.anthropic.com/news/claude-opus-4-8",
+      "source": "Hacker News",
+      "reason": "Claude Opus 4.8发布，模型能力重大更新"
+    },
+    {
+      "title": "I'm Tired of Talking to AI",
+      "sourceUrl": "https://orchidfiles.com/im-tired-of-ai-generated-answers/",
+      "source": "Hacker News",
+      "reason": "AI疲劳话题引发共鸣，反思技术与人关系"
+    },
+    {
+      "title": "Tech CEOs are apparently suffering from AI psychosis",
+      "sourceUrl": "https://techcrunch.com/2026/05/27/tech-ceos-are-apparently-suffering-from-ai-psychosis/",
+      "source": "Hacker News",
+      "reason": "科技CEO被指AI幻觉，讽刺行业狂热现状"
+    },
+    {
+      "title": "Disagreement among frontier LLMs on real-world fact-checks",
+      "sourceUrl": "https://lenz.io/research/llm-disagreement",
+      "source": "Hacker News",
+      "reason": "前沿模型事实核查分歧，揭示AI可信度问题"
+    }
+  ]
 }
