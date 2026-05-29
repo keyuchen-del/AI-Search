@@ -1,3 +1,4 @@
+import { Suspense } from "react";
 import Link from "next/link";
 import SearchBar from "./SearchBar";
 
@@ -16,7 +17,11 @@ export default function Header({ defaultKeyword = "" }: { defaultKeyword?: strin
         </Link>
 
         <div className="flex-1 max-w-xl">
-          <SearchBar defaultValue={defaultKeyword} />
+          <Suspense fallback={
+            <div className="w-full h-9 rounded-full border border-gray-200 bg-gray-50 animate-pulse" />
+          }>
+            <SearchBar defaultValue={defaultKeyword} />
+          </Suspense>
         </div>
 
         <nav className="hidden md:flex items-center gap-4 text-sm text-gray-600">

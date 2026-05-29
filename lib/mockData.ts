@@ -17,11 +17,12 @@ const TAGS_POOL = [
   "国产模型", "GPU", "推理加速", "Chip", "评测", "数据集",
 ];
 
-function pick<T>(arr: T[], n = 1): T[] {
+function pick<T>(arr: T[], n = 1, seed = 0): T[] {
   const copy = [...arr];
   const out: T[] = [];
   for (let i = 0; i < n && copy.length; i++) {
-    out.push(copy.splice(Math.floor(Math.random() * copy.length), 1)[0]);
+    const idx = (seed + i * 7 + 3) % copy.length;
+    out.push(copy.splice(idx, 1)[0]);
   }
   return out;
 }
@@ -70,7 +71,7 @@ function gen(n: number): AIItem[] {
   for (let i = 0; i < n; i++) {
     const seed = SEEDS[i % SEEDS.length];
     const src = SOURCES[i % SOURCES.length];
-    const tags = pick(TAGS_POOL, 2 + (i % 3));
+    const tags = pick(TAGS_POOL, 2 + (i % 3), i);
     items.push({
       id: `mock-${pad(i + 1, 4)}`,
       title: `${seed.title}${i >= SEEDS.length ? ` (${Math.floor(i / SEEDS.length) + 1})` : ""}`,
@@ -80,7 +81,7 @@ function gen(n: number): AIItem[] {
       category: seed.category,
       tags,
       publishedAt: isoTimestampOffset(i * 3),
-      heat: 1000 - i * 7 + Math.floor(Math.random() * 50),
+      heat: 1000 - i * 7 + ((i * 13 + 7) % 50),
       aiSelected: i % 3 !== 0,
     });
   }
