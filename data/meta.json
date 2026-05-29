@@ -1,10 +1,10 @@
 {
-  "fetchedAt": "2026-05-29T07:07:02.602Z",
-  "count": 552,
+  "fetchedAt": "2026-05-29T07:17:13.526Z",
+  "count": 551,
   "sources": {
     "hf-papers": 50,
     "github": 80,
-    "hackernews": 107,
+    "hackernews": 106,
     "rss:qbitai": 10,
     "rss:36kr": 6,
     "rss:infoq": 16,
@@ -20,15 +20,15 @@
     "rss:arstechnica-ai": 20,
     "rss:techreview-ai": 10,
     "rss:simonwillison": 13,
-    "rss:jiqizhixin": 0,
     "rss:aws-ml": 20,
     "rss:msr": 8,
     "rss:lilianweng": 20,
     "rss:raschka": 20,
     "rss:thegradient": 14,
-    "rss:importai": 20
+    "rss:importai": 0,
+    "arxiv": 20
   },
   "errors": {
-    "rss:jiqizhixin": "HTTP 500  <- https://www.jiqizhixin.com/rss"
+    "rss:importai": "HTTP 403 Forbidden <- https://importai.substack.com/feed"
   }
 }
