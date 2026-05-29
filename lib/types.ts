@@ -73,6 +73,7 @@ export interface DailyReport {
     id?: string;
     title: string;
     summary: string | null;
+    aiNote?: string | null;
     sourceUrl: string;
     sourceName: string;
     category: CategoryKey | null;
@@ -83,6 +84,7 @@ export interface DailyReport {
       id?: string;
       title: string;
       summary: string | null;
+      aiNote?: string | null;
       sourceUrl: string;
       sourceName: string;
     }[];

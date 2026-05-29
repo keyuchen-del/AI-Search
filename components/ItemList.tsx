@@ -25,19 +25,21 @@ export default function ItemList({
   if (items.length === 0) {
     return <div className="card p-10 text-center text-gray-500">{emptyHint}</div>;
   }
+  // 小红书式错落瀑布流：有图卡片高、无图卡片矮，按列自然交错（纯 CSS columns）。
   return (
-    <div className="grid grid-cols-1 sm:grid-cols-2 xl:grid-cols-3 gap-4">
+    <div className="columns-1 sm:columns-2 xl:columns-3 gap-4">
       {items.map((it) => (
-        <ItemCard
-          key={it.id}
-          item={it}
-          bookmarked={bookmarks?.has(it.id)}
-          read={readSet?.has(it.id)}
-          now={now}
-          keyword={keyword}
-          onToggleBookmark={onToggleBookmark}
-          onOpen={onOpen}
-        />
+        <div key={it.id} className="mb-4 break-inside-avoid">
+          <ItemCard
+            item={it}
+            bookmarked={bookmarks?.has(it.id)}
+            read={readSet?.has(it.id)}
+            now={now}
+            keyword={keyword}
+            onToggleBookmark={onToggleBookmark}
+            onOpen={onOpen}
+          />
+        </div>
       ))}
     </div>
   );

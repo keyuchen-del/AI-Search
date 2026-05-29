@@ -1,5 +1,5 @@
 import type { AIItem } from "../../lib/types";
-import { getJson, hashId, truncate } from "../lib/fetchUtil";
+import { getJson, hashId, stripHtml, truncate } from "../lib/fetchUtil";
 import type { SourceAdapter } from "./types";
 
 interface HNHit {
@@ -43,7 +43,7 @@ export const hackernews: SourceAdapter = {
         byId.set(h.objectID, {
           id: hashId("hn", h.objectID),
           title: h.title.trim(),
-          summary: h.story_text ? truncate(h.story_text, 180) : null,
+          summary: h.story_text ? truncate(stripHtml(h.story_text), 180) : null,
           source: "Hacker News",
           sourceUrl: link,
           category: "industry",

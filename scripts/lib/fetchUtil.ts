@@ -31,22 +31,8 @@ export async function getJson<T>(url: string, headers: Record<string, string> = 
   return (await res.json()) as T;
 }
 
-/** Strip HTML tags and collapse whitespace. */
-export function stripHtml(input: string | null | undefined): string {
-  if (!input) return "";
-  return input
-    .replace(/<script[\s\S]*?<\/script>/gi, "")
-    .replace(/<style[\s\S]*?<\/style>/gi, "")
-    .replace(/<[^>]+>/g, " ")
-    .replace(/&nbsp;/g, " ")
-    .replace(/&amp;/g, "&")
-    .replace(/&lt;/g, "<")
-    .replace(/&gt;/g, ">")
-    .replace(/&quot;/g, '"')
-    .replace(/&#39;/g, "'")
-    .replace(/\s+/g, " ")
-    .trim();
-}
+/** Strip HTML tags + decode entities (named/numeric/hex) + collapse whitespace. */
+export { cleanText as stripHtml } from "../../lib/text";
 
 export function truncate(s: string, max = 160): string {
   const t = s.trim();

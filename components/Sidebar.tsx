@@ -3,15 +3,7 @@ import type { AIItem } from "@/lib/types";
 import type { StoreMeta } from "@/lib/localStore";
 import type { ViewState } from "./HomeClient";
 import { buildHref } from "@/lib/href";
-import { formatBJDate, formatRelative } from "@/lib/timeFormat";
-
-function Flame() {
-  return (
-    <svg className="w-3 h-3 shrink-0" viewBox="0 0 24 24" fill="currentColor">
-      <path d="M13.5 1c1 3 .5 5-1 7C11 10 9 12 9 15a5 5 0 0 0 10 0c0-1.5-.5-3-1.5-4 .5 1 .5 2 0 3a3 3 0 0 1-5.5-2c0-2 1-3 2-5 1-2 1-4-.5-6Z" />
-    </svg>
-  );
-}
+import { formatBJDate } from "@/lib/timeFormat";
 
 export default function Sidebar({
   trending,
@@ -43,10 +35,11 @@ export default function Sidebar({
     <aside className="space-y-4">
       {/* 热门榜单 */}
       <div className="card p-4">
-        <h3 className="text-sm font-semibold mb-3 flex items-center gap-2">
+        <h3 className="text-sm font-semibold mb-1 flex items-center gap-2">
           <span className="w-1 h-4 bg-brand-500 rounded-sm" />
-          热门榜单
+          本周最热
         </h3>
+        <p className="text-[11px] text-gray-400 mb-3">按 GitHub Star / Hacker News 讨论热度排序</p>
         {top.length === 0 ? (
           <p className="text-sm text-gray-500">暂无数据</p>
         ) : (
@@ -75,11 +68,14 @@ export default function Sidebar({
                     </span>
                     <div className="text-[11px] text-gray-400 mt-0.5 flex items-center gap-1.5 truncate">
                       <span className="truncate">{item.source}</span>
-                      {item.publishedAt && <span>· {formatRelative(item.publishedAt)}</span>}
                       {typeof item.heat === "number" && item.heat > 0 && (
-                        <span className="flex items-center gap-0.5 text-amber-500">
-                          · <Flame />
-                          {item.heat.toLocaleString()}
+                        <span className="text-amber-600 font-medium shrink-0">
+                          ·{" "}
+                          {item.origin === "github"
+                            ? `★ ${item.heat.toLocaleString()}`
+                            : item.origin === "hackernews"
+                              ? `HN ${item.heat.toLocaleString()} 赞`
+                              : item.heat.toLocaleString()}
                         </span>
                       )}
                     </div>

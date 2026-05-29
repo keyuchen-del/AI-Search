@@ -5,6 +5,7 @@ import type { DailyReport } from "@/lib/types";
 import { CATEGORY_MAP } from "@/lib/categories";
 import { formatBJDate, formatRelative } from "@/lib/timeFormat";
 import { useUserStore } from "@/lib/userStore";
+import { cleanText } from "@/lib/text";
 
 function countItems(d: DailyReport): number {
   return d.sections.reduce((sum, s) => sum + s.items.length, 0);
@@ -137,7 +138,18 @@ export default function DailyView({
                           </div>
                           {it.id && <Star on={bookmarks.has(it.id)} onClick={() => toggleBookmark(it.id!)} />}
                         </div>
-                        {it.summary && <p className="text-gray-600 leading-relaxed mt-1">{it.summary}</p>}
+                        {(it.aiNote || it.summary) && (
+                          <p className="text-gray-600 leading-relaxed mt-1">
+                            {it.aiNote ? (
+                              <>
+                                <span className="text-brand-600 font-medium">AI 导读 · </span>
+                                {it.aiNote}
+                              </>
+                            ) : (
+                              cleanText(it.summary)
+                            )}
+                          </p>
+                        )}
                       </div>
                     </div>
                   </li>

@@ -4,6 +4,7 @@ import type { AIItem } from "@/lib/types";
 import { CATEGORY_MAP } from "@/lib/categories";
 import { formatItemTime } from "@/lib/timeFormat";
 import { highlight } from "@/lib/highlight";
+import { cleanText } from "@/lib/text";
 
 const NEW_WINDOW_MS = 48 * 60 * 60 * 1000;
 
@@ -86,7 +87,7 @@ export default function ItemCard({
 
       {item.summary && (
         <p className="text-sm text-gray-600 leading-relaxed line-clamp-3">
-          {highlight(item.summary, keyword)}
+          {highlight(cleanText(item.summary), keyword)}
         </p>
       )}
 
