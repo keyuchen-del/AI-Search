@@ -1,37 +1,37 @@
 {
-  "date": "2026-05-30",
-  "generatedAt": "2026-05-29T23:42:53.793Z",
+  "date": "2026-05-31",
+  "generatedAt": "2026-05-30T23:16:36.715Z",
   "picks": [
     {
-      "title": "Anthropic raises $65B in Series H funding at $965B post-money valuation",
-      "sourceUrl": "https://www.anthropic.com/news/series-h",
+      "title": "Anthropic surpasses OpenAI to become most valuable AI startup",
+      "sourceUrl": "https://qazinform.com/news/anthropic-surpasses-openai-to-become-worlds-most-valuable-ai-startup",
       "source": "Hacker News",
-      "reason": "Anthropic融资650亿美元，估值近万亿，AI资本大事件"
+      "reason": "Anthropic估值超越OpenAI，AI格局剧变"
     },
     {
-      "title": "Claude Opus 4.8",
-      "sourceUrl": "https://www.anthropic.com/news/claude-opus-4-8",
+      "title": "Disagreement among frontier LLMs on real-world fact-checks",
+      "sourceUrl": "https://lenz.io/research/llm-disagreement",
       "source": "Hacker News",
-      "reason": "Claude Opus 4.8发布，前沿模型重大更新"
+      "reason": "前沿模型事实核查分歧，AI可靠性存疑"
+    },
+    {
+      "title": "EY Canada published a cybersecurity report and most citations were hallucinated",
+      "sourceUrl": "https://gptzero.me/investigations/ey",
+      "source": "Hacker News",
+      "reason": "EY报告引用幻觉，AI生成内容风险曝光"
+    },
+    {
+      "title": "Is AI causing a repeat of frontend’s lost decade?",
+      "sourceUrl": "https://mastrojs.github.io/blog/2026-05-23-is-AI-causing-a-repeat-of-frontends-lost-decade/",
+      "source": "Hacker News",
+      "reason": "AI是否重蹈前端十年停滞？行业反思"
     },
     {
       "title": "GitHub bans security researcher who posted zero-day Windows exploits",
       "sourceUrl": "https://www.tomshardware.com/tech-industry/cyber-security/microsofts-github-bans-security-researcher-who-posted-zero-day-windows-exploits-because-company-ruined-their-life-expert-claims-action-is-vindictive-and-promises-further-retaliation",
       "source": "Hacker News",
-      "reason": "GitHub封禁0day漏洞研究员，安全社区震动"
-    },
-    {
-      "title": "Cars collect a startling amount of data about you",
-      "sourceUrl": "https://www.bbc.com/future/article/20260513-your-car-is-spying-on-you-its-about-to-get-worse",
-      "source": "Hacker News",
-      "reason": "汽车数据收集惊人，隐私风险引发关注"
-    },
-    {
-      "title": "Sam Altman and Dario Amodei are both walking back AI jobs apocalypse predictions",
-      "sourceUrl": "https://fortune.com/2026/05/26/sam-altman-dario-amodei-walking-back-ai-jobs-apocalypse-prophecies-ipo/",
-      "source": "Hacker News",
-      "reason": "Altman和Amodei改口AI取代工作论，行业风向转变"
+      "reason": "GitHub封禁安全研究员，零日漏洞争议"
     }
   ],
-  "trendSummary": "本周AI圈热点集中在模型突破与开源实践，包括Claude新版本发布、OpenAI模型推翻几何猜想，以及GPT训练、智能体优化等实用工具与案例的涌现。"
+  "trendSummary": "本周AI圈热点集中在开源工具爆发、模型能力突破与人才流动，Claude新版本及OpenAI在数学领域的重要发现引发广泛关注。"
 }
