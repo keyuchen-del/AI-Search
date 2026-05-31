@@ -36,6 +36,9 @@ export default function RootLayout({
   return (
     <html lang="zh-CN">
       <body className="min-h-screen">
+        <a href="#main-content" className="skip-link">
+          跳到主内容
+        </a>
         {children}
         <ServiceWorkerRegister />
       </body>

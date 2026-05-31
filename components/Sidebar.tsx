@@ -44,7 +44,7 @@ export default function Sidebar({
           <span className="w-1 h-4 bg-brand-500 rounded-sm" />
           本周最热
         </h3>
-        <p className="text-[11px] text-gray-400 mb-3">按 GitHub Star / Hacker News 讨论热度排序</p>
+        <p className="text-[11px] text-gray-500 mb-3">按 GitHub Star / Hacker News 讨论热度排序</p>
         {top.length === 0 ? (
           <p className="text-sm text-gray-500">暂无数据</p>
         ) : (
@@ -71,7 +71,7 @@ export default function Sidebar({
                     <span className="text-sm text-gray-700 group-hover:text-brand-600 line-clamp-2 leading-snug">
                       {item.title}
                     </span>
-                    <div className="text-[11px] text-gray-400 mt-0.5 flex items-center gap-1.5 truncate">
+                    <div className="text-[11px] text-gray-500 mt-0.5 flex items-center gap-1.5 truncate">
                       <span className="truncate">{item.source}</span>
                       {typeof item.heat === "number" && item.heat > 0 && (
                         <span className="text-amber-600 font-medium shrink-0">
@@ -105,7 +105,7 @@ export default function Sidebar({
             <span className="w-1 h-4 bg-brand-500 rounded-sm" />
             数据来源
           </h3>
-          <div className="text-[11px] text-gray-400 mb-2.5">
+          <div className="text-[11px] text-gray-500 mb-2.5">
             {meta?.fetchedAt && <>更新于 {formatBJDate(meta.fetchedAt)} · </>}
             {sources.length} 个来源
             {failed > 0 && <span className="text-amber-500"> · {failed} 个未更新</span>}
@@ -159,7 +159,7 @@ export default function Sidebar({
             <span className="w-1 h-4 bg-brand-500 rounded-sm" />
             推荐阅读
           </h3>
-          <p className="text-[11px] text-gray-400 mb-3">各方向精选，换个角度看 AI</p>
+          <p className="text-[11px] text-gray-500 mb-3">各方向精选，换个角度看 AI</p>
           <ul className="space-y-2.5">
             {recommend.map((it) => {
               const cat = it.category ? CATEGORY_MAP[it.category] : null;

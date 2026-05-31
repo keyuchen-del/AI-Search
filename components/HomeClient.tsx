@@ -80,7 +80,7 @@ function HomeLayout({
       <Header defaultKeyword={keyword} />
       <CategoryNav active={category} mode={mode} since={since} keyword={keyword} />
 
-      <main className="max-w-7xl mx-auto px-4 py-6 grid grid-cols-1 lg:grid-cols-[1fr_300px] gap-6">
+      <main id="main-content" className="max-w-7xl mx-auto px-4 py-6 grid grid-cols-1 lg:grid-cols-[1fr_300px] gap-6">
         <section>
           {heroItem && <Hero item={heroItem} />}
           {showDigest && <TopReads digest={digest} />}

@@ -37,6 +37,7 @@ export default function ItemCard({
           src={item.image}
           alt=""
           loading="lazy"
+          decoding="async"
           onError={(e) => {
             e.currentTarget.style.display = "none";
           }}
